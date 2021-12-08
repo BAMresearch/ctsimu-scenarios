@@ -1,9 +1,9 @@
-.. _general:
+.. _sec_general:
 
 General information
 ===================
 
-.. _file_structure:
+.. _sec_file_structure:
 
 File structure
 --------------
@@ -23,7 +23,7 @@ The scenario description consists of the following main sections:
 * :json:`"simulation":` --- Proprietary parameters specific to the simulation software.
 
 
-.. _parameters:
+.. _sec_general_parameters:
 
 Parameters
 ----------
@@ -55,7 +55,7 @@ Most values with physical representation come with an associated physical unit a
 	  ]
 	}
 
-.. _values_and_units:
+.. _sec_values_and_units:
 
 Values & Units
 --------------
@@ -70,7 +70,7 @@ The following units are allowed for length, angle, time, voltage, current, densi
 
 .. code-block:: json-object
 
-	  "nm"  "deg"  "ms"   "MV"  "uA"  "g/cm^3"  "C"  "deg/s"    "lp/mm"  "relative"  null
+	  "nm"  "deg"  "ms"   "MV"  "uA"  "g/cm^3"  "C"  "deg/s"    "lp/mm"  "px"  "relative"  null
 	  "um"  "rad"  "s"    "kV"  "mA"  "kg/m^3"  "K"  "deg/min"  "lp/cm"
 	  "mm"         "min"  "V"   "A"             "F"  "deg/h"    "lp/dm"
 	  "cm"         "h"                               "rad/s"    "lp/m" 
@@ -79,7 +79,7 @@ The following units are allowed for length, angle, time, voltage, current, densi
 
 The prefix :code:`u` represents the SI prefix µ (10\ :sup:`-6`\ ). :json:`"relative"` can be used for relative uncertainties or any values that express a fraction of a related measure. For properties without a unit, the keyword :json:`null` is used.
 
-.. _uncertainty:
+.. _sec_uncertainty:
 
 Uncertainty
 -----------
@@ -87,7 +87,7 @@ Uncertainty
 :json:`"uncertainty":`
 	gives a :json:`"value":` for the standard measurement uncertainty and its physical :json:`"unit":`. The intention is to use this to document (or model) a real, physical CT machine.
 
-.. _drifts:
+.. _sec_drifts:
 
 Drifts
 ------
@@ -108,7 +108,7 @@ Drifts
 	Drift keywords are prepared throughout this document for any parameters where they are assumed to be possible. In most cases of the example, they are set :json:`null`, rendering them inactive.
 
 
-.. _referred_data_files:
+.. _sec_referred_data_files:
 
 Formats of referred data files
 ------------------------------
@@ -122,6 +122,8 @@ For **two-dimensional** data such as intensity profiles or bad pixel maps, image
 For **three-dimensional** data, such as a 3D spot intensity profile, a headerless RAW file shall be used. Its dimensions are specified at the respective place in the JSON scenario. The data type can be one of the following: :code:`uint8`, :code:`int8`, :code:`uint16`, :code:`int16`, :code:`float` (32 bit). Data shall be written row-first, column-second, slice-third. For an image with :math:`n_x` columns, :math:`n_y` rows and :math:`n_z` slices, this results in an array with the following one-dimensional index representation, with coordinates :math:`(x, y, z)` starting at :math:`(0, 0, 0)`:
 
 .. math::
+	:label: eq_raw_index
+
 	\text{\textsf{Index}}(x, y, z) = (n_x \cdot n_y \cdot z) + (n_x \cdot y) + x.
 
 3D raw data is expected to be written in little-endian byte order, and most-significant to least-significant bit (MSB\ :sub:`0`\ ).

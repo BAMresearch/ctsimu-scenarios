@@ -1,4 +1,4 @@
-.. _file:
+.. _sec_file:
 
 File
 ====

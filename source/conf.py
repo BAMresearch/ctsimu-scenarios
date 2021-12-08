@@ -36,7 +36,7 @@ extensions = [
 ]
 
 # Add the path of a bibliography (.bib) file
-bibtex_bibfiles = ['references.bib']
+bibtex_bibfiles = ['library.bib']
 
 # Define bibtex enconding (default: utf-8-sig)
 bibtex_encoding = 'utf-8-sig'
@@ -45,7 +45,7 @@ bibtex_encoding = 'utf-8-sig'
 bibtex_default_style = 'unsrt'
 
 imgmath_image_format = "svg"
-imgmath_font_size = 13
+imgmath_font_size = 12
 imgmath_latex_preamble = """\\usepackage{sansmathfonts}
 \\usepackage{paratype}
 \\usepackage{amsmath, amssymb}
@@ -186,6 +186,7 @@ latex_elements = {
 		\newunicodechar{≈}{\ensuremath{\approx}}
 		\newunicodechar{×}{\ensuremath{\times}}
 		\newunicodechar{→}{\ensuremath{\rightarrow}}
+		\newunicodechar{°}{\ensuremath{^\circ}}
 		\newunicodechar{²}{\textsuperscript{2}}
 		\newunicodechar{³}{\textsuperscript{3}}
 

@@ -34,4 +34,11 @@ Das Projekt CTSimU wurde durch die Förderrichtlinie `WIPANO <https://www.innova
    file
    environment
    geometry
+   detector
+   source
+   samples
+   acquisition
+   materials
+   proprietary
    fullexample
+   bibliography

@@ -264,7 +264,7 @@
 				"s": {"value": 1.0, "drift": null},
 				"t": {"value": 1.0, "drift": null}
 			},
-			"material_id": "Zerodur",
+			"material_id": "Glass Ceramic",
 			"position":
 			{
 				"centre": {
@@ -402,8 +402,8 @@
 			"composition": {"value": "C16H14N4O4", "drift": null}
 		},
 		{
-			"id":   "Zerodur",
-			"name": "Zerodur",
+			"id":   "Glass Ceramic",
+			"name": "Glass Ceramic",
 			"density": {"value": 2.53, "unit": "g/cm^3", "uncertainty": {"value": 0, "unit": "g/cm^3"}, "drift": null},
 			"composition": {"value": "Al 0.21172 Si 0.28044 O 0.50784", "drift": null}
 		}

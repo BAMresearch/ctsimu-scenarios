@@ -1,4 +1,4 @@
-.. _introduction:
+.. _sec_introduction:
 
 Introduction
 ============
@@ -12,7 +12,7 @@ On the following pages, a JSON structure (JavaScript Object Notation) is introdu
 
 The JSON format was chosen because it is both *human-readable* and *human-writeable*, as well as *machine-readable*, which enables reproducible simulations based on the scenario description files.
 
-A listing of a :ref:`full example <FullExample>` can be found at the end of this document. The line numbers in the code snippets in the following description refer to the line numbers of the full example. The example describes a step cylinder made of Zerodur, placed 20\,mm to the "left" of the rotation axis at a slight angle. The rotation stage is symmetrically surrounded by a fixed aluminium frame that does not follow the rotation of the stage (:numref:`exampleCTsetup`). The detector is tilted around its planar normal by 0.023\,rad in clockwise direction (as seen from the source).
+A listing of a :ref:`full example <FullExample>` can be found at the end of this document. The line numbers in the code snippets in the following description refer to the line numbers of the full example. The example describes a step cylinder made of a glass ceramic, placed 20\,mm to the "left" of the rotation axis at a slight angle. The rotation stage is symmetrically surrounded by a fixed aluminium frame that does not follow the rotation of the stage (:numref:`exampleCTsetup`). The detector is tilted around its planar normal by 0.023\,rad in clockwise direction (as seen from the source).
 
 .. _exampleCTsetup:
 .. figure:: pictures/example.png
