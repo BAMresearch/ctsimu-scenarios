@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detector &mdash; ctsimu-scenarios 0.9 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Source" href="source.html" />
+    <link rel="prev" title="Geometry" href="geometry.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ctsimu-scenarios
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-properties">General properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grey-value-characteristics">Grey value characteristics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#min-max-method">Min/Max method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-response-function">Linear response function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-characteristics-file">External characteristics file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quantum-efficiency">Quantum efficiency</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#image-quality">Image Quality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#noise">Noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gain">Gain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsharpness">Unsharpness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bad-pixel-map">Bad pixel map</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scintillator-filters">Scintillator &amp; Filters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ctsimu-scenarios</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Detector</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/detector.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="detector">
+<span id="sec-detector"></span><h1>Detector<a class="headerlink" href="#detector" title="Permalink to this headline"></a></h1>
+<section id="general-properties">
+<span id="sec-detector-general"></span><h2>General properties<a class="headerlink" href="#general-properties" title="Permalink to this headline"></a></h2>
+<p>The following properties can be specified in the detector section of the scenario file.</p>
+<p>The model name and the manufacturer, if an existing detector is modelled:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">114</span><span class="nt">&quot;model&quot;</span><span class="p">:</span>        <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="linenos">115</span><span class="nt">&quot;manufacturer&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Using the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;type&quot;</span></span><span class="p"><span class="pre">:</span></span></code> keyword, it can be defined whether an <strong>ideal</strong> or a <strong>real</strong> detector is described or shall be simulated. An <strong>ideal</strong> detector is assumed to convert all incident radiation energy linearly into grey values. For an <strong>ideal</strong> detector, no scintillator should be defined in the scenario file. A <strong>real</strong> detector is assumed to take the absorption characteristics and quantum yield of the scintillator material into account.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">116</span><span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;real&quot;</span> <span class="s2">&quot;ideal&quot;</span>
+</pre></div>
+</div>
+<p>The number of detector pixels in directions <img class="math" src="_images/math/17dcdd8ca2862e923fac2c2f9f81f5e419623cbc.svg" alt="\vec{u}_\textsf{D}"/> and <img class="math" src="_images/math/0fe05e079e32ad1d98f6dba2311676c78617e598.svg" alt="\vec{v}_\textsf{D}"/>:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">117</span><span class="nt">&quot;columns&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;px&quot;</span><span class="p">},</span>
+<span class="linenos">118</span><span class="nt">&quot;rows&quot;</span><span class="p">:</span>    <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;px&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The pixel pitch (distance between neighbouring pixels) in directions <img class="math" src="_images/math/17dcdd8ca2862e923fac2c2f9f81f5e419623cbc.svg" alt="\vec{u}_\textsf{D}"/> and <img class="math" src="_images/math/0fe05e079e32ad1d98f6dba2311676c78617e598.svg" alt="\vec{v}_\textsf{D}"/>. The physical dimensions of the active detector area are calculated from the pixel pitch and the number of pixels per row and column.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">119</span><span class="nt">&quot;pixel_pitch&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">120</span>  <span class="nt">&quot;u&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.127</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">121</span>  <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.127</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">122</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The bit depth of the detector:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">123</span><span class="nt">&quot;bit_depth&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The integration time is the exposure time to take one frame. The dead time is the time between exposure times, which includes the readout time of the detector.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">124</span><span class="nt">&quot;integration_time&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;s&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">125</span><span class="nt">&quot;dead_time&quot;</span><span class="p">:</span>        <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;ms&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;s&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;image_lag&quot;</span></span><span class="p"><span class="pre">:</span></span></code> between subsequent frames can be specified, following loosely the definition of <em>GlobalLag1f</em> in ASTM E2597. <span id="id1">[<a class="reference internal" href="bibliography.html#id3" title="ASTM Subcommittee E07.01. ASTM E2597 / E2597M-14, Standard Practice for Manufacturing Characterization of Digital Detector Arrays. ASTM International, West Conshohocken, PA, 2014, www.astm.org, 2014. doi:10.1520/E2597_E2597M-14.">1</a>]</span></p>
+<div class="math" id="equation-eq-image-lag">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-eq-image-lag" title="Permalink to this equation"></a></span><img src="_images/math/d3cd93851b61e557d463f1f1cc8b188c0e00bde1.svg" alt="\textsf{image~lag} = \frac{\text{\textsf{Grey value at first frame radiation fully off}}}{\text{\textsf{Grey value at radiation fully on}}}"/></p>
+</div><div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">126</span><span class="nt">&quot;image_lag&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>As opposed to <em>GlobalLag1f</em>, <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;image_lag&quot;</span></span><span class="p"><span class="pre">:</span></span></code> refers to the scenario described in this file, particularly the specified radiation intensity and integration time. Here, it is therefore not treated as a parameter intrinsic to the detector, but describes its lag characteristics only for the specified scenario.</p>
+</section>
+<section id="grey-value-characteristics">
+<span id="sec-gv-characteristics"></span><h2>Grey value characteristics<a class="headerlink" href="#grey-value-characteristics" title="Permalink to this headline"></a></h2>
+<p>There are three ways provided to model the grey value characteristics of the detector.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">127</span><span class="nt">&quot;grey_value&quot;</span><span class="p">:</span>
+<span class="linenos">128</span><span class="p">{</span>
+<span class="linenos">129</span>  <span class="nt">&quot;imax&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">45000</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">130</span>  <span class="nt">&quot;imin&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">1000</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">131</span>
+<span class="linenos">132</span>  <span class="nt">&quot;factor&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">3e15</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;1/J&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;1/J&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">133</span>  <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1800</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>  <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">134</span>
+<span class="linenos">135</span>  <span class="nt">&quot;intensity_characteristics_file&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;detector_intensity.csv&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span>  <span class="nt">&quot;efficiency&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">138</span>  <span class="nt">&quot;efficiency_characteristics_file&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;detector_efficiency.csv&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">139</span><span class="p">}</span>
+</pre></div>
+</div>
+<section id="min-max-method">
+<h3>Min/Max method<a class="headerlink" href="#min-max-method" title="Permalink to this headline"></a></h3>
+<p>The first approach is to specify the average grey value at the maximum intensity of the free beam in the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;imax&quot;</span></span><span class="p"><span class="pre">:</span></span></code>, and the average grey value at no incident radiation in the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;imin&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. Between these two values, a linear interpolation based on the incident intensity should take place to calculate the grey value of a pixel. In this case, the grey values are invariant under changes in the integration time or pixel size, and will be rescaled along with changes in the minimum or maximum intensity. It is similar to the re-normalization of the projection image to a specific grey value at maximum free-beam intensity.</p>
+</section>
+<section id="linear-response-function">
+<h3>Linear response function<a class="headerlink" href="#linear-response-function" title="Permalink to this headline"></a></h3>
+<p>The second method allows to specify a linear response function. This function assigns a grey value to the collected energy E (in J) for each pixel.</p>
+<div class="math" id="equation-eq-greyvalue">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-eq-greyvalue" title="Permalink to this equation"></a></span><img src="_images/math/474ccaca526aaa98a3f7dc3215e3b5b951606a14.svg" alt="\text{\textsf{Grey Value}} = \left(\textsf{factor} \cdot E \right) + \textsf{offset}"/></p>
+</div><p>The file format allows to provide a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;factor&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and an <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;offset&quot;</span></span><span class="p"><span class="pre">:</span></span></code> for this linear function. This method allows the grey values to change with a change in pixel size, tube power, integration time or a change in intensity due to a different focus-detector distance. It has precedence over the first method if <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;factor&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;offset&quot;</span></span><span class="p"><span class="pre">:</span></span></code> are set and not <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;null&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. From eq. <a class="reference internal" href="#equation-eq-greyvalue">(3)</a> it becomes clear that the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;factor&quot;</span></span><span class="p"><span class="pre">:</span></span></code> should have the inverse unit of the deposited energy: 1/J.</p>
+</section>
+<section id="external-characteristics-file">
+<h3>External characteristics file<a class="headerlink" href="#external-characteristics-file" title="Permalink to this headline"></a></h3>
+<p>For a more general approach, it is also possible to provide an arbitrary grey value characteristics from a CSV file specified by the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;intensity_characteristics_file&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. The file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorintensitycharacteristics"><span class="std std-numref">Tab. 1</span></a>, separated by commas or white space.</p>
+<p>The interpolation method between these discrete values shall not be specified here and is left to the simulation software. However, all values are assumed to refer to the centre of their bin.</p>
+<p>If a valid intensity characteristics CSV file is specified and the parameter is not set to <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;null&quot;</span></span><span class="p"><span class="pre">:</span></span></code>, this method has precedence over the first two methods.</p>
+<span id="tab-csvdetectorintensitycharacteristics"></span><table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Tab. 1 </span><span class="caption-text">CSV for detector’s intensity characteristics</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Col.</p></th>
+<th class="head"><p>Property</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Energy <em>E</em> in J, collected by a pixel</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Grey value</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Grey value uncertainty <em>(optional)</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="quantum-efficiency">
+<h3>Quantum efficiency<a class="headerlink" href="#quantum-efficiency" title="Permalink to this headline"></a></h3>
+<p>The photon <strong>conversion efficiency</strong> (quantum efficiency) of the detector can also either be provided as a constant value for all photon energies – using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;efficiency&quot;</span></span><span class="p"><span class="pre">:</span></span></code> – or as another characteristics curve through a CSV file, using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;efficiency_characteristics_file&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. In the latter case, this file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorefficiencycharacteristics"><span class="std std-numref">Tab. 2</span></a>, separated by commas or white space. If a valid efficiency characteristics file is provided, it has precedence over the global <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;efficiency&quot;</span></span><span class="p"><span class="pre">:</span></span></code> property.</p>
+<span id="tab-csvdetectorefficiencycharacteristics"></span><table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Tab. 2 </span><span class="caption-text">CSV for detector’s efficiency characteristics</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Col.</p></th>
+<th class="head"><p>Property</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Photon energy in keV</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Quantum efficiency, as the ratio of incident photons to absorbed photons</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Quantum efficiency uncertainty <em>(optional)</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="image-quality">
+<span id="sec-image-quality"></span><h2>Image Quality<a class="headerlink" href="#image-quality" title="Permalink to this headline"></a></h2>
+<section id="noise">
+<span id="sec-noise"></span><h3>Noise<a class="headerlink" href="#noise" title="Permalink to this headline"></a></h3>
+<p>The noise in the projection image can be described by specifying the signal-to-noise ratio (SNR) at the maximum intensity (free beam) for one frame, with no frame averaging applied.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">140</span><span class="nt">&quot;noise&quot;</span><span class="p">:</span>
+<span class="linenos">141</span><span class="p">{</span>
+<span class="linenos">142</span>  <span class="nt">&quot;snr_at_imax&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">205</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">143</span>  <span class="nt">&quot;noise_characteristics_file&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;noise.csv&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">144</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that the SNR’s underlying grey value distribution must refer to an area of pixels that ideally has the same mean intensity, and is not subject to systematic grey value variations from other physical effects such as the <img class="math" src="_images/math/8e9e0fd86eda4e9f1e61b89853b7fca6a840b843.svg" alt="1/r^2"/> law or a change in the angle of radiation incidence on the detector.</p>
+<p>It is also possible to provide an intensity-dependent noise characteristics using a CSV file. A valid characteristics file has precedence over the SNR at maximum intensity. The characteristics file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectornoisecharacteristics"><span class="std std-numref">Tab. 3</span></a>, separated by commas or white space.</p>
+<span id="tab-csvdetectornoisecharacteristics"></span><table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Tab. 3 </span><span class="caption-text">CSV for noise characteristics</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Col.</p></th>
+<th class="head"><p>Property</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Mean pixel grey value (intensity)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Signal-to-noise ratio (SNR)</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>SNR uncertainty <em>(optional)</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gain">
+<span id="sec-gain"></span><h3>Gain<a class="headerlink" href="#gain" title="Permalink to this headline"></a></h3>
+<p>A gain factor can be specified using the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;gain&quot;</span></span><span class="p"><span class="pre">:</span></span></code> parameter:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">145</span><span class="nt">&quot;gain&quot;</span><span class="p">:</span>
+<span class="linenos">146</span><span class="p">{</span>
+<span class="linenos">147</span>  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="linenos">148</span>  <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="linenos">149</span>  <span class="nt">&quot;scale_signal_and_noise&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<span class="linenos">150</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;scale_signal_and_noise&quot;</span></span><span class="p"><span class="pre">:</span></span></code> is set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">true</span></span></code>, a simulation software shall use this parameter to scale the grey values (usually linearly), and noise (usually quadratically) with the gain value. This assumes that the grey value characteristics and noise characteristics that have been provided before refer to a gain factor of 1. If the grey value and noise characteristics are already provided for the given gain factor, the parameter must be set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">false</span></span></code>.</p>
+</section>
+<section id="unsharpness">
+<span id="sec-unsharpness"></span><h3>Unsharpness<a class="headerlink" href="#unsharpness" title="Permalink to this headline"></a></h3>
+<p>There are three ways provided to specify the detector unsharpness.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">151</span><span class="nt">&quot;unsharpness&quot;</span><span class="p">:</span>
+<span class="linenos">152</span><span class="p">{</span>
+<span class="linenos">153</span>  <span class="nt">&quot;basic_spatial_resolution&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span>        <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">154</span>  <span class="nt">&quot;mtf10_frequency&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;lp/mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;lp/mm&quot;</span><span class="p">},</span>            <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">155</span>  <span class="nt">&quot;mtf&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;detector_mtf.csv&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">156</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>The basic spatial resolution, as defined in ASTM E2597 <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="ASTM Subcommittee E07.01. ASTM E2597 / E2597M-14, Standard Practice for Manufacturing Characterization of Digital Detector Arrays. ASTM International, West Conshohocken, PA, 2014, www.astm.org, 2014. doi:10.1520/E2597_E2597M-14.">1</a>]</span>, provided using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;basic_spatial_resolution&quot;</span></span><span class="p"><span class="pre">:</span></span></code>.</p></li>
+<li><p>The MTF10 frequency of the system’s modulation transfer function (MTF). This value states the frequency at which the contrast in the detector response drops to 10% <span id="id3">[<a class="reference internal" href="bibliography.html#id4" title="Kurt Rossmann. Point Spread-Function, Line Spread-Function, and Modulation Transfer Function: Tools for the Study of Imaging Systems. Radiology, 93(2):257–272, August 1969. doi:10.1148/93.2.257.">2</a>]</span>. It can be provided using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;mtf10_frequency&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. If specified and not <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code>, this parameter has precedence over the basic spatial resolution.</p></li>
+<li><p>The complete modulation transfer function (MTF, <span id="id4">[<a class="reference internal" href="bibliography.html#id4" title="Kurt Rossmann. Point Spread-Function, Line Spread-Function, and Modulation Transfer Function: Tools for the Study of Imaging Systems. Radiology, 93(2):257–272, August 1969. doi:10.1148/93.2.257.">2</a>]</span>), provided through a CSV file. Its name is given using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;mtf&quot;</span></span><span class="p"><span class="pre">:</span></span></code>, and it should contain the columns listed in <a class="reference internal" href="#tab-csvmtf"><span class="std std-numref">Tab. 4</span></a>, separated by commas or white space. If a valid MTF is provided, this has precedence over the first two parameters mentioned here.</p></li>
+</ol>
+<span id="tab-csvmtf"></span><table class="docutils align-default" id="id8">
+<caption><span class="caption-number">Tab. 4 </span><span class="caption-text">CSV for noise characteristics</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Col.</p></th>
+<th class="head"><p>Property</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Frequency in lp/mm</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Modulation contrast, from the interval [0, 1]</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Modulation contrast uncertainty <em>(optional)</em></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bad-pixel-map">
+<h3>Bad pixel map<a class="headerlink" href="#bad-pixel-map" title="Permalink to this headline"></a></h3>
+<p>The bad pixel map provided here should be a 2D grey-scale image file with a number of columns and rows that matches the detector. A pixel value of <code class="code docutils literal notranslate"><span class="pre">0</span></code> means that the pixel is working properly. A pixel value other than <code class="code docutils literal notranslate"><span class="pre">0</span></code> means that the pixel does not function correctly. If a TIFF file is provided, the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;type&quot;</span></span><span class="p"><span class="pre">:</span></span></code> property is obsolete and can be omitted.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">157</span><span class="nt">&quot;bad_pixel_map&quot;</span><span class="p">:</span>
+<span class="linenos">158</span><span class="p">{</span>
+<span class="linenos">159</span>  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;badpixels.raw&quot;</span><span class="p">,</span>
+<span class="linenos">160</span>  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint8&quot;</span><span class="p">,</span>
+<span class="linenos">161</span>  <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="linenos">162</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="scintillator-filters">
+<span id="sec-scintillatorandfilters"></span><h2>Scintillator &amp; Filters<a class="headerlink" href="#scintillator-filters" title="Permalink to this headline"></a></h2>
+<p>In this section, the scintillator and filter materials for the detector can be defined. The filter materials are split into <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;front&quot;</span></span><span class="p"><span class="pre">:</span></span></code> filters and <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;rear&quot;</span></span><span class="p"><span class="pre">:</span></span></code> filters (i.e. a back panel, mostly to consider backscattering). Any number of filters can be defined. For the materials of scintillator and filters, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">materials section</span></a> of the JSON file.</p>
+<p>Note that front and rear of the detector are not explicitly identified by the detector’s normal vector or any other property, but only given implicitly by the side of the detector facing the source, and the side facing away from the source.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">163</span><span class="nt">&quot;scintillator&quot;</span><span class="p">:</span>
+<span class="linenos">164</span><span class="p">{</span>
+<span class="linenos">165</span>  <span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;CsI&quot;</span><span class="p">,</span>
+<span class="linenos">166</span>  <span class="nt">&quot;thickness&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">167</span><span class="p">},</span>
+<span class="linenos">168</span><span class="nt">&quot;filters&quot;</span><span class="p">:</span>
+<span class="linenos">169</span><span class="p">{</span>
+<span class="linenos">170</span>  <span class="nt">&quot;front&quot;</span><span class="p">:</span>
+<span class="linenos">171</span>  <span class="p">[</span>
+<span class="linenos">172</span>    <span class="p">{</span>
+<span class="linenos">173</span>      <span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">174</span>      <span class="nt">&quot;thickness&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">175</span>    <span class="p">},</span>
+<span class="linenos">176</span>    <span class="p">{</span>
+<span class="linenos">177</span>      <span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Kapton&quot;</span><span class="p">,</span>
+<span class="linenos">178</span>      <span class="nt">&quot;thickness&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="mf">0.13</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">179</span>    <span class="p">}</span>
+<span class="linenos">180</span>  <span class="p">],</span>
+<span class="linenos">181</span>  <span class="nt">&quot;rear&quot;</span><span class="p">:</span>
+<span class="linenos">182</span>  <span class="p">[</span>
+<span class="linenos">183</span>    <span class="p">{</span>
+<span class="linenos">184</span>      <span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">185</span>      <span class="nt">&quot;thickness&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">186</span>    <span class="p">}</span>
+<span class="linenos">187</span>  <span class="p">]</span>
+<span class="linenos">188</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="geometry.html" class="btn btn-neutral float-left" title="Geometry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="source.html" class="btn btn-neutral float-right" title="Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

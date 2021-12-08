@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General information &mdash; ctsimu-scenarios 0.9 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="File" href="file.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ctsimu-scenarios
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#values-units">Values &amp; Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uncertainty">Uncertainty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drifts">Drifts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formats-of-referred-data-files">Formats of referred data files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ctsimu-scenarios</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>General information</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/general.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="general-information">
+<span id="sec-general"></span><h1>General information<a class="headerlink" href="#general-information" title="Permalink to this headline"></a></h1>
+<section id="file-structure">
+<span id="sec-file-structure"></span><h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline"></a></h2>
+<p>The JSON file should be encoded and decoded using the UTF-8 character set, even though all characters in this specification are from the ASCII set to ensure compatibility with other decoding interpretations.</p>
+<p>The scenario description consists of the following main sections:</p>
+<dl class="simple">
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>General file information: scenario name, file format version.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;environment&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Description of the environment: temperature, atmosphere.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;geometry&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Location and orientation of source, detector and sample stage (rotation axis).</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;detector&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Parameters and characteristics of the detector.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;source&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Parameters and characteristics of the X-ray source.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;samples&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Definitions of all samples: surface models, location and orientation, size.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;acquisition&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Parameters for the CT acquisition: angular steps, flat fields, etc.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;materials&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Density and chemical composition of all materials relevant to the scenario.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;simulation&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Proprietary parameters specific to the simulation software.</p>
+</dd>
+</dl>
+</section>
+<section id="parameters">
+<span id="sec-general-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
+<p>Most values with physical representation come with an associated physical unit and a measurement uncertainty. Additionally, many parameters may drift during a CT scan. In general, parameters are defined using a JSON object which may contain the following properties. Depending on the situation, only the ones of relevance must be specified. Irrelevant ones may be omitted or set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code> at any level.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">,</span>
+  <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span>
+  <span class="p">}</span>
+  <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">-100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+      <span class="nt">&quot;file&quot;</span><span class="p">:</span>  <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;unit&quot;</span><span class="p">:</span>  <span class="s2">&quot;mm&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;known_to_reconstruction&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;file&quot;</span><span class="p">:</span>  <span class="s2">&quot;vertical_motion_deviations.csv&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;unit&quot;</span><span class="p">:</span>  <span class="s2">&quot;mm&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;known_to_reconstruction&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="values-units">
+<span id="sec-values-and-units"></span><h2>Values &amp; Units<a class="headerlink" href="#values-units" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>gives the measured value or the value that should be used by the simulation software.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;unit&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>gives the physical unit of the value.</p>
+</dd>
+</dl>
+<p>The following units are allowed for length, angle, time, voltage, current, density, temperature, angular velocity and the spatial frequency, and should be interpreted correctly by any parser.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;nm&quot;</span>  <span class="s2">&quot;deg&quot;</span>  <span class="s2">&quot;ms&quot;</span>   <span class="s2">&quot;MV&quot;</span>  <span class="s2">&quot;uA&quot;</span>  <span class="s2">&quot;g/cm^3&quot;</span>  <span class="s2">&quot;C&quot;</span>  <span class="s2">&quot;deg/s&quot;</span>    <span class="s2">&quot;lp/mm&quot;</span>  <span class="s2">&quot;px&quot;</span>  <span class="s2">&quot;relative&quot;</span>  <span class="kc">null</span>
+<span class="s2">&quot;um&quot;</span>  <span class="s2">&quot;rad&quot;</span>  <span class="s2">&quot;s&quot;</span>    <span class="s2">&quot;kV&quot;</span>  <span class="s2">&quot;mA&quot;</span>  <span class="s2">&quot;kg/m^3&quot;</span>  <span class="s2">&quot;K&quot;</span>  <span class="s2">&quot;deg/min&quot;</span>  <span class="s2">&quot;lp/cm&quot;</span>
+<span class="s2">&quot;mm&quot;</span>         <span class="s2">&quot;min&quot;</span>  <span class="s2">&quot;V&quot;</span>   <span class="s2">&quot;A&quot;</span>             <span class="s2">&quot;F&quot;</span>  <span class="s2">&quot;deg/h&quot;</span>    <span class="s2">&quot;lp/dm&quot;</span>
+<span class="s2">&quot;cm&quot;</span>         <span class="s2">&quot;h&quot;</span>                               <span class="s2">&quot;rad/s&quot;</span>    <span class="s2">&quot;lp/m&quot;</span>
+<span class="s2">&quot;dm&quot;</span>                                           <span class="s2">&quot;rad/min&quot;</span>
+<span class="s2">&quot;m&quot;</span>                                            <span class="s2">&quot;rad/h&quot;</span>
+</pre></div>
+</div>
+<p>The prefix <code class="code docutils literal notranslate"><span class="pre">u</span></code> represents the SI prefix µ (10<sup>-6</sup>). <code class="code highlight json-object docutils literal notranslate"><span class="s2"><span class="pre">&quot;relative&quot;</span></span></code> can be used for relative uncertainties or any values that express a fraction of a related measure. For properties without a unit, the keyword <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code> is used.</p>
+</section>
+<section id="uncertainty">
+<span id="sec-uncertainty"></span><h2>Uncertainty<a class="headerlink" href="#uncertainty" title="Permalink to this headline"></a></h2>
+<dl class="simple">
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;uncertainty&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>gives a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code> for the standard measurement uncertainty and its physical <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;unit&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. The intention is to use this to document (or model) a real, physical CT machine.</p>
+</dd>
+</dl>
+</section>
+<section id="drifts">
+<span id="sec-drifts"></span><h2>Drifts<a class="headerlink" href="#drifts" title="Permalink to this headline"></a></h2>
+<dl>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;drift&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>provides an array that may contain an arbitrary number of drift components. Typically, only one drift component is necessary, but in some cases it can be useful to provide more than one drift component for a parameter, especially if some drift contributions shall be unknown to the reconstruction software, whereas others shall be considered during the reconstruction. A typical example would be a helix scan: the vertical movement of the stage along the rotation axis can be modelled as a drift that must be known during the reconstruction. However, inhomogeneities in the vertical motion can be modelled as a second drift component unknown to the reconstruction software.</p>
+<p>Drifts are applied for each frame individually once the stage has reached its intended position as described in the <a class="reference internal" href="acquisition.html#sec-acquisition"><span class="std std-ref">acquisiton section</span></a> of the scenario file. Because any drift value describes an absolute deviation from the initial condition at frame 0, they are not accumulated over time. If multiple drift components are defined, they are applied in an additive, sequential manner in the given order.</p>
+<p>Each drift component must provide a range of drift values (at least one). These drift values represent absolute deviations from the initial values at the start position (frame 0). They can be provided in the component’s <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code> array or through a single-column CSV <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. If a drift component provides only a single <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code> different from <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code>, this drift deviation will stay constant throughout the scan. For example, a constant stage drift value for its tilt around one of the stage’s plane vectors (see <a class="reference internal" href="geometry.html#sec-geometry"><span class="std std-ref">geometry section</span></a>) leads to a simple axis wobble.</p>
+<p>For dynamic, non-constant drifts, more than one drift value can be provided in the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code> array or CSV <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. Ideally, the number of rows in the CSV file would match the number of frames of the scan. If the number of provided drift values does not match the number of frames, the values are assumed to be spread in equidistant steps between start projection (first value) and last projection (last value), and a linear interpolation between neighbouring values is assumed to calculate each frame’s deviation value for the parameter.</p>
+<p>The physical <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;unit&quot;</span></span><span class="p"><span class="pre">:</span></span></code> of the deviation values should be specified; otherwise, the main parameter unit is assumed. If the drift refers to a parameter that expects a string (e.g. file name of a spectrum file), the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;values&quot;</span></span><span class="p"><span class="pre">:</span></span></code> array or CSV <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code> should contain a string for each frame; otherwise, the same equidistant behaviour is assumed as for numerical parameters with the exception that no interpolation takes place. Instead, a string remains valid until the next key frame is reached.</p>
+<p>The parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;known_to_reconstruction&quot;</span></span><span class="p"><span class="pre">:</span></span></code> (either <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">true</span></span></code> or <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">false</span></span></code>) can be used to specify whether the drift should be considered during the reconstruction of the CT scan (e.g. when calculating projection matrices).</p>
+<p>Drift keywords are prepared throughout this document for any parameters where they are assumed to be possible. In most cases of the example, they are set <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code>, rendering them inactive.</p>
+</dd>
+</dl>
+</section>
+<section id="formats-of-referred-data-files">
+<span id="sec-referred-data-files"></span><h2>Formats of referred data files<a class="headerlink" href="#formats-of-referred-data-files" title="Permalink to this headline"></a></h2>
+<p>A scenario description may refer to other data files.</p>
+<p>For <strong>one-dimensional</strong> data such as response curves, characteristics files or spectra, the CSV format shall be used, with its columns in the order specified in the corresponding sections of this guide. The columns shall be separated by commas or white-space.</p>
+<p>For <strong>two-dimensional</strong> data such as intensity profiles or bad pixel maps, image files shall be used. The minimum set of supported image file formats should be TIFF and headerless RAW. For the RAW format, please follow the details for three-dimensional data.</p>
+<p>For <strong>three-dimensional</strong> data, such as a 3D spot intensity profile, a headerless RAW file shall be used. Its dimensions are specified at the respective place in the JSON scenario. The data type can be one of the following: <code class="code docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="code docutils literal notranslate"><span class="pre">int8</span></code>, <code class="code docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="code docutils literal notranslate"><span class="pre">int16</span></code>, <code class="code docutils literal notranslate"><span class="pre">float</span></code> (32 bit). Data shall be written row-first, column-second, slice-third. For an image with <img class="math" src="_images/math/444a29ef6f91183e32bede1726dbdac3df2cb090.svg" alt="n_x"/> columns, <img class="math" src="_images/math/29970beec3d3a964d2059626a0e700bfcb3bd4d9.svg" alt="n_y"/> rows and <img class="math" src="_images/math/11542a5ff8bb887f546d00fdde31783b76c94e55.svg" alt="n_z"/> slices, this results in an array with the following one-dimensional index representation, with coordinates <img class="math" src="_images/math/b8f2b32c03aacfc537cb1204bc6bd044dba2c9b6.svg" alt="(x, y, z)"/> starting at <img class="math" src="_images/math/d194c7ce84ee482b6397337e4ab16d0d95768595.svg" alt="(0, 0, 0)"/>:</p>
+<div class="math" id="equation-eq-raw-index">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-raw-index" title="Permalink to this equation"></a></span><img src="_images/math/b0a018b8e2d38329768bfdd7ff505d8e489f406e.svg" alt="\text{\textsf{Index}}(x, y, z) = (n_x \cdot n_y \cdot z) + (n_x \cdot y) + x."/></p>
+</div><p>3D raw data is expected to be written in little-endian byte order, and most-significant to least-significant bit (MSB<sub>0</sub>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="file.html" class="btn btn-neutral float-right" title="File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <p></p>
+    <p>&#169; Copyright 2021, WIPANO CTSimU Project.</p>
+    <p><a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

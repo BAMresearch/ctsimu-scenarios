@@ -1,0 +1,7 @@
+{% extends "!footer.html" %}
+{% block extrafooter %}
+    <p></p>
+    <p>{%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}</p>
+    <p><a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+    {{ super() }}
+{% endblock %}

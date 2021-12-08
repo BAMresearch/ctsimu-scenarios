@@ -23,7 +23,18 @@ author = 'WIPANO CTSimU Project'
 # The full version, including alpha/beta/rc tags
 release = '0.9'
 
+title = "CTSimU Scenario Descriptions {version}".format(version=release)
+
 # -- General configuration ---------------------------------------------------
+
+# The html index document.
+root_doc = 'index'
+
+# The latex index document
+latex_documents = [
+	("index_latex", "ctsimu-scenarios_{version}.tex".format(version=release), title, author, "manual", False),
+	]
+
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -134,10 +145,7 @@ latex_elements = {
 		\usepackage{setspace}	% line spacings
 		\usepackage{wrapfig}
 		\usepackage{datetime}
-		\usepackage[numbers, super, square]{natbib}
-		\bibpunct{[}{]}{, }{s}{}{} % superscript citation
 		\usepackage{doi}
-		\usepackage[nottoc]{tocbibind}	% Bibliography in TOC
 
 		\usepackage{sfmath} % sans serif math
 		\DeclareMathSymbol{\Delta}{\mathalpha}{SFMathGreek}{"01}
@@ -161,9 +169,9 @@ latex_elements = {
 
 		\usepackage{hyperref}
 		\hypersetup{
-			pdftitle    = {CTSimU Scenario File Format 0.9},
+			pdftitle    = {"""+title+r"""},
 			pdfsubject  = {},
-			pdfauthor   = {David Plotzki},
+			pdfauthor   = {"""+author+r"""},
 			pdfkeywords = {CT, scenario, simulation, CTSimU},
 			colorlinks  = {false},
 			pdfborder   = {0 0 0}  % Keine Rahmen um Links
@@ -274,6 +282,14 @@ Version """+release+r"""
 
 \textbf{Summary:}
 This is the specification for a JSON file format to handle the parameters of a full industrial CT scan scenario, intended for describing virtual CT scenarios for simulations, as well as for documenting real CT scan geometries and acquisition parameters and their measurement uncertainties.
+
+\par ~
+
+\par ~
+
+This specification is free to use. It is released under the \textbf{Apache 2.0 license}.\\
+You can find the \textbf{online version} of this document at\\
+\url{https://bamresearch.github.io/ctsimu-scenarios}
 
 \end{titlepage}
 """

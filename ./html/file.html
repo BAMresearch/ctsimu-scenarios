@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File &mdash; ctsimu-scenarios 0.9 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Environment" href="environment.html" />
+    <link rel="prev" title="General information" href="general.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ctsimu-scenarios
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ctsimu-scenarios</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>File</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/file.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file">
+<span id="sec-file"></span><h1>File<a class="headerlink" href="#file" title="Permalink to this headline"></a></h1>
+<p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code> section leaves room for specifying a scenario <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;name&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and a short <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;description&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. Further meta data such as a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;contact&quot;</span></span><span class="p"><span class="pre">:</span></span></code> person, dates of creation and modification, and a file <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;version&quot;</span></span><span class="p"><span class="pre">:</span></span></code> can be added here.</p>
+<p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file_type&quot;</span></span><span class="p"><span class="pre">:</span></span></code> is a constant string to identify this as a CTSimU scenario and must not be changed. The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file_format_version&quot;</span></span><span class="p"><span class="pre">:</span></span></code> states which issue of the file format specification is used.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 2</span><span class="nt">&quot;file&quot;</span><span class="p">:</span>
+<span class="linenos"> 3</span><span class="p">{</span>
+<span class="linenos"> 4</span>  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Scenario&quot;</span><span class="p">,</span>
+<span class="linenos"> 5</span>  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Step cylinder in a rigid frame.&quot;</span><span class="p">,</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>  <span class="nt">&quot;contact&quot;</span><span class="p">:</span> <span class="s2">&quot;David Plotzki&quot;</span><span class="p">,</span>
+<span class="linenos"> 8</span>  <span class="nt">&quot;date_created&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-23&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span>  <span class="nt">&quot;date_changed&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-15&quot;</span><span class="p">,</span>
+<span class="linenos">10</span>  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;major&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>  <span class="nt">&quot;file_type&quot;</span><span class="p">:</span> <span class="s2">&quot;CTSimU Scenario&quot;</span><span class="p">,</span>
+<span class="linenos">13</span>  <span class="nt">&quot;file_format_version&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;major&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
+<span class="linenos">14</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="general.html" class="btn btn-neutral float-left" title="General information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment.html" class="btn btn-neutral float-right" title="Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

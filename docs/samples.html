@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samples &mdash; ctsimu-scenarios 0.9 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Acquisition" href="acquisition.html" />
+    <link rel="prev" title="Source" href="source.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ctsimu-scenarios
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-properties">General properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sample-positioning">Sample positioning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-attached-to-the-stage-coordinate-system">Sample attached to the stage coordinate system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-sample-position-in-the-world-coordinate-system">Fixed sample position in the world coordinate system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ctsimu-scenarios</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Samples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/samples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="samples">
+<span id="sec-samples"></span><h1>Samples<a class="headerlink" href="#samples" title="Permalink to this headline"></a></h1>
+<section id="general-properties">
+<span id="sec-samples-general"></span><h2>General properties<a class="headerlink" href="#general-properties" title="Permalink to this headline"></a></h2>
+<p>Any number of samples can be defined in the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;samples&quot;</span></span><span class="p"><span class="pre">:</span></span></code> array and placed in the scene, either <a class="reference internal" href="#sec-sample-in-stage-coordinates"><span class="std std-ref">attached to the rotating sample stage</span></a>, or <a class="reference internal" href="#sec-sample-in-world-coordinates"><span class="std std-ref">fixed to the world coordinate system</span></a>. A sample object has the following properties.</p>
+<p>The sample name:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">259</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Step Cylinder&quot;</span>
+</pre></div>
+</div>
+<p>A reference to the model file (e.g. STL or CAD file) that describes the sample geometry:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">260</span><span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;stepCyl.stl&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The unit of length that is used in the model file:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">261</span><span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span>
+</pre></div>
+</div>
+<p>A scaling factor for each axis of the sample coordinate system, if the model should be resized by a constant factor:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">262</span><span class="nt">&quot;scaling_factor&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">263</span>  <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">264</span>  <span class="nt">&quot;s&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">265</span>  <span class="nt">&quot;t&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">266</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The material of the sample, given by a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;material_id&quot;</span></span><span class="p"><span class="pre">:</span></span></code> that references a material definition in the material section of the file:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">267</span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Glass Ceramic&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="sample-positioning">
+<span id="sec-sample-positioning"></span><h2>Sample positioning<a class="headerlink" href="#sample-positioning" title="Permalink to this headline"></a></h2>
+<section id="sample-attached-to-the-stage-coordinate-system">
+<span id="sec-sample-in-stage-coordinates"></span><h3>Sample attached to the stage coordinate system<a class="headerlink" href="#sample-attached-to-the-stage-coordinate-system" title="Permalink to this headline"></a></h3>
+<p>The sample coordinate system {r, s, t} is equivalent to the surface model’s proper {x, y, z} coordinate system (except for the location of the origin). It is specific to each sample and can be placed in the stage coordinate system by providing its centre coordinates in terms of {u, v, w}<sub>O</sub> (see <a class="reference internal" href="#fig-samplecoordinates"><span class="std std-numref">Fig. 3</span></a> for an illustration). If done so, the sample is attached to the stage and will follow any rotations and translations performed by the stage during the CT scan.</p>
+<p>The description follows the convention that has been established for the <a class="reference internal" href="geometry.html#sec-geometry-placement-in-world"><span class="std std-ref">placement of objects in the world coordinate system</span></a>, with the following sub-elements of the sample’s <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;position&quot;</span></span><span class="p"><span class="pre">:</span></span></code> property.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">270</span><span class="nt">&quot;centre&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">271</span>  <span class="nt">&quot;u&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">272</span>  <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">273</span>  <span class="nt">&quot;w&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">274</span><span class="p">}</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<span id="fig-samplecoordinates"></span><a class="reference internal image-reference" href="_images/sample.svg"><img alt="_images/sample.svg" src="_images/sample.svg" width="60%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">World coordinate system {x, y, z}, stage coordinate system {u, v, w}<sub>O</sub> and sample coordinate system {r, s, t}.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To define the sample’s orientation, its <img class="math" src="_images/math/88c09948643035a538be195ecbf18735bac047c1.svg" alt="\vec{r}"/> and <img class="math" src="_images/math/d95289de58c51e25fab7cc263e7af7117f835005.svg" alt="\vec{t}"/> vector must also be expressed in terms of the stage coordinate system {u, v, w}<sub>O</sub>:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">277</span><span class="nt">&quot;vector_r&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">278</span>  <span class="nt">&quot;u&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">1</span><span class="p">,</span>   <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">279</span>  <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span>   <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">280</span>  <span class="nt">&quot;w&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span>   <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">281</span><span class="p">},</span>
+<span class="linenos">282</span><span class="nt">&quot;vector_t&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">283</span>  <span class="nt">&quot;u&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span>   <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">284</span>  <span class="nt">&quot;v&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">-0.2</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">285</span>  <span class="nt">&quot;w&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">1</span><span class="p">,</span>   <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">286</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In analogy to the rotational deviations of the source, stage and detector (see <a class="reference internal" href="geometry.html#sec-geometry"><span class="std std-ref">geometry</span></a>), the sample’s rotational deviations should also be expressed in terms of the <strong>sample coordinate system.</strong> Rotations are meant to be applied in the following manner: <img class="math" src="_images/math/ca91636e0d38dd61fc1a62b68299fc6c36015159.svg" alt="ts^{\prime}r^{\prime\prime}"/> which means that the rotation around the sample’s <img class="math" src="_images/math/d95289de58c51e25fab7cc263e7af7117f835005.svg" alt="\vec{t}"/> axis is performed first, followed by the rotation around the new <img class="math" src="_images/math/1c2444bf7e0586f42e18aca3dd42fc88a6dc506c.svg" alt="\vec{s}^{\prime}"/> axis, and finally the rotation around the resulting <img class="math" src="_images/math/6428f0d58ad7198be265a5583ddb089776bf48da.svg" alt="\vec{r}^{\prime\prime}"/> axis.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">287</span><span class="nt">&quot;rotation&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">288</span>  <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">289</span>  <span class="nt">&quot;s&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">290</span>  <span class="nt">&quot;t&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">291</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="fixed-sample-position-in-the-world-coordinate-system">
+<span id="sec-sample-in-world-coordinates"></span><h3>Fixed sample position in the world coordinate system<a class="headerlink" href="#fixed-sample-position-in-the-world-coordinate-system" title="Permalink to this headline"></a></h3>
+<p>If the sample is placed in the fixed world coordinate system, it will not follow any motions performed by the sample stage, but it will stay fixed relative to source and detector.</p>
+<p>The description is very similar to placing a sample in the stage coordinate system, as described in the <a class="reference internal" href="#sec-sample-in-stage-coordinates"><span class="std std-ref">previous section</span></a>. The only difference is that the object’s centre and basis vectors <img class="math" src="_images/math/88c09948643035a538be195ecbf18735bac047c1.svg" alt="\vec{r}"/> and <img class="math" src="_images/math/d95289de58c51e25fab7cc263e7af7117f835005.svg" alt="\vec{t}"/> are now expressed in terms of the world coordinate system {x, y, z}, just like it is done for the source and detector. The rotational deviations are still described in the sample coordinate system {r, s, t}. The following listing gives an example of an aluminium frame around the sample stage that is fixed to the world coordinate system.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">295</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Attachment Frame&quot;</span><span class="p">,</span>
+<span class="linenos">296</span><span class="nt">&quot;file&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;frame.stl&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">297</span><span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span>
+<span class="linenos">298</span><span class="nt">&quot;scaling_factor&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">299</span>  <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">300</span>  <span class="nt">&quot;s&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">301</span>  <span class="nt">&quot;t&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">302</span><span class="p">},</span>
+<span class="linenos">303</span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">304</span><span class="nt">&quot;position&quot;</span><span class="p">:</span>
+<span class="linenos">305</span><span class="p">{</span>
+<span class="linenos">306</span>  <span class="nt">&quot;centre&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">307</span>    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">275</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">308</span>    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">309</span>    <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>   <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;mm&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">310</span>  <span class="p">},</span>
+<span class="linenos">311</span>
+<span class="linenos">312</span>  <span class="nt">&quot;vector_r&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">313</span>    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">314</span>    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">315</span>    <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">316</span>  <span class="p">},</span>
+<span class="linenos">317</span>  <span class="nt">&quot;vector_t&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">318</span>    <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">319</span>    <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">320</span>    <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">321</span>  <span class="p">},</span>
+<span class="linenos">322</span>
+<span class="linenos">323</span>  <span class="nt">&quot;rotation&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">324</span>    <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">325</span>    <span class="nt">&quot;s&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">326</span>    <span class="nt">&quot;t&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;rad&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">327</span>  <span class="p">}</span>
+<span class="linenos">328</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="source.html" class="btn btn-neutral float-left" title="Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="acquisition.html" class="btn btn-neutral float-right" title="Acquisition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <p></p>
+    <p>&#169; Copyright 2021, WIPANO CTSimU Project.</p>
+    <p><a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materials &mdash; ctsimu-scenarios 0.9 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Software-specific properties" href="proprietary.html" />
+    <link rel="prev" title="Acquisition" href="acquisition.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ctsimu-scenarios
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ctsimu-scenarios</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Materials</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/materials.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="materials">
+<span id="sec-materials"></span><h1>Materials<a class="headerlink" href="#materials" title="Permalink to this headline"></a></h1>
+<p>In all previous declarations, materials are referred by their <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;material_id&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. The last section of the JSON file, the materials array, finally contains the specifications for all materials used throughout the scenario description. Each element of the materials array must have the following properties:</p>
+<dl class="simple">
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;id&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>names the material ID that is used to refer to the material from the other sections of the file.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;name&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>is a trivial name that can be given to the material for better identification.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;density&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>provides the mass density of the material.</p>
+</dd>
+<dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;composition&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>gives the chemical composition: a string of chemical symbols, each followed by their corresponding <strong>number fraction</strong> (integers or floating-point numbers) within the material. White space between symbols and numbers is allowed. If the number fraction of an element is 1, the number can be omitted and the next chemical symbol can follow right away. All chemical symbols start with a capital letter, potentially followed lower-case letters.</p>
+</dd>
+</dl>
+<p>Example for a multi-component material:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">387</span><span class="p">{</span>
+<span class="linenos">388</span>  <span class="nt">&quot;id&quot;</span><span class="p">:</span>   <span class="s2">&quot;Brass&quot;</span><span class="p">,</span>
+<span class="linenos">389</span>  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brass&quot;</span><span class="p">,</span>
+<span class="linenos">390</span>  <span class="nt">&quot;density&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">8860</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;kg/m^3&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">391</span>  <span class="nt">&quot;composition&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;CuZn5&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">392</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Example for a material with unusual number fractions, derived from a mass ratio of 40% Al<sub>2</sub>O<sub>3</sub> and 60% SiO<sub>2</sub>:</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">405</span><span class="p">{</span>
+<span class="linenos">406</span>  <span class="nt">&quot;id&quot;</span><span class="p">:</span>   <span class="s2">&quot;Glass Ceramic&quot;</span><span class="p">,</span>
+<span class="linenos">407</span>  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Glass Ceramic&quot;</span><span class="p">,</span>
+<span class="linenos">408</span>  <span class="nt">&quot;density&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mf">2.53</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;g/cm^3&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">},</span>
+<span class="linenos">409</span>  <span class="nt">&quot;composition&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Al 0.21172 Si 0.28044 O 0.50784&quot;</span><span class="p">,</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
+<span class="linenos">410</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="acquisition.html" class="btn btn-neutral float-left" title="Acquisition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="proprietary.html" class="btn btn-neutral float-right" title="Software-specific properties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <p></p>
+    <p>&#169; Copyright 2021, WIPANO CTSimU Project.</p>
+    <p><a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
