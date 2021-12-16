@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'ctsimu-scenarios'
+project = 'CTSimU Scenarios'
 copyright = '2021, WIPANO CTSimU Project'
 author = 'WIPANO CTSimU Project'
 
