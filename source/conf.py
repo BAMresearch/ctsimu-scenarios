@@ -92,8 +92,6 @@ rst_prolog = """
 .. |nbsp| unicode:: 0xA0
     :trim:
 
-.. |artist| replace:: *aRT*\\ ist
-
 .. role:: json(code)
   :language: json-object
   :class: highlight

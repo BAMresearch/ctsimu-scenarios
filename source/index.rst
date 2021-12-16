@@ -18,11 +18,9 @@ This is the specification for a JSON-based file format to handle the parameters 
 
     .pdf">PDF document</a>
 
-**About the WIPANO CTSimU Project**
+**About this work**
 
-Full project name: *Durchstrahlungssimulation für die Messunsicherheitsbestimmung beim Messen geometrischer Merkmale mittels Röntgen-Computertomographie*
-
-Das Projekt CTSimU wurde durch die Förderrichtlinie `WIPANO <https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/wipano.html>`__ gefördert und durch das `Budesministerium für Wirtschaft und Energie <https://www.bmwi.de/>`__ finanziert.
+This work was funded through the project `CTSimU <https://www.ctsimu.forschung.fau.de/>`__ (WIPANO project 03TNH026A). `WIPANO <https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/wipano.html>`__ projects are financed by the German `Federal Ministry for Economic Affairs and Energy <https://www.bmwi.de/>`__ and managed by `Project Management Jülich <https://www.ptj.de/>`__.
 
 .. image:: pictures/Wipano-Logo-1-1024x402.png
     :width: 65%

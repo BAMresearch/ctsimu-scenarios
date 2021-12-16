@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduction &mdash; ctsimu-scenarios 0.9 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -19,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="General information" href="general.html" />
-    <link rel="prev" title="CTSimU Scenario Descriptions" href="index.html" /> 
+    <link rel="prev" title="CTSimU Scenario Descriptions 0.9" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -77,7 +76,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="introduction">
+  <div class="section" id="introduction">
 <span id="sec-introduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
 <p>The WIPANO CTSimU project aims to define a qualification framework for radiographic simulation software. Such software is intended to be used for determining measurement uncertainties for geometrical properties of scanned samples, which arise from the overall procedure of a computed tomography (CT) scan.</p>
 <p>On the following pages, a JSON structure (JavaScript Object Notation) is introduced. Its purpose is to contain all relevant parameters of a CT scan, with the intention to</p>
@@ -87,19 +86,17 @@
 </ol>
 <p>The JSON format was chosen because it is both <em>human-readable</em> and <em>human-writeable</em>, as well as <em>machine-readable</em>, which enables reproducible simulations based on the scenario description files.</p>
 <p>A listing of a <a class="reference internal" href="fullexample.html#fullexample"><span class="std std-ref">full example</span></a> can be found at the end of this document. The line numbers in the code snippets in the following description refer to the line numbers of the full example. The example describes a step cylinder made of a glass ceramic, placed 20 mm to the “left” of the rotation axis at a slight angle. The rotation stage is symmetrically surrounded by a fixed aluminium frame that does not follow the rotation of the stage (<a class="reference internal" href="#examplectsetup"><span class="std std-numref">Fig. 1</span></a>). The detector is tilted around its planar normal by 0.023 rad in clockwise direction (as seen from the source).</p>
-<figure class="align-default" id="id1">
+<div class="figure align-default" id="id1">
 <span id="examplectsetup"></span><a class="reference internal image-reference" href="_images/example.png"><img alt="_images/example.png" src="_images/example.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Left:</strong> CT setup that is described by the example code snippets in the following sections. <strong>Right:</strong> Resulting projection on the detector.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</figcaption>
-</figure>
-</section>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text"><strong>Left:</strong> CT setup that is described by the example code snippets in the following sections. <strong>Right:</strong> Resulting projection on the detector.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="CTSimU Scenario Descriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="CTSimU Scenario Descriptions 0.9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="general.html" class="btn btn-neutral float-right" title="General information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>General information &mdash; ctsimu-scenarios 0.9 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -85,9 +84,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="general-information">
+  <div class="section" id="general-information">
 <span id="sec-general"></span><h1>General information<a class="headerlink" href="#general-information" title="Permalink to this headline"></a></h1>
-<section id="file-structure">
+<div class="section" id="file-structure">
 <span id="sec-file-structure"></span><h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this headline"></a></h2>
 <p>The JSON file should be encoded and decoded using the UTF-8 character set, even though all characters in this specification are from the ASCII set to ensure compatibility with other decoding interpretations.</p>
 <p>The scenario description consists of the following main sections:</p>
@@ -111,8 +110,8 @@
 <dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;simulation&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>Proprietary parameters specific to the simulation software.</p>
 </dd>
 </dl>
-</section>
-<section id="parameters">
+</div>
+<div class="section" id="parameters">
 <span id="sec-general-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
 <p>Most values with physical representation come with an associated physical unit and a measurement uncertainty. Additionally, many parameters may drift during a CT scan. In general, parameters are defined using a JSON object which may contain the following properties. Depending on the situation, only the ones of relevance must be specified. Irrelevant ones may be omitted or set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code> at any level.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -139,8 +138,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="values-units">
+</div>
+<div class="section" id="values-units">
 <span id="sec-values-and-units"></span><h2>Values &amp; Units<a class="headerlink" href="#values-units" title="Permalink to this headline"></a></h2>
 <dl class="simple">
 <dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>gives the measured value or the value that should be used by the simulation software.</p>
@@ -158,15 +157,15 @@
 </pre></div>
 </div>
 <p>The prefix <code class="code docutils literal notranslate"><span class="pre">u</span></code> represents the SI prefix µ (10<sup>-6</sup>). <code class="code highlight json-object docutils literal notranslate"><span class="s2"><span class="pre">&quot;relative&quot;</span></span></code> can be used for relative uncertainties or any values that express a fraction of a related measure. For properties without a unit, the keyword <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code> is used.</p>
-</section>
-<section id="uncertainty">
+</div>
+<div class="section" id="uncertainty">
 <span id="sec-uncertainty"></span><h2>Uncertainty<a class="headerlink" href="#uncertainty" title="Permalink to this headline"></a></h2>
 <dl class="simple">
 <dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;uncertainty&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>gives a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;value&quot;</span></span><span class="p"><span class="pre">:</span></span></code> for the standard measurement uncertainty and its physical <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;unit&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. The intention is to use this to document (or model) a real, physical CT machine.</p>
 </dd>
 </dl>
-</section>
-<section id="drifts">
+</div>
+<div class="section" id="drifts">
 <span id="sec-drifts"></span><h2>Drifts<a class="headerlink" href="#drifts" title="Permalink to this headline"></a></h2>
 <dl>
 <dt><code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;drift&quot;</span></span><span class="p"><span class="pre">:</span></span></code></dt><dd><p>provides an array that may contain an arbitrary number of drift components. Typically, only one drift component is necessary, but in some cases it can be useful to provide more than one drift component for a parameter, especially if some drift contributions shall be unknown to the reconstruction software, whereas others shall be considered during the reconstruction. A typical example would be a helix scan: the vertical movement of the stage along the rotation axis can be modelled as a drift that must be known during the reconstruction. However, inhomogeneities in the vertical motion can be modelled as a second drift component unknown to the reconstruction software.</p>
@@ -178,8 +177,8 @@
 <p>Drift keywords are prepared throughout this document for any parameters where they are assumed to be possible. In most cases of the example, they are set <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code>, rendering them inactive.</p>
 </dd>
 </dl>
-</section>
-<section id="formats-of-referred-data-files">
+</div>
+<div class="section" id="formats-of-referred-data-files">
 <span id="sec-referred-data-files"></span><h2>Formats of referred data files<a class="headerlink" href="#formats-of-referred-data-files" title="Permalink to this headline"></a></h2>
 <p>A scenario description may refer to other data files.</p>
 <p>For <strong>one-dimensional</strong> data such as response curves, characteristics files or spectra, the CSV format shall be used, with its columns in the order specified in the corresponding sections of this guide. The columns shall be separated by commas or white-space.</p>
@@ -188,8 +187,8 @@
 <div class="math" id="equation-eq-raw-index">
 <p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-raw-index" title="Permalink to this equation"></a></span><img src="_images/math/b0a018b8e2d38329768bfdd7ff505d8e489f406e.svg" alt="\text{\textsf{Index}}(x, y, z) = (n_x \cdot n_y \cdot z) + (n_x \cdot y) + x."/></p>
 </div><p>3D raw data is expected to be written in little-endian byte order, and most-significant to least-significant bit (MSB<sub>0</sub>).</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

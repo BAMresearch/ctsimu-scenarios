@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Source &mdash; ctsimu-scenarios 0.9 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -89,9 +88,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="source">
+  <div class="section" id="source">
 <span id="sec-source"></span><h1>Source<a class="headerlink" href="#source" title="Permalink to this headline"></a></h1>
-<section id="general-properties">
+<div class="section" id="general-properties">
 <span id="sec-source-general"></span><h2>General properties<a class="headerlink" href="#general-properties" title="Permalink to this headline"></a></h2>
 <p>The following properties can be specified in the source section of the scenario file.</p>
 <p>The model name and the manufacturer, if an existing X-ray source is modelled:</p>
@@ -104,8 +103,8 @@
 <span class="linenos">196</span><span class="nt">&quot;current&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;uA&quot;</span><span class="p">,</span> <span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;uA&quot;</span><span class="p">},</span> <span class="nt">&quot;drift&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="target">
+</div>
+<div class="section" id="target">
 <span id="sec-target"></span><h2>Target<a class="headerlink" href="#target" title="Permalink to this headline"></a></h2>
 <p>The target material is defined by providing a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;material_id&quot;</span></span><span class="p"><span class="pre">:</span></span></code> that refers to a material declaration in the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">materials section</span></a> of the file.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">199</span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span> <span class="s2">&quot;W&quot;</span>
@@ -131,8 +130,8 @@
 <span class="linenos">206</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="spot-intensity-profile">
+</div>
+<div class="section" id="spot-intensity-profile">
 <span id="sec-spotintensityprofile"></span><h2>Spot intensity profile<a class="headerlink" href="#spot-intensity-profile" title="Permalink to this headline"></a></h2>
 <p>The spot intensity profile is specified in the source’s <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;spot&quot;</span></span><span class="p"><span class="pre">:</span></span></code> section. At first, the size of the virtual spot rectangle or volume is defined along the three axes of the source coordinate system. If only a two-dimensional spot profile is modelled, the size along the source’s normal axis should be set to <code class="code highlight json-object docutils literal notranslate"><span class="mi"><span class="pre">0</span></span></code>.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">210</span><span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -147,7 +146,7 @@
 </pre></div>
 </div>
 <p>The shape of the spot can be defined in the following three ways.</p>
-<section id="simple-gaussian-profiles">
+<div class="section" id="simple-gaussian-profiles">
 <span id="sec-spot-simple-gaussian"></span><h3>Simple Gaussian profiles<a class="headerlink" href="#simple-gaussian-profiles" title="Permalink to this headline"></a></h3>
 <p>A simple Gaussian profile can be modelled <img class="math" src="_images/math/6603f2ff2b01d33659950a1f85c37b15a1d74efd.svg" alt="I(\vec{r})=I_0\cdot\exp(-|\vec{r}|^2/2\sigma^2)"/>, by specifying the spatial sigmas <img class="math" src="_images/math/cb94f547a1360f21be7d5f17853d3a3cf0e676bc.svg" alt="\sigma"/> for each dimension:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">210</span><span class="nt">&quot;sigma&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -157,8 +156,8 @@
 <span class="linenos">214</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="d-images">
+</div>
+<div class="section" id="d-images">
 <span id="sec-spot-2d-images"></span><h3>2D images<a class="headerlink" href="#d-images" title="Permalink to this headline"></a></h3>
 <p>For a more detailed approach, the intensity profile can also be provided from an external image file. In this case, the <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> vector of the source coordinate system points from left to right in the image, and the <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/> vector points from top to bottom, in analogy to the <a class="reference internal" href="geometry.html#sec-geometry-detector"><span class="std std-ref">detector geometry</span></a>. The image shall be resized to match the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;size&quot;</span></span><span class="p"><span class="pre">:</span></span></code> of the spot rectangle, without necessarily retaining the original aspect ratio of the image. The picture is recommended to be a 32 bit float grey-scale image, and the pixel values in the interval [0, 1], with 0 meaning no intensity, and 1 meaning full intensity. However, a simulation software must also support grey-scale integer file formats, and be able to re-normalize the provided grey values accordingly. If a valid spot intensity image is provided, this method takes precedence over the previously described specification of Gaussian sigmas.</p>
 <p>If a RAW file is provided, the number of pixels in directions <img class="math" src="_images/math/f99de1dc0ca30c2ecbab6c2f477619880f90679b.svg" alt="x"/> (i.e. <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> in the source coordinate system) and <img class="math" src="_images/math/6c2ff5f92930fd167d4884931360922d3f516cc7.svg" alt="y"/> (i.e. <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/>) must be specified, as well as its type (see <a class="reference internal" href="general.html#sec-referred-data-files"><span class="std std-ref">formats of referred data files</span></a> for details). For TIFF images, the parameters <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;type&quot;</span></span><span class="p"><span class="pre">:</span></span></code>, <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;dim_x&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;dim_y&quot;</span></span><span class="p"><span class="pre">:</span></span></code> are obsolete and can be omitted.</p>
@@ -171,8 +170,8 @@
 <span class="linenos">226</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="d-volumes">
+</div>
+<div class="section" id="d-volumes">
 <span id="sec-spot-3d-volumes"></span><h3>3D volumes<a class="headerlink" href="#d-volumes" title="Permalink to this headline"></a></h3>
 <p>To describe a three-dimensional spot profile, a RAW file can be provided. It is recommended to be a 32 bit float volume with values between <code class="code docutils literal notranslate"><span class="pre">0</span></code> and <code class="code docutils literal notranslate"><span class="pre">1</span></code>, and should otherwise be re-normalized by the simulation software. The lowest value (0) means no intensity, the highest value (1) means maximum intensity. If specified, this method takes precedence over the first two described methods.</p>
 <p>The <img class="math" src="_images/math/f99de1dc0ca30c2ecbab6c2f477619880f90679b.svg" alt="x"/> direction of the given volume points along the <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> vector of the source coordinate system, <img class="math" src="_images/math/6c2ff5f92930fd167d4884931360922d3f516cc7.svg" alt="y"/> points in direction <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/>, and <img class="math" src="_images/math/f7986e4d4aca23a0717a3b4bcf2cb8a37bb62dfa.svg" alt="z"/> in direction <img class="math" src="_images/math/baf02a521473961a9ed6f3f5e2fd5a9930874cad.svg" alt="\vec{w}"/>. The data type and volume dimensions need to be specified as well (see section <a class="reference internal" href="general.html#sec-referred-data-files"><span class="std std-ref">formats of referred data files</span></a> for details). The volume shall be resized to match the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;size&quot;</span></span><span class="p"><span class="pre">:</span></span></code> of the spot volume, without necessarily retaining the original aspect ratio of the volume file.</p>
@@ -186,9 +185,9 @@
 <span class="linenos">227</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="spectrum">
+</div>
+</div>
+<div class="section" id="spectrum">
 <span id="sec-source-spectrum"></span><h2>Spectrum<a class="headerlink" href="#spectrum" title="Permalink to this headline"></a></h2>
 <p>If the spectrum is to be calculated by the simulation software, the following three parameters decide whether only a monochromatic energy scenario is described, or a complete spectrum, with the ability to artificially turn on and off the components from Bremsstrahlung and characteristic emission from the target material. If <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;bremsstrahlung&quot;</span></span><span class="p"><span class="pre">:</span></span></code> or <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;characteristic&quot;</span></span><span class="p"><span class="pre">:</span></span></code> (or both) is set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">true</span></span></code>, these take precedence over the monochromatic case.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">229</span><span class="nt">&quot;spectrum&quot;</span><span class="p">:</span>
@@ -225,8 +224,8 @@
 </tbody>
 </table>
 <p>The energy values correspond to the centre of the histogram bins. The interpolation between the bin values shall not be specified here and is left to the simulation software. If a valid spectrum file is specified and the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code> parameter is not set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">null</span></span></code>, this has precedence over the spectrum calculated by the simulation software.</p>
-</section>
-<section id="tube-window-and-filters">
+</div>
+<div class="section" id="tube-window-and-filters">
 <span id="sec-tube-filters"></span><h2>Tube window and filters<a class="headerlink" href="#tube-window-and-filters" title="Permalink to this headline"></a></h2>
 <p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;window&quot;</span></span><span class="p"><span class="pre">:</span></span></code> material(s) and the additional <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;filters&quot;</span></span><span class="p"><span class="pre">:</span></span></code> in front of the tube are specified in two separate JSON arrays. For both, an arbitrary number of materials and thicknesses can be specified. If a <a class="reference internal" href="#sec-source-spectrum"><span class="std std-ref">source spectrum</span></a> is provided in a file, the spectrum is assumed to be already filtered by all <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;window&quot;</span></span><span class="p"><span class="pre">:</span></span></code> materials, but not yet by any <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;filters&quot;</span></span><span class="p"><span class="pre">:</span></span></code>.</p>
 <p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;material_id&quot;</span></span><span class="p"><span class="pre">:</span></span></code> refers to the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">material definition</span></a> in the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;materials&quot;</span></span><span class="p"><span class="pre">:</span></span></code> section of the file. Also, a window and filter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;thickness&quot;</span></span><span class="p"><span class="pre">:</span></span></code> must be provided.</p>
@@ -250,8 +249,8 @@
 <span class="linenos">253</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detector &mdash; ctsimu-scenarios 0.9 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -95,9 +94,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="detector">
+  <div class="section" id="detector">
 <span id="sec-detector"></span><h1>Detector<a class="headerlink" href="#detector" title="Permalink to this headline"></a></h1>
-<section id="general-properties">
+<div class="section" id="general-properties">
 <span id="sec-detector-general"></span><h2>General properties<a class="headerlink" href="#general-properties" title="Permalink to this headline"></a></h2>
 <p>The following properties can be specified in the detector section of the scenario file.</p>
 <p>The model name and the manufacturer, if an existing detector is modelled:</p>
@@ -137,8 +136,8 @@
 </pre></div>
 </div>
 <p>As opposed to <em>GlobalLag1f</em>, <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;image_lag&quot;</span></span><span class="p"><span class="pre">:</span></span></code> refers to the scenario described in this file, particularly the specified radiation intensity and integration time. Here, it is therefore not treated as a parameter intrinsic to the detector, but describes its lag characteristics only for the specified scenario.</p>
-</section>
-<section id="grey-value-characteristics">
+</div>
+<div class="section" id="grey-value-characteristics">
 <span id="sec-gv-characteristics"></span><h2>Grey value characteristics<a class="headerlink" href="#grey-value-characteristics" title="Permalink to this headline"></a></h2>
 <p>There are three ways provided to model the grey value characteristics of the detector.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">127</span><span class="nt">&quot;grey_value&quot;</span><span class="p">:</span>
@@ -156,18 +155,18 @@
 <span class="linenos">139</span><span class="p">}</span>
 </pre></div>
 </div>
-<section id="min-max-method">
+<div class="section" id="min-max-method">
 <h3>Min/Max method<a class="headerlink" href="#min-max-method" title="Permalink to this headline"></a></h3>
 <p>The first approach is to specify the average grey value at the maximum intensity of the free beam in the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;imax&quot;</span></span><span class="p"><span class="pre">:</span></span></code>, and the average grey value at no incident radiation in the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;imin&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. Between these two values, a linear interpolation based on the incident intensity should take place to calculate the grey value of a pixel. In this case, the grey values are invariant under changes in the integration time or pixel size, and will be rescaled along with changes in the minimum or maximum intensity. It is similar to the re-normalization of the projection image to a specific grey value at maximum free-beam intensity.</p>
-</section>
-<section id="linear-response-function">
+</div>
+<div class="section" id="linear-response-function">
 <h3>Linear response function<a class="headerlink" href="#linear-response-function" title="Permalink to this headline"></a></h3>
 <p>The second method allows to specify a linear response function. This function assigns a grey value to the collected energy E (in J) for each pixel.</p>
 <div class="math" id="equation-eq-greyvalue">
 <p><span class="eqno">(3)<a class="headerlink" href="#equation-eq-greyvalue" title="Permalink to this equation"></a></span><img src="_images/math/474ccaca526aaa98a3f7dc3215e3b5b951606a14.svg" alt="\text{\textsf{Grey Value}} = \left(\textsf{factor} \cdot E \right) + \textsf{offset}"/></p>
 </div><p>The file format allows to provide a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;factor&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and an <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;offset&quot;</span></span><span class="p"><span class="pre">:</span></span></code> for this linear function. This method allows the grey values to change with a change in pixel size, tube power, integration time or a change in intensity due to a different focus-detector distance. It has precedence over the first method if <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;factor&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;offset&quot;</span></span><span class="p"><span class="pre">:</span></span></code> are set and not <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;null&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. From eq. <a class="reference internal" href="#equation-eq-greyvalue">(3)</a> it becomes clear that the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;factor&quot;</span></span><span class="p"><span class="pre">:</span></span></code> should have the inverse unit of the deposited energy: 1/J.</p>
-</section>
-<section id="external-characteristics-file">
+</div>
+<div class="section" id="external-characteristics-file">
 <h3>External characteristics file<a class="headerlink" href="#external-characteristics-file" title="Permalink to this headline"></a></h3>
 <p>For a more general approach, it is also possible to provide an arbitrary grey value characteristics from a CSV file specified by the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;intensity_characteristics_file&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. The file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorintensitycharacteristics"><span class="std std-numref">Tab. 1</span></a>, separated by commas or white space.</p>
 <p>The interpolation method between these discrete values shall not be specified here and is left to the simulation software. However, all values are assumed to refer to the centre of their bin.</p>
@@ -195,8 +194,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="quantum-efficiency">
+</div>
+<div class="section" id="quantum-efficiency">
 <h3>Quantum efficiency<a class="headerlink" href="#quantum-efficiency" title="Permalink to this headline"></a></h3>
 <p>The photon <strong>conversion efficiency</strong> (quantum efficiency) of the detector can also either be provided as a constant value for all photon energies – using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;efficiency&quot;</span></span><span class="p"><span class="pre">:</span></span></code> – or as another characteristics curve through a CSV file, using the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;efficiency_characteristics_file&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. In the latter case, this file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorefficiencycharacteristics"><span class="std std-numref">Tab. 2</span></a>, separated by commas or white space. If a valid efficiency characteristics file is provided, it has precedence over the global <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;efficiency&quot;</span></span><span class="p"><span class="pre">:</span></span></code> property.</p>
 <span id="tab-csvdetectorefficiencycharacteristics"></span><table class="docutils align-default" id="id6">
@@ -222,11 +221,11 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="image-quality">
+</div>
+</div>
+<div class="section" id="image-quality">
 <span id="sec-image-quality"></span><h2>Image Quality<a class="headerlink" href="#image-quality" title="Permalink to this headline"></a></h2>
-<section id="noise">
+<div class="section" id="noise">
 <span id="sec-noise"></span><h3>Noise<a class="headerlink" href="#noise" title="Permalink to this headline"></a></h3>
 <p>The noise in the projection image can be described by specifying the signal-to-noise ratio (SNR) at the maximum intensity (free beam) for one frame, with no frame averaging applied.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">140</span><span class="nt">&quot;noise&quot;</span><span class="p">:</span>
@@ -261,8 +260,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="gain">
+</div>
+<div class="section" id="gain">
 <span id="sec-gain"></span><h3>Gain<a class="headerlink" href="#gain" title="Permalink to this headline"></a></h3>
 <p>A gain factor can be specified using the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;gain&quot;</span></span><span class="p"><span class="pre">:</span></span></code> parameter:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">145</span><span class="nt">&quot;gain&quot;</span><span class="p">:</span>
@@ -274,8 +273,8 @@
 </pre></div>
 </div>
 <p>If the parameter <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;scale_signal_and_noise&quot;</span></span><span class="p"><span class="pre">:</span></span></code> is set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">true</span></span></code>, a simulation software shall use this parameter to scale the grey values (usually linearly), and noise (usually quadratically) with the gain value. This assumes that the grey value characteristics and noise characteristics that have been provided before refer to a gain factor of 1. If the grey value and noise characteristics are already provided for the given gain factor, the parameter must be set to <code class="code highlight json-object docutils literal notranslate"><span class="kc"><span class="pre">false</span></span></code>.</p>
-</section>
-<section id="unsharpness">
+</div>
+<div class="section" id="unsharpness">
 <span id="sec-unsharpness"></span><h3>Unsharpness<a class="headerlink" href="#unsharpness" title="Permalink to this headline"></a></h3>
 <p>There are three ways provided to specify the detector unsharpness.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">151</span><span class="nt">&quot;unsharpness&quot;</span><span class="p">:</span>
@@ -314,8 +313,8 @@
 </tr>
 </tbody>
 </table>
-</section>
-<section id="bad-pixel-map">
+</div>
+<div class="section" id="bad-pixel-map">
 <h3>Bad pixel map<a class="headerlink" href="#bad-pixel-map" title="Permalink to this headline"></a></h3>
 <p>The bad pixel map provided here should be a 2D grey-scale image file with a number of columns and rows that matches the detector. A pixel value of <code class="code docutils literal notranslate"><span class="pre">0</span></code> means that the pixel is working properly. A pixel value other than <code class="code docutils literal notranslate"><span class="pre">0</span></code> means that the pixel does not function correctly. If a TIFF file is provided, the <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;type&quot;</span></span><span class="p"><span class="pre">:</span></span></code> property is obsolete and can be omitted.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">157</span><span class="nt">&quot;bad_pixel_map&quot;</span><span class="p">:</span>
@@ -326,9 +325,9 @@
 <span class="linenos">162</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="scintillator-filters">
+</div>
+</div>
+<div class="section" id="scintillator-filters">
 <span id="sec-scintillatorandfilters"></span><h2>Scintillator &amp; Filters<a class="headerlink" href="#scintillator-filters" title="Permalink to this headline"></a></h2>
 <p>In this section, the scintillator and filter materials for the detector can be defined. The filter materials are split into <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;front&quot;</span></span><span class="p"><span class="pre">:</span></span></code> filters and <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;rear&quot;</span></span><span class="p"><span class="pre">:</span></span></code> filters (i.e. a back panel, mostly to consider backscattering). Any number of filters can be defined. For the materials of scintillator and filters, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">materials section</span></a> of the JSON file.</p>
 <p>Note that front and rear of the detector are not explicitly identified by the detector’s normal vector or any other property, but only given implicitly by the side of the detector facing the source, and the side facing away from the source.</p>
@@ -360,8 +359,8 @@
 <span class="linenos">188</span><span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

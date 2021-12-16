@@ -1,13 +1,14 @@
 CTSimU Scenario Descriptions
 ============================
 
-| **About the WIPANO CTSimU Project**
-| Full project name: *Durchstrahlungssimulation für die Messunsicherheitsbestimmung beim Messen geometrischer Merkmale mittels Röntgen-Computertomographie*
+**About this work**
+
+This work was funded through the project `CTSimU <https://www.ctsimu.forschung.fau.de/>`__ (WIPANO project 03TNH026A). 
 
 .. image:: pictures/cropped-Logo_V3.png
     :width: 35%
 
-Das Projekt CTSimU wurde durch die Förderrichtlinie `WIPANO <https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/wipano.html>`__ gefördert und durch das `Budesministerium für Wirtschaft und Energie <https://www.bmwi.de/>`__ finanziert.
+`WIPANO <https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/wipano.html>`__ projects are financed by the German `Federal Ministry for Economic Affairs and Energy <https://www.bmwi.de/>`__ and managed by `Project Management Jülich <https://www.ptj.de/>`__.
 
 .. image:: pictures/Wipano-Logo-1-1024x402.png
     :width: 65%
