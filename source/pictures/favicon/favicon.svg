@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20.700001"
+   height="20.700001"
+   viewBox="0 0 5.4768751 5.4768754"
+   version="1.1"
+   id="svg8"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path869" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1121"
+       refX="0"
+       refY="0"
+       orient="auto">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path872" />
+    </marker>
+    <linearGradient
+       id="linearGradient1264">
+      <stop
+         style="stop-color:#ddf3ff;stop-opacity:1;"
+         offset="0"
+         id="stop1260" />
+      <stop
+         style="stop-color:#ddf3ff;stop-opacity:0;"
+         offset="1"
+         id="stop1262" />
+    </linearGradient>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Sstart"
+       style="overflow:visible">
+      <path
+         id="path868"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#6b87c9;fill-opacity:1;fill-rule:evenodd;stroke:#6b87c9;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.2,0,0,0.2,1.2,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path862"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#6b87c9;fill-opacity:1;fill-rule:evenodd;stroke:#6b87c9;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mstart"
+       style="overflow:visible">
+      <path
+         id="path880"
+         style="fill:#ddf3ff;fill-opacity:1;fill-rule:evenodd;stroke:#6b87c9;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6)" />
+    </marker>
+    <linearGradient
+       xlink:href="#linearGradient1264"
+       id="linearGradient1266"
+       x1="70.02198"
+       y1="60.197906"
+       x2="74.175941"
+       y2="60.197906"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-0.66145722)" />
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(-78.273925,-57.158791)">
+    <g
+       id="g1250"
+       transform="translate(8.2519467,-0.30067822)">
+      <g
+         id="g2670">
+        <g
+           id="g1242"
+           transform="translate(-4.6302137,-0.21462567)">
+          <g
+             id="g886"
+             transform="translate(0.66145675)">
+            <path
+               id="path12-3"
+               d="M 74.083334,58.610408 73.025,57.552075 l -2.910418,-2e-6 v 5.291667 h 3.96875 z"
+               style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.185208;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               transform="translate(4.6302144,0.21462668)" />
+            <path
+               id="path12"
+               d="M 74.083334,58.610408 73.025,57.552075 l -2.910418,-2e-6 v 5.291667 h 3.96875 z"
+               style="fill:url(#linearGradient1266);fill-opacity:1;stroke:#000001;stroke-width:0.185208;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               transform="translate(4.6302144,0.21462668)" />
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1;font-family:Calibri;-inkscape-font-specification:Calibri;letter-spacing:0px;word-spacing:0px;fill:#6b87c9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+               x="70.896622"
+               y="62.110912"
+               id="text16"
+               transform="translate(4.6302144,0.21462668)"><tspan
+                 id="tspan14"
+                 x="70.896622"
+                 y="62.110912"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76389px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke-width:0.264583">CT</tspan></text>
+            <path
+               d="m 77.137975,59.089617 a 1.3229166,0.33072916 0 0 1 0.897826,0.36628 1.3229166,0.33072916 0 0 1 -1.306629,0.278992 1.3229166,0.33072916 0 0 1 -1.30663,-0.278992 1.3229166,0.33072916 0 0 1 0.897826,-0.36628"
+               id="path852"
+               style="fill:none;fill-opacity:1;stroke:#000001;stroke-width:0.185208;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker1121)" />
+            <path
+               id="path854"
+               d="m 76.729167,58.345825 v 2.116667"
+               style="fill:none;stroke:#000001;stroke-width:0.185208;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

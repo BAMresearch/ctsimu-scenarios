@@ -1,9 +1,0 @@
-.. _bibliography:
-
-.. only:: html
-
-	Bibliography
-	============
-
-.. bibliography::
-	:style: unsrt

@@ -104,7 +104,7 @@ rst_prolog = """
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-#html_favicon = 'favicon.ico'
+html_favicon = 'favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -237,8 +237,8 @@ latex_elements = {
 	""",
 	'maketitle': r"""
 \begin{titlepage}
-\begin{wrapfigure}[0]{r}{0.3\textwidth}
-\includegraphics[scale=0.4]{cropped-Logo_V3.png}
+\begin{wrapfigure}[0]{r}{0.1\textwidth}
+\includegraphics[scale=4.0]{fileformat_logo.pdf}
 \end{wrapfigure}
 {\ymddate\today}
 
@@ -268,7 +268,7 @@ Version """+release+r"""
 
 {\Large {WIPANO CTSimU Project}}
 
-\emph{Durchstrahlungssimulation für die Messunsicherheitsbestimmung beim Messen\\geometrischer Merkmale mittels Röntgen-Computertomographie}
+\emph{Radiographic Computed Tomography Simulation for Measurement Uncertainty Evaluation}
 
 \par ~
 
