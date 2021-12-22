@@ -47,4 +47,5 @@ This work was funded through the project `CTSimU <https://www.ctsimu.forschung.f
    materials
    proprietary
    fullexample
+   metadata
    bibliography
