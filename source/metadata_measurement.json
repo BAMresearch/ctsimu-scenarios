@@ -1,0 +1,80 @@
+{
+	"file":
+	{
+		"name": "Example Measurement Metadata",
+		"description": "Step cylinder in a rigid frame.",
+
+		"contact": "David Plotzki",
+		"date_created": "2020-04-23",
+		"date_changed": "2020-04-23",
+		"version": {"major": 1, "minor": 0}
+	},
+
+	"output":
+	{
+		"system": "Zeiss Metrotom 1500 (FMT, FAU)",
+		"date_measured": "2020-03-05",
+		"projections":
+		{
+			"filename":  "projection_%04d.raw",
+			"datatype":  "uint16",
+			"byteorder": "little",
+			"headersize": {"file": 500, "image": 0},
+
+			"number": 1500,
+			"dimensions": {
+				"x": {"value": 1000, "unit": "px"},
+				"y": {"value": 1000, "unit": "px"}
+			},
+			"pixelsize": {
+				"x": {"value": 200, "unit": "um"},
+				"y": {"value": 200, "unit": "um"}
+			},
+			"dark_field": {
+				"number": 0,
+				"frame_average": null,
+				"filename": null,
+				"projections_corrected": false
+			},
+			"flat_field": {
+				"number": 20,
+				"frame_average": 1,
+				"filename": "bright_%02d.raw",
+				"projections_corrected": true
+			}
+		},
+		"tomogram":
+		{
+			"filename":  "volume.raw",
+			"datatype":  "uint16",
+			"byteorder": "little",
+			"headersize": {"file": 500, "image": 0},
+
+			"dimensions": {
+				"x": {"value": 1000, "unit": "px"},
+				"y": {"value": 1000, "unit": "px"},
+				"z": {"value": 1000, "unit": "px"}
+			},
+			"voxelsize": {
+				"x": {"value": 20, "unit": "um"},
+				"y": {"value": 20, "unit": "um"},
+				"z": {"value": 20, "unit": "um"}
+			}
+		},
+		"reconstruction":
+		{
+			"software":	"CERA Version 3.X",
+			"settings":
+			{
+				"description": "Ramp filtering, no corrections (no beam hardening correction) [in the following, arbitrary name value pairs can be added or removed. Please remember to end the final name value pair without a comma]",
+				"ring_artifact_correction": 3,
+				"median": 5,
+				"filter": "Ram-Lak"
+			}
+		},
+		"acquisitionGeometry":
+		{
+			"path_to_CTSimU_JSON": ""
+		}
+	}
+}
