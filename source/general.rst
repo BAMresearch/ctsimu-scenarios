@@ -132,7 +132,7 @@ Formats of referred data files
 
 A scenario description may refer to other data files.
 
-For **one-dimensional** data such as response curves, characteristics files or spectra, the CSV format shall be used, with its columns in the order specified in the corresponding sections of this guide. The columns shall be separated by commas or white-space.
+For **one-dimensional** data such as response curves, characteristics files or spectra, the CSV (comma-separated values) or TSV format (tab-separated values) shall be used, with its columns in the order specified in the corresponding sections of this guide.
 
 For **two-dimensional** data such as intensity profiles or bad pixel maps, image files shall be used. The minimum set of supported image file formats should be TIFF and headerless RAW. For the RAW format, please follow the details for three-dimensional data.
 
