@@ -132,10 +132,14 @@ Formats of referred data files
 
 A scenario description may refer to other data files.
 
+.. _sec_referred_data_files_1d:
+
 One-dimensional data
 ~~~~~~~~~~~~~~~~~~~~
 
 For one-dimensional data such as response curves, characteristics files or spectra, the CSV (comma-separated values) or TSV format (tab-separated values) shall be used, with its columns in the order specified in the corresponding sections of this guide.
+
+.. _sec_referred_data_files_2d:
 
 Two-dimensional data
 ~~~~~~~~~~~~~~~~~~~~
@@ -169,6 +173,8 @@ Data shall be written row-first. For an image with :math:`n_x` columns and :math
   \text{\textsf{Index}}(x, y) = (n_x \cdot y) + x.
 
 Bytes are assumed to be written from most-significant to least-significant bit (MSB\ :sub:`0`\ ).
+
+.. _sec_referred_data_files_3d:
 
 Three-dimensional data
 ~~~~~~~~~~~~~~~~~~~~~~~

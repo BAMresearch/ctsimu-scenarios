@@ -16,7 +16,7 @@ This is the specification for a JSON-based file format to handle the parameters 
 
 .. |link-post| raw:: html
 
-    .pdf">PDF document</a>
+    .pdf"><b>PDF document</b></a>
 
 **About this work**
 

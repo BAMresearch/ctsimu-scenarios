@@ -66,7 +66,7 @@
 			"software":	"CERA Version 3.X",
 			"settings":
 			{
-				"description": "Ramp filtering, no corrections (no beam hardening correction) [in the following, arbitrary name value pairs can be added or removed. Please remember to end the final name value pair without a comma]",
+				"description": "Users are free to adapt these settings to their software.",
 				"ring_artifact_correction": 3,
 				"median": 5,
 				"filter": "Ram-Lak"

@@ -26,6 +26,8 @@ The :json:`"geometry"` section has three subsections to define the location and 
 
   :math:`\vec{w}` is usually meant to be a normal vector and :math:`\vec{u}` is one of the support vectors. :math:`\vec{u}` and :math:`\vec{v}` also serve a second meaning as row and column vector of the resulting projection (for the detector) or of a given spot intensity profile image (for the source). See the descriptions below for details.
 
+.. _sec_geometry_deviations:
+
 Deviations
 ----------
 
@@ -79,19 +81,29 @@ A deviation component should provide the following properties:
       "axis": "w"
     
   * :code:`"r"`, :code:`"s"` or :code:`"t"` are the local axes of the **sample coordinate system** (see :ref:`samples <sec_samples>` for details).
-  * An **arbitrary axis** can be specified using the vector components from any of the three aforementioned sets (world, local or sample). For example, a vector defined in the world coordinate system would look like:
+  * An **arbitrary axis** can be specified using the vector components from any of the three aforementioned sets (world, local or sample). For example, a vector defined in the **world coordinate system** would look like:
   
-  .. code-block:: json-object
-    :linenos:
-    :lineno-start: 57
+    .. code-block:: json-object
+      :linenos:
+      :lineno-start: 57
+      
+      "axis": {
+        "x": {"value":  2.0},
+        "y": {"value": -3.0},
+        "z": {"value":  5.3}
+      }
+  
+    whereas a vector that is fixed to the **local coordinate system** would look like in the following listing. If this were defined for the stage, the vector would follow the stage's rotation throughout the CT scan.
     
-    "axis": {
-      "x": {"value":  2.0},
-      "y": {"value": -3.0},
-      "z": {"value":  5.3}
-    }
-  
-  whereas a vector that is fixed to the local coordinate system would look like in the following listing. If this were defined for the stage, the vector would follow the stage's rotation throughout the CT scan.
+    .. code-block:: json-object
+      :linenos:
+      :lineno-start: 122
+      
+      "axis": {
+        "u": {"value": 1},
+        "v": {"value": 1},
+        "w": {"value": 0}
+      }
 
 * :json:`"pivot":` For rotations, the pivot point where the rotation axis is attached can be specified. If not specified, the object's center point is assumed to be the rotation's pivot point. Similar to the :json:`"axis"`, the pivot can be expressed in terms of the world coordinate system {x, y, z}, the local (or stage) coordinate system {u, v, w}, or the sample coordinate sytem {r, s, t}.
 
