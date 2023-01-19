@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>File &mdash; CTSimU Scenarios 0.9 documentation</title>
+  <title>File &mdash; CTSimU Scenarios 1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -14,12 +15,14 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Environment" href="environment.html" />
-    <link rel="prev" title="General information" href="general.html" /> 
+    <link rel="prev" title="General structures" href="general.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,7 +42,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General structures</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">File</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
@@ -67,8 +70,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>File</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">File</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/file.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -78,32 +81,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="file">
-<span id="sec-file"></span><h1>File<a class="headerlink" href="#file" title="Permalink to this headline"></a></h1>
-<p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file&quot;</span></span><span class="p"><span class="pre">:</span></span></code> section leaves room for specifying a scenario <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;name&quot;</span></span><span class="p"><span class="pre">:</span></span></code> and a short <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;description&quot;</span></span><span class="p"><span class="pre">:</span></span></code>. Further meta data such as a <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;contact&quot;</span></span><span class="p"><span class="pre">:</span></span></code> person, dates of creation and modification, and a file <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;version&quot;</span></span><span class="p"><span class="pre">:</span></span></code> can be added here.</p>
-<p>The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file_type&quot;</span></span><span class="p"><span class="pre">:</span></span></code> is a constant string to identify this as a CTSimU scenario and must not be changed. The <code class="code highlight json-object docutils literal notranslate"><span class="nt"><span class="pre">&quot;file_format_version&quot;</span></span><span class="p"><span class="pre">:</span></span></code> states which issue of the file format specification is used.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 2</span><span class="nt">&quot;file&quot;</span><span class="p">:</span>
-<span class="linenos"> 3</span><span class="p">{</span>
-<span class="linenos"> 4</span>  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Scenario&quot;</span><span class="p">,</span>
-<span class="linenos"> 5</span>  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Step cylinder in a rigid frame.&quot;</span><span class="p">,</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span>  <span class="nt">&quot;contact&quot;</span><span class="p">:</span> <span class="s2">&quot;David Plotzki&quot;</span><span class="p">,</span>
-<span class="linenos"> 8</span>  <span class="nt">&quot;date_created&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-04-23&quot;</span><span class="p">,</span>
-<span class="linenos"> 9</span>  <span class="nt">&quot;date_changed&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-15&quot;</span><span class="p">,</span>
-<span class="linenos">10</span>  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;major&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span>  <span class="nt">&quot;file_type&quot;</span><span class="p">:</span> <span class="s2">&quot;CTSimU Scenario&quot;</span><span class="p">,</span>
-<span class="linenos">13</span>  <span class="nt">&quot;file_format_version&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;major&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&quot;minor&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}</span>
-<span class="linenos">14</span><span class="p">}</span>
+  <section id="file">
+<span id="sec-file"></span><h1>File<a class="headerlink" href="#file" title="Permalink to this heading"></a></h1>
+<p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> section leaves room for specifying a scenario <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;name&quot;</span></code> and a short <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;description&quot;</span></code>. Further meta data such as a <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;contact&quot;</span></code> person, dates of creation and modification, and a file <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;version&quot;</span></code> can be added here.</p>
+<p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file_type&quot;</span></code> is a constant string to identify this as a CTSimU scenario and must not be changed. The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file_format_version&quot;</span></code> states which issue of the file format specification is used.</p>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 2</span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Example Scenario&quot;</span><span class="p">,</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Step cylinder in a rigid frame.&quot;</span><span class="p">,</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;David Plotzki&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="nt">&quot;date_created&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-04-23&quot;</span><span class="p">,</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">&quot;date_changed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-18&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;major&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;minor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">},</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="w">  </span><span class="nt">&quot;file_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CTSimU Scenario&quot;</span><span class="p">,</span>
+<span class="linenos">12</span><span class="w">  </span><span class="nt">&quot;file_format_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;major&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;minor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span>
+<span class="linenos">13</span><span class="p">}</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="general.html" class="btn btn-neutral float-left" title="General information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="general.html" class="btn btn-neutral float-left" title="General structures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="environment.html" class="btn btn-neutral float-right" title="Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

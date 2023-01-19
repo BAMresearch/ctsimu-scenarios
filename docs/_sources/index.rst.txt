@@ -8,7 +8,7 @@ CTSimU Scenario Descriptions |release|
 This is the specification for a JSON-based file format to handle the parameters of a full industrial CT scan scenario, intended for describing virtual CT scenarios for simulations, as well as for documenting real CT scan geometries and acquisition parameters and their measurement uncertainties.
 
 | Specification version |release|, released under the **Apache 2.0 license.**
-| A |link-pre|\ |release|\ |link-post| of this specification is available.
+| A |link-pre|\ |release|\ |link-post| of this specification is available. Example scenarios and simulated projection images can be found on the specification's `Github repository <https://github.com/BAMresearch/ctsimu-scenarios>`__.
 
 .. |link-pre| raw:: html
 
@@ -16,7 +16,7 @@ This is the specification for a JSON-based file format to handle the parameters 
 
 .. |link-post| raw:: html
 
-    .pdf">PDF document</a>
+    .pdf"><b>PDF document</b></a>
 
 **About this work**
 

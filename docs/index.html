@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CTSimU Scenario Descriptions 0.9 &mdash; CTSimU Scenarios 0.9 documentation</title>
+  <title>CTSimU Scenario Descriptions 1.0 &mdash; CTSimU Scenarios 1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -14,7 +15,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,7 +41,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file.html">File</a></li>
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a></li>
@@ -66,8 +69,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>CTSimU Scenario Descriptions 0.9</li>
+      <li><a href="#" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">CTSimU Scenario Descriptions 1.0</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -77,32 +80,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="ctsimu-scenario-descriptions-release">
-<h1>CTSimU Scenario Descriptions 0.9<a class="headerlink" href="#ctsimu-scenario-descriptions-release" title="Permalink to this headline"></a></h1>
-<div class="figure align-right" style="width: 15%">
+  <section id="ctsimu-scenario-descriptions-release">
+<h1>CTSimU Scenario Descriptions 1.0<a class="headerlink" href="#ctsimu-scenario-descriptions-release" title="Permalink to this heading"></a></h1>
+<figure class="align-right" style="width: 15%">
 <img alt="_images/fileformat_logo.png" src="_images/fileformat_logo.png" />
-</div>
+</figure>
 <p>This is the specification for a JSON-based file format to handle the parameters of a full industrial CT scan scenario, intended for describing virtual CT scenarios for simulations, as well as for documenting real CT scan geometries and acquisition parameters and their measurement uncertainties.</p>
 <div class="line-block">
-<div class="line">Specification version 0.9, released under the <strong>Apache 2.0 license.</strong></div>
-<div class="line">A <a href="ctsimu-scenarios_0.9.pdf">PDF document</a> of this specification is available.</div>
+<div class="line">Specification version 1.0, released under the <strong>Apache 2.0 license.</strong></div>
+<div class="line">A <a href="ctsimu-scenarios_1.0.pdf"><b>PDF document</b></a> of this specification is available. Example scenarios and simulated projection images can be found on the specification’s <a class="reference external" href="https://github.com/BAMresearch/ctsimu-scenarios">Github repository</a>.</div>
 </div>
 <p><strong>About this work</strong></p>
-<div class="figure align-right" style="width: 40%">
+<figure class="align-right" style="width: 40%">
 <img alt="_images/cropped-Logo_V3.png" src="_images/cropped-Logo_V3.png" />
-</div>
+</figure>
 <p>This work was funded through the project <a class="reference external" href="https://www.ctsimu.forschung.fau.de/">CTSimU</a> (<em>Radiographic Computed Tomography Simulation for Measurement Uncertainty Evaluation</em>, WIPANO project 03TNH026A).</p>
 <p><a class="reference external" href="https://www.innovation-beratung-foerderung.de/INNO/Navigation/DE/WIPANO/wipano.html">WIPANO</a> projects are financed by the German <a class="reference external" href="https://www.bmwi.de/">Federal Ministry for Economic Affairs and Energy</a> and managed by <a class="reference external" href="https://www.ptj.de/">Project Management Jülich</a>.</p>
 <a class="reference internal image-reference" href="_images/Wipano-Logo-1-1024x402.png"><img alt="_images/Wipano-Logo-1-1024x402.png" src="_images/Wipano-Logo-1-1024x402.png" style="width: 65%;" /></a>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="general.html">General information</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General structures</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="general.html#file-structure">File structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="general.html#parameters">Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general.html#values-units">Values &amp; Units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general.html#uncertainty">Uncertainty</a></li>
-<li class="toctree-l2"><a class="reference internal" href="general.html#drifts">Drifts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="general.html#formats-of-referred-data-files">Formats of referred data files</a></li>
 </ul>
 </li>
@@ -110,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometry.html">Geometry</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="geometry.html#placement-of-objects-in-the-world-coordinate-system">Placement of objects in the world coordinate system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometry.html#deviations">Deviations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry.html#detector">Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry.html#source">Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geometry.html#stage">Stage</a></li>
@@ -117,9 +118,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="detector.html">Detector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="detector.html#general-properties">General properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="detector.html#grey-value-characteristics">Grey value characteristics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="detector.html#image-quality">Image Quality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="detector.html#scintillator-filters">Scintillator &amp; Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detector.html#gray-value-characteristics">Gray value characteristics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detector.html#image-quality">Image quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="detector.html#scintillator-filters">Scintillator &amp; filters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="source.html">Source</a><ul>
@@ -148,7 +149,7 @@
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>
