@@ -1,7 +1,7 @@
 {
 	"file": {
 		"name": "Full example scenario",
-		"description": "Icosahedron in a rigid frame.",
+		"description": "Tetrahedron in a rigid frame.",
 
 		"contact": "David Plotzki",
 		"date_created": "2020-04-23",

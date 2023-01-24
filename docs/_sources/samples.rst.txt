@@ -16,7 +16,7 @@ The sample name:
   :linenos:
   :lineno-start: 257
 
-  "name": "Step Cylinder"
+  "name": "Tetrahedron"
 
 A reference to the model file (e.g. STL or CAD file) that describes the sample geometry:
 
@@ -24,7 +24,7 @@ A reference to the model file (e.g. STL or CAD file) that describes the sample g
   :linenos:
   :lineno-start: 258
 
-  "file": {"value": "step_cylinder.stl", "drifts": null}
+  "file": {"value": "tetra.stl", "drifts": null}
 
 The unit of length that is used in the model file:
 

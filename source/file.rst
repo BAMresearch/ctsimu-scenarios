@@ -13,7 +13,7 @@ The :json:`"file_type"` is a constant string to identify this as a CTSimU scenar
 
   "file": {
     "name": "Example Scenario",
-    "description": "Icosahedron in a rigid frame.",
+    "description": "Tetrahedron in a rigid frame.",
 
     "contact": "David Plotzki",
     "date_created": "2020-04-23",
