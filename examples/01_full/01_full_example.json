@@ -1,12 +1,12 @@
 {
 	"file": {
-		"name": "Example Scenario",
-		"description": "Step cylinder in a rigid frame.",
+		"name": "Full example scenario",
+		"description": "Icosahedron in a rigid frame.",
 
 		"contact": "David Plotzki",
 		"date_created": "2020-04-23",
-		"date_changed": "2023-01-18",
-		"version": {"major": 1, "minor": 6},
+		"date_changed": "2023-01-24",
+		"version": {"major": 1, "minor": 7},
 
 		"file_type": "CTSimU Scenario",
 		"file_format_version": {"major": 1, "minor": 0}
@@ -60,9 +60,9 @@
 						"z": {"value":  5.3}
 					},
 					"pivot": {
-						"x": {"value":  2.0, "unit": "mm"},
-						"y": {"value": -3.0, "unit": "mm"},
-						"z": {"value":  5.3, "unit": "mm"}
+						"u": {"value":  1.0, "unit": "mm"},
+						"v": {"value": -2.0, "unit": "mm"},
+						"w": {"value":  2.5, "unit": "mm"}
 					},
 					"amount": {"value": 1.3, "unit": "deg"},
 					"known_to_reconstruction": true
@@ -254,13 +254,13 @@
 
 	"samples": [
 		{
-			"name": "Step Cylinder",
-			"file": {"value": "step_cylinder.stl", "drifts": null},
+			"name": "Tetrahedron",
+			"file": {"value": "tetra.stl", "drifts": null},
 			"unit": "mm",
 			"scaling_factor": {
-				"r": {"value": 1.0, "drifts": null},
-				"s": {"value": 1.0, "drifts": null},
-				"t": {"value": 1.0, "drifts": null}
+				"r": {"value": 0.75, "drifts": null},
+				"s": {"value": 0.75, "drifts": null},
+				"t": {"value": 0.75, "drifts": null}
 			},
 			"material_id": "Glass Ceramic",
 			"position": {

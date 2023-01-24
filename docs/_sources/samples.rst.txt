@@ -41,9 +41,9 @@ A scaling factor for each axis of the sample coordinate system, if the model sho
   :lineno-start: 260
 
   "scaling_factor": {
-    "r": {"value": 1.0, "drifts": null},
-    "s": {"value": 1.0, "drifts": null},
-    "t": {"value": 1.0, "drifts": null}
+    "r": {"value": 0.75, "drifts": null},
+    "s": {"value": 0.75, "drifts": null},
+    "t": {"value": 0.75, "drifts": null}
   }
 
 The material of the sample, given by a :json:`"material_id"` that references a material definition in the :ref:`materials section <sec_materials>` of the file:

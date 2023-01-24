@@ -1,3 +1,0 @@
-# Example scenario 01: full CT example
-
-This scenario describes a step cylinder made of a glass ceramic, placed 20 mm to the "left" of the rotation axis at a slight angle. The rotation stage is symmetrically surrounded by a fixed aluminium frame that does not follow the rotation of the stage. The detector is tilted around its planar normal by 0.023 rad in clockwise direction (as seen from the source). The stage's rotation axis is tilted and performs a wobble motion at an angle of 4°.

@@ -105,16 +105,16 @@ A deviation component should provide the following properties:
         "w": {"value": 0}
       }
 
-* :json:`"pivot":` For rotations, the pivot point where the rotation axis is attached can be specified. If not specified, the object's center point is assumed to be the rotation's pivot point. Similar to the :json:`"axis"`, the pivot can be expressed in terms of the world coordinate system {x, y, z}, the local (or stage) coordinate system {u, v, w}, or the sample coordinate sytem {r, s, t}.
+* :json:`"pivot":` For rotations, the pivot point defines where the rotation axis is attached. If not specified, the object's center point is assumed to be the rotation's pivot point. Similar to the :json:`"axis"`, the pivot can be expressed in terms of the world coordinate system {x, y, z}, the local (or stage) coordinate system {u, v, w}, or the sample coordinate sytem {r, s, t}. It does not have to be the same coordinate system as for the :json:`"axis"`.
 
   .. code-block:: json-object
     :linenos:
     :lineno-start: 62
     
     "pivot": {
-      "x": {"value":  2.0, "unit": "mm"},
-      "y": {"value": -3.0, "unit": "mm"},
-      "z": {"value":  5.3, "unit": "mm"}
+      "u": {"value":  1.0, "unit": "mm"},
+      "v": {"value": -2.0, "unit": "mm"},
+      "w": {"value":  2.5, "unit": "mm"}
     }
 
 * :json:`"known_to_reconstruction":` Whether these deviations are known to the reconstruction software or not depends on the purpose of the scenario and can be specified by setting this property to either :json:`true` or :json:`false`:
