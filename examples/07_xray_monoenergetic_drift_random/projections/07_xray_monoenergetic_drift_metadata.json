@@ -1,0 +1,61 @@
+{
+    "file":   {
+        "name":         "07_xray_monoenergetic_drift",
+        "description":  "",
+        "contact":      "",
+        "date_created": "2023-01-25",
+        "date_changed": "2023-01-25",
+        "version":      {
+            "major": 1,
+            "minor": 0
+        }
+    },
+    "output": {
+        "system":              "aRTist v2.12.6-0-g30fb1d33, CTSimU Scenario Loader 1.0.0",
+        "date_measured":       "2023-01-25",
+        "projections":         {
+            "filename":   "07_xray_monoenergetic_drift_%04d.tif",
+            "datatype":   "uint16",
+            "byteorder":  "little",
+            "headersize": null,
+            "number":     21,
+            "dimensions": {
+                "x": {
+                    "value": 150,
+                    "unit":  "px"
+                },
+                "y": {
+                    "value": 150,
+                    "unit":  "px"
+                }
+            },
+            "pixelsize":  {
+                "x": {
+                    "value": 1.3,
+                    "unit":  "mm"
+                },
+                "y": {
+                    "value": 1.3,
+                    "unit":  "mm"
+                }
+            },
+            "dark_field": {
+                "number":        0,
+                "frame_average": null,
+                "filename":      null,
+                "projections_corrected": false
+            },
+            "flat_field": {
+                "number":        0,
+                "frame_average": null,
+                "filename":      null,
+                "projections_corrected": false
+            }
+        },
+        "tomogram":            null,
+        "reconstruction":      null,
+        "acquisitionGeometry": {
+            "path_to_CTSimU_JSON": "07_xray_monoenergetic_drift.json"
+        }
+    }
+}

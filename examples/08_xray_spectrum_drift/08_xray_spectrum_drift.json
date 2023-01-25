@@ -1,11 +1,11 @@
 {
 	"file": {
-		"name": "Rotation axis wobble",
-		"description": "Tetrahedron on a circular scan trajectory, stage axis wobbles around 15° cone angle.",
+		"name": "Monoenergetic drift of the spectrum",
+		"description": "A spectrum file for each frame: the tube voltage increases by 0.5 kV (from 130 kV to 140 kV).",
 
 		"contact": "David Plotzki",
-		"date_created": "2023-01-24",
-		"date_changed": "2023-01-24",
+		"date_created": "2023-01-25",
+		"date_changed": "2023-01-25",
 		"version": {"major": 1, "minor": 0},
 
 		"file_type": "CTSimU Scenario",
@@ -81,14 +81,7 @@
 				"z": {"value":  1}
 			},
 			
-			"deviations": [
-				{
-					"type": "rotation",
-					"axis": "u",
-					"amount": {"value": 15, "unit": "deg"},
-					"known_to_reconstruction": true
-				}
-			]
+			"deviations": []
 		}
 	},
 
@@ -107,7 +100,7 @@
 		"dead_time":  null,
 		"image_lag":  null,
 		"gray_value": {
-			"imax":   {"value": 60000},
+			"imax":   {"value": 45000},
 			"imin":   {"value":     0}
 		},
 		"noise": null,
@@ -123,13 +116,33 @@
 		"manufacturer": "",
 		"voltage": {"value": 130, "unit": "kV"},
 		"current": {"value": 120, "unit": "uA"},
-		"target": null,
+		"target": {
+			"material_id": "W",
+			"type": "reflection",
+			"thickness": null,
+			"angle": {
+				"incidence": {"value": 45, "unit": "deg"},
+				"emission":  {"value": 45, "unit": "deg"}
+			}
+		},
 		"spot": null,
 		"spectrum": {
-			"monochromatic": true,
-			"file": null
+			"monochromatic": false,
+			"file": {
+				"value": "xray_spectrum_130kV.tsv",
+				"drifts": [
+					{
+						"file": "xray_spectrum_drifts.tsv"
+					}
+				]
+			}
 		},
-		"window": [],
+		"window": [
+			{
+				"material_id": "Al",
+				"thickness": {"value": 2.0, "unit": "mm"}
+			}
+		],
 		"filters": []
 	},
 
@@ -189,6 +202,18 @@
 			"name": "Iron",
 			"density": {"value": 7.874, "unit": "g/cm^3"},
 			"composition": {"value": "Fe"}
+		},
+		{
+			"id":   "Al",
+			"name": "Aluminium",
+			"density": {"value": 2.6989, "unit": "g/cm^3"},
+			"composition": {"value": "Al"}
+		},
+		{
+			"id":   "W",
+			"name": "Tungsten",
+			"density": {"value": 19.25, "unit": "g/cm^3"},
+			"composition": {"value": "W"}
 		}
 	]
 }

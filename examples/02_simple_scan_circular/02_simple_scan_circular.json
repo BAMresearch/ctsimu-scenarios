@@ -139,7 +139,7 @@
 			"material_id": "Fe",
 			"position": {
 				"center": {
-					"comment": "Move tetrahedron tip to rotation axis.",
+					"comment": "Place tetrahedron tip at rotation axis.",
 					"u": {"value": 9.428083, "unit": "mm"},
 					"v": {"value": 0, "unit": "mm"},
 					"w": {"value": 8.888888, "unit": "mm"}

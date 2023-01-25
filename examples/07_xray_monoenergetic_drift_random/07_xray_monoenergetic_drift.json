@@ -1,11 +1,11 @@
 {
 	"file": {
-		"name": "Rotation axis wobble",
-		"description": "Tetrahedron on a circular scan trajectory, stage axis wobbles around 15° cone angle.",
+		"name": "Monoenergetic drift of the radiation, quasi-random fluctuations",
+		"description": "In each frame, the X-ray energy fluctuates by a defined random value.",
 
 		"contact": "David Plotzki",
-		"date_created": "2023-01-24",
-		"date_changed": "2023-01-24",
+		"date_created": "2023-01-25",
+		"date_changed": "2023-01-25",
 		"version": {"major": 1, "minor": 0},
 
 		"file_type": "CTSimU Scenario",
@@ -81,14 +81,7 @@
 				"z": {"value":  1}
 			},
 			
-			"deviations": [
-				{
-					"type": "rotation",
-					"axis": "u",
-					"amount": {"value": 15, "unit": "deg"},
-					"known_to_reconstruction": true
-				}
-			]
+			"deviations": []
 		}
 	},
 
@@ -107,7 +100,7 @@
 		"dead_time":  null,
 		"image_lag":  null,
 		"gray_value": {
-			"imax":   {"value": 60000},
+			"imax":   {"value": 45000},
 			"imin":   {"value":     0}
 		},
 		"noise": null,
@@ -121,7 +114,17 @@
 	"source": {
 		"model":        "",
 		"manufacturer": "",
-		"voltage": {"value": 130, "unit": "kV"},
+		"voltage": {
+			"value": 130,
+			"unit": "kV",
+			"drifts": [
+				{
+					"comment": "21 drift values from a list file. One for each frame, so no interpolation will be needed.",
+					"file": "xray_voltage_drifts.tsv",
+					"unit": "kV"
+				}
+			]
+		},
 		"current": {"value": 120, "unit": "uA"},
 		"target": null,
 		"spot": null,
