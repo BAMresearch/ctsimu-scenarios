@@ -1,0 +1,82 @@
+.. _changes:
+
+Specification Changes
+=====================
+
+The following listing contains the changes to the file format in its prior versions.
+
+Version 1.0
+-----------
+* Introduced a more general concept to specify geometric deviations (sec. :ref:`sec_geometry_deviations`). Instead of a strict order of rotations around the axes of the local coordinate system, an arbitrary order of translations and rotations around arbitrary axes and pivot points can be specified in a :json:`"deviations"` array.
+* Re-introduced American spelling to keep consistency with most other software and IT standards, also in regard to the world of Python packages. Therefore: :json:`"centre"` → :json:`"center"`, :json:`"grey"` → :json:`"gray"`.
+* Added :json:`"endian"` and :json:`"headersize"` for RAW data files (sec. :ref:`sec_referred_data_files_2d` and :ref:`sec_referred_data_files_3d`). Also: more options for the data :json:`"type"`.
+* The detector's quantum efficiency can no longer be expressed by a single number because it would be meaningless (the gray value characteristics already takes it into account, and it would currently have no effect on other parameters). For an energy-resolved quantum efficiency, an external characteristics file is still supported (sec. :ref:`sec_detector_quantum_efficiency`).
+* The parameter :json:`"mtf10_frequency"` for the detector unsharpness has been removed. Instead, a full MTF should be defined in an external file. For single-value unsharpness definitions, the :json:`"basic_spatial_resolution"` should be used (sec. :ref:`sec_unsharpness`).
+* Bad pixel maps: properly working pixels are now encoded with the value :code:`-1` instead of :code:`0`; the latter would now mean a defect, completely black pixel (sec. :ref:`sec_bad_pixel_map`).
+* Detector :json:`"gain"` is now purely reserved for the documentation of a real CT scan parameter, but has no meaning for a simulation. All detector parameters in the JSON file are assumed to refer to the gain setting specified in the :json:`"gain"` parameter (sec. :ref:`sec_gain`). The gain property :json:`"scale_signal_and_noise"` has been removed because it was not well-defined.
+* X-ray source: the parameters :json:`"bremsstrahlung"` and :json:`"characteristic"` have been removed (sec. :ref:`sec_source_spectrum`).
+
+
+Version 0.9
+-----------
+
+* Introduced a new concept for drifts (sec. :ref:`sec_drifts`).
+* Uncertainties are now described in single :json:`"uncertainty"` blocks that contain a :json:`"value"` and :json:`"unit"` element, instead of defining two separate elements for :json:`"uncertainty"` and :json:`"uncertainty_unit"` (sec. :ref:`sec_uncertainty`).
+* Removed noise FWHM as an alternative measure to the SNR (sec. :ref:`sec_noise`) to avoid inconsistencies.
+* Changed detector parameter name :json:`"sharpness"` to :json:`"unsharpness"` (sec. :ref:`sec_unsharpness`).
+
+Version 0.8
+-----------
+
+* Added the simulation software-specific parameter section :json:`"simulation"` (sec. :ref:`sec_proprietary`).
+* Noise parameters (SNR, FWHM, sec. :ref:`sec_noise`) now specifically refer to one frame, not an averaged projection.
+
+Version 0.7
+-----------
+
+* Added further meta data fields to the :json:`"file"` section (sec. :ref:`sec_file`) and changed the previous parameter designations :json:`"type"` and :json:`"version"` to :json:`"file_format_type"` and :json:`"file_format_version"` to make room for their meta data equivalents.
+* The parameter :json:`"frames_to_average"` has been renamed to :json:`"frame_average"` (sec. :ref:`sec_frame_avg`).
+* Introduced acquisition parameters for dark field and flat field images (sec. :ref:`sec_flat_dark_field`).
+* All uncertainties are assumed to be standard measurement uncertainties.
+
+Version 0.6
+-----------
+
+* Added :json:`"description"` to :json:`"file"` section (sec. :ref:`sec_file`).
+* Split tube :json:`"window"` and :json:`"filters"` into two separate arrays (sec. :ref:`sec_tube_filters`), and now demand that any tube spectrum provided through a file is only filtered by the window material, but none of the additional filters that can be placed in front of the tube (sec. :ref:`sec_source_spectrum`).
+* Added the detector's noise FWHM as an equivalent measure next to the SNR (sec. :ref:`sec_noise`).
+* Sample scaling factors now correctly refer to the sample coordinate system {r, s, t} instead of the stage coordinate system {u, v, w} (sec. :ref:`sec_samples_general`).
+
+Version 0.5
+-----------
+
+* Added detector :json:`"type"`, options are: :json:`"real"` and :json:`"ideal"` (sec. :ref:`sec_detector_general`).
+* Spectra provided through CSV files are assumed to be filtered by all tube filters (sec. :ref:`sec_source_spectrum`).
+
+Version 0.4
+-----------
+
+* Grey value characteristics of the detector is now based on total collected energy *E* (in J) for each pixel instead of incident energy density (sec. :ref:`sec_gv_characteristics`).
+* Introduced :json:`"environment"` section (sec. :ref:`sec_environment`), with the environment temperature and (atmospheric) composition.
+* Introduced :json:`"pixel_binning"` to :json:`"acquisition"` parameters (sec. :ref:`sec_pixel_binning`).
+* The time index for drift trajectory files is now the frame number instead of the angular position to avoid floating point rounding discrepancies between description file and CT simulation (sec. :ref:`sec_drifts`).
+* Under :json:`"acquisition"`, the parameter :json:`"angular_steps"` has been replaced by the parameter :json:`"number_of_projections"` (sec. :ref:`sec_num_of_projections`).
+* Added support for RAW files for any 2D or 3D data.
+* 2D and 3D spot intensity profiles are now both handled by the parameter :json:`"intensity_map"`, which has been extended to support RAW files in both cases (sec. :ref:`sec_spot_intensity_profile`).
+
+Version 0.3
+-----------
+
+* New axis designations :math:`\vec{u}`, :math:`\vec{v}`, :math:`\vec{w}` for local coordinate systems, whereas :math:`\vec{x}`, :math:`\vec{y}`, :math:`\vec{z}` always designate the axes of the world coordinate system (sec. :ref:`sec_geometry`).
+* Introduced sample coordinate system {r, s, t} (sec. :ref:`sec_sample_positioning`).
+* New geometry parameter :json:`"deviations"` contains all deviations from the ideal (known) geometry. Deviation parameters can be unknown to the reconstruction. (Sec. :ref:`sec_geometry`)
+* Introduced British spelling: :json:`"center"` → :json:`"centre"`, :json:`"gray"` → :json:`"grey"`.
+* Removed FOD and FDD to prevent inconsistencies.
+* Removed detector :json:`"width"` and :json:`"height"` to prevent inconsistencies.
+* Removed option for gain characteristics file.
+* Detector: filters and rear panel merged into :json:`"front"` and :json:`"rear"` filters (sec. :ref:`sec_scintillator_and_filters`).
+* :json:`"image_lag"` moved from :json:`"acquisition"` to :json:`"detector"` (sec. :ref:`sec_detector_general`).
+* Moved :json:`"integration_time"` from :json:`"acquisition"` to :json:`"detector"`, because other detector characteristics (such as image lag and possibly noise) are specific to it (sec. :ref:`sec_detector_general`).
+* Source: removed number of photons from :json:`"spectrum"` to prevent inconsistencies with tube current.
+* Introduced uncertainties to CSV files.
+* Removed option for purely random drifts because it is not reproducible and was so far only limited to Gaussian distributions. Drift trajectories from CSV files remain the most general and reproducible approach.

@@ -117,7 +117,7 @@ The second method allows to specify a linear response function. This function as
 
   \text{\textsf{Gray Value}} = \left(\textsf{factor} \cdot E \right) + \textsf{offset}
 
-The file format allows to provide a :json:`"factor"` and an :json:`"offset"` for this linear function. This method allows the gray values to change with a change in pixel size, tube power, integration time or a change in intensity due to a different focus-detector distance. 
+The file format allows to provide a :json:`"factor"` and an :json:`"offset"` for this linear function. This method allows the gray values to change with a change in pixel size, tube power, integration time or a change in intensity due to a different focus-detector distance.
 
 This method has precedence over the first method if :json:`"factor"` and :json:`"offset"` are set and not :json:`null`. From eq. |nbsp| :math:numref:`eq_grayValue` it becomes clear that the :json:`"factor"` should have the inverse unit of the deposited energy: 1/J.
 
@@ -260,7 +260,7 @@ The bad pixel map provided here should be a 2D gray-scale image file with a sign
     "drifts": null
   }
 
-.. _sec_scintillatorAndFilters:
+.. _sec_scintillator_and_filters:
 
 Scintillator & filters
 ----------------------

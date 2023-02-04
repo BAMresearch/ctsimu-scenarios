@@ -70,7 +70,7 @@ For a reflection target, this parameter should be set to :json:`null`.
 
 The angles of electron incidence and main X-ray emission can be defined and refer to the angles between the target surface and electron beam or main photon emission direction, respectively.
 
-.. _sec_spotIntensityProfile:
+.. _sec_spot_intensity_profile:
 
 Spot intensity profile
 ----------------------
@@ -78,7 +78,7 @@ Spot intensity profile
 .. code-block:: json-object
   :linenos:
   :lineno-start: 212
-  
+
   "spot": {
     "size": {
       "u": {"value": 100.0, "unit": "um"},
@@ -125,7 +125,7 @@ A simple Gaussian profile can be modelled by specifying the spatial sigmas :math
 .. code-block:: json-object
   :linenos:
   :lineno-start: 218
-  
+
   "sigma": {
     "u": {"value":  50.0, "unit": "um"},
     "v": {"value":  50.0, "unit": "um"},

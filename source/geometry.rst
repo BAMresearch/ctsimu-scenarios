@@ -36,7 +36,7 @@ Deviations are small shifts (translations) or rotations that specify how much an
 .. code-block:: json-object
   :linenos:
   :lineno-start: 42
-  
+
   "deviations": [
     {
       "type": "translation",
@@ -55,50 +55,50 @@ Deviations are small shifts (translations) or rotations that specify how much an
 :json:`"deviations":` an array that can be used to specify a sequence of small deviations from the ideal geometry, both rotational or translational. Examples would be tilts of the detector or the rotation axis, or small shifts that should or should not be considered during the reconstruction of the CT scan.
 
 A simulation software should treat the array's deviation components as subsequent transformations of the frame's ideal local coordinate system.
-  
+
 A deviation component should provide the following properties:
 
 * :json:`"type":` can be either :code:`"translation"` or :code:`"rotation"`.
 * :json:`"amount":` the amount by which to deviate. For a translational deviation, this is the length by which the object should shift in the given direction. For a rotational deviation, it is the angle by which the object should rotate around the given axis (and optionally, the given pivot point). A :json:`"value"` and :json:`"unit"` must be specified for the amount.
 * :json:`"axis":` specifies the direction of the deviation. For translations, it provides the direction of the shift. For rotations, it provides the rotation axis. The axis must not be a unit vector, but its length has no special significance.
-  
+
   The axis can be given as and axis designation or as an arbitrary vector:
-  
+
   * :code:`"x"`, :code:`"y"` or :code:`"z"` are the axes of the **world coordinate system.**
-  
+
     .. code-block:: json-object
       :linenos:
       :lineno-start: 45
-      
+
       "axis": "x"
-  
+
   * :code:`"u"`, :code:`"v"` or :code:`"w"` are the axes of the **local coordinate system** or of the **stage coordinate system** (in case of samples).
-  
+
     .. code-block:: json-object
       :linenos:
       :lineno-start: 51
-      
+
       "axis": "w"
-    
+
   * :code:`"r"`, :code:`"s"` or :code:`"t"` are the local axes of the **sample coordinate system** (see :ref:`samples <sec_samples>` for details).
   * An **arbitrary axis** can be specified using the vector components from any of the three aforementioned sets (world, local or sample). For example, a vector defined in the **world coordinate system** would look like:
-  
+
     .. code-block:: json-object
       :linenos:
       :lineno-start: 57
-      
+
       "axis": {
         "x": {"value":  2.0},
         "y": {"value": -3.0},
         "z": {"value":  5.3}
       }
-  
+
     whereas a vector that is fixed to the **local coordinate system** would look like in the following listing. If this were defined for the stage, the vector would follow the stage's rotation throughout the CT scan.
-    
+
     .. code-block:: json-object
       :linenos:
       :lineno-start: 122
-      
+
       "axis": {
         "u": {"value": 1},
         "v": {"value": 1},
@@ -110,14 +110,14 @@ A deviation component should provide the following properties:
   .. code-block:: json-object
     :linenos:
     :lineno-start: 62
-    
+
     "pivot": {
       "u": {"value":  1.0, "unit": "mm"},
       "v": {"value": -2.0, "unit": "mm"},
       "w": {"value":  2.5, "unit": "mm"}
     }
 
-* :json:`"known_to_reconstruction":` Whether these deviations are known to the reconstruction software or not depends on the purpose of the scenario and can be specified by setting this property to either :json:`true` or :json:`false`:
+* :json:`"known_to_reconstruction":` Whether these deviations are known to the reconstruction software or not depends on the purpose of the scenario and can be specified by setting this property to either :json:`true` or :json:`false`. If not specified, the parameter's standard value is :json:`true`.
 
   .. code-block:: json-object
     :linenos:
@@ -146,7 +146,7 @@ If a **dynamic stage tilt (wobble)** is modelled, it can be given as a rotation 
 .. code-block:: json-object
   :linenos:
   :lineno-start: 118
-  
+
   "deviations": [
     {
       "comment": "axis wobble",
@@ -193,7 +193,7 @@ The size and further properties of the detector are defined later on in the :ref
       "y": {"value":  0},
       "z": {"value":  0}
     },
-    
+
     "deviations": [
       {
         "type": "translation",
@@ -296,7 +296,7 @@ Within the WIPANO CTSimU project, we agreed to the convention of placing the sou
       "y": {"value":  0},
       "z": {"value":  0}
     },
-    
+
     "deviations": []
   }
 
@@ -331,7 +331,7 @@ Samples that are placed in the stage coordinate system all take part in the rota
       "y": {"value":  0},
       "z": {"value":  1}
     },
-    
+
     "deviations": [
       {
         "comment": "axis wobble",

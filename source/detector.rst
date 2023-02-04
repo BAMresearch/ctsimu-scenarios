@@ -117,7 +117,7 @@ The second method allows to specify a linear response function. This function as
 
   \text{\textsf{Gray Value}} = \left(\textsf{factor} \cdot E \right) + \textsf{offset}
 
-The file format allows to provide a :json:`"factor"` and an :json:`"offset"` for this linear function. This method allows the gray values to change with a change in pixel size, tube power, integration time or a change in intensity due to a different focus-detector distance. 
+The file format allows to provide a :json:`"factor"` and an :json:`"offset"` for this linear function. This method allows the gray values to change with a change in pixel size, tube power, integration time or a change in intensity due to a different focus-detector distance.
 
 This method has precedence over the first method if :json:`"factor"` and :json:`"offset"` are set and not :json:`null`. From eq. |nbsp| :math:numref:`eq_grayValue` it becomes clear that the :json:`"factor"` should have the inverse unit of the deposited energy: 1/J.
 
@@ -141,6 +141,8 @@ If a valid intensity characteristics CSV file is specified and the parameter is 
   2      Gray value
   3      Gray value uncertainty *(optional)*
   ====== =====================================
+
+.. _sec_detector_quantum_efficiency:
 
 Quantum efficiency
 ~~~~~~~~~~~~~~~~~~
@@ -228,7 +230,7 @@ Unsharpness
 There are two ways provided to specify the detector unsharpness:
 
 1. The **basic spatial resolution,** as defined in ASTM E2597 :cite:p:`astm2597`, provided using the parameter :json:`"basic_spatial_resolution"`.
-2. The **modulation transfer function** (MTF, :cite:p:`rossmann_point_1969`), provided through a CSV or TSV file. The file name can be given in the parameter :json:`"mtf"`. It should contain the columns listed in :numref:`tab_csvMTF`, separated by commas or white space. If a valid MTF is provided, this has precedence over the basic spatial resolution.
+2. The **modulation transfer function** (MTF, :cite:p:`rossmann_point_1969`), provided through a CSV or TSV file. The file name can be given in the parameter :json:`"mtf"`. It should contain the columns listed in :numref:`tab_csvMTF`, separated by comma or tab characters. If a valid MTF is provided, this has precedence over the basic spatial resolution.
 
 .. _tab_csvMTF:
 
@@ -242,6 +244,7 @@ There are two ways provided to specify the detector unsharpness:
   3      Modulation contrast uncertainty *(optional)*
   ====== =============================================
 
+.. _sec_bad_pixel_map:
 
 Bad pixel map
 ~~~~~~~~~~~~~
@@ -260,7 +263,7 @@ The bad pixel map provided here should be a 2D gray-scale image file with a sign
     "drifts": null
   }
 
-.. _sec_scintillatorAndFilters:
+.. _sec_scintillator_and_filters:
 
 Scintillator & filters
 ----------------------

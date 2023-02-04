@@ -50,4 +50,5 @@ This work was funded through the project `CTSimU <https://www.ctsimu.forschung.f
    proprietary
    fullexample
    metadata
+   changes
    bibliography

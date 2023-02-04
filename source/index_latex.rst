@@ -3,7 +3,7 @@ CTSimU Scenario Descriptions
 
 **About this work**
 
-This work was funded through the project `CTSimU <https://www.ctsimu.forschung.fau.de/>`__ (WIPANO project 03TNH026A). 
+This work was funded through the project `CTSimU <https://www.ctsimu.forschung.fau.de/>`__ (WIPANO project 03TNH026A).
 
 .. image:: pictures/cropped-Logo_V3.png
     :width: 35%
@@ -30,4 +30,5 @@ This work was funded through the project `CTSimU <https://www.ctsimu.forschung.f
    proprietary
    fullexample
    metadata
+   changes
    bibliography
