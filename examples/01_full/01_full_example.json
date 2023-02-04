@@ -5,11 +5,11 @@
 
 		"contact": "David Plotzki",
 		"date_created": "2020-04-23",
-		"date_changed": "2023-01-24",
+		"date_changed": "2023-02-04",
 		"version": {"major": 1, "minor": 7},
 
 		"file_type": "CTSimU Scenario",
-		"file_format_version": {"major": 1, "minor": 0}
+		"file_format_version": {"major": 1, "minor": 1}
 	},
 
 	"environment": {
@@ -38,7 +38,7 @@
 				"y": {"value":  0},
 				"z": {"value":  0}
 			},
-			
+
 			"deviations": [
 				{
 					"type": "translation",
@@ -93,7 +93,7 @@
 				"y": {"value":  0},
 				"z": {"value":  0}
 			},
-			
+
 			"deviations": []
 		},
 
@@ -114,7 +114,7 @@
 				"y": {"value":  0},
 				"z": {"value":  1}
 			},
-			
+
 			"deviations": [
 				{
 					"comment": "axis wobble",
@@ -165,11 +165,10 @@
 			"mtf": {"value": "detector_mtf.tsv"}
 		},
 		"bad_pixel_map": {
-			"value": "badpixels.raw",
+			"file": {"value": "badpixels.raw", "drifts": null},
 			"type": "int16",
 			"endian": "little",
-			"headersize": 0,
-			"drifts": null
+			"headersize": 0
 		},
 		"scintillator": {
 			"material_id": "CsI",
@@ -280,7 +279,7 @@
 					"v": {"value": -0.2},
 					"w": {"value":  1}
 				},
-				
+
 				"deviations": []
 			}
 		},
@@ -311,7 +310,7 @@
 					"y": {"value":  1},
 					"z": {"value":  0}
 				},
-				
+
 				"deviations": []
 			}
 		}
@@ -347,49 +346,105 @@
 			"id":   "Air",
 			"name": "Air",
 			"density": {"value": 1.293, "unit": "kg/m^3"},
-			"composition": {"value": "N 0.785 O 0.21 Ar 0.005"}
+			"composition": [
+				{
+					"formula": {"value": "N2"},
+					"mass_fraction": {"value": 0.7552}
+				},
+				{
+					"formula": {"value": "O2"},
+					"mass_fraction": {"value": 0.2314}
+				},
+				{
+					"formula": {"value": "Ar"},
+					"mass_fraction": {"value": 0.0128}
+				},
+				{
+					"formula": {"value": "CO2"},
+					"mass_fraction": {"value": 0.0006}
+				}
+			]
 		},
 		{
 			"id":   "Al",
 			"name": "Aluminium",
 			"density": {"value": 2.6989, "unit": "g/cm^3"},
-			"composition": {"value": "Al"}
+			"composition": [
+				{
+					"formula": {"value": "Al"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		},
 		{
 			"id":   "W",
 			"name": "Tungsten",
 			"density": {"value": 19.25, "unit": "g/cm^3"},
-			"composition": {"value": "W"}
+			"composition": [
+				{
+					"formula": {"value": "W"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		},
 		{
 			"id":   "CsI",
 			"name": "Caesium Iodide",
 			"density": {"value": 4.51, "unit": "g/cm^3"},
-			"composition": {"value": "CsI"}
+			"composition": [
+				{
+					"formula": {"value": "CsI"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		},
 		{
 			"id":   "Brass",
 			"name": "Brass",
 			"density": {"value": 8860, "unit": "kg/m^3"},
-			"composition": {"value": "CuZn5"}
+			"composition": [
+				{
+					"formula": {"value": "CuZn5"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		},
 		{
 			"id":   "Cu",
 			"name": "Copper",
 			"density": {"value": 8.92, "unit": "g/cm^3"},
-			"composition": {"value": "Cu"}
+			"composition": [
+				{
+					"formula": {"value": "Cu"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		},
 		{
 			"id":   "Kapton",
 			"name": "Kapton 50HN (Polyimide film)",
 			"density": {"value": 1.42, "unit": "g/cm^3"},
-			"composition": {"value": "C16H14N4O4"}
+			"composition": [
+				{
+					"formula": {"value": "C16H14N4O4"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		},
 		{
 			"id":   "Glass Ceramic",
 			"name": "Glass Ceramic",
-			"density": {"value": 2.53, "unit": "g/cm^3"},
-			"composition": {"value": "Al 0.21172 Si 0.28044 O 0.50784"}
+			"density": {"value": 2.53, "unit": "g/cm^3", "drifts": null},
+			"composition": [
+				{
+					"formula": {"value": "Al2O3", "drifts": null},
+					"mass_fraction": {"value": 0.4, "drifts": null}
+				},
+				{
+					"formula": {"value": "SiO2", "drifts": null},
+					"mass_fraction": {"value": 0.6, "drifts": null}
+				}
+			]
 		}
 	],
 

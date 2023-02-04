@@ -142,6 +142,8 @@ If a valid intensity characteristics CSV file is specified and the parameter is 
   3      Gray value uncertainty *(optional)*
   ====== =====================================
 
+.. _sec_detector_quantum_efficiency:
+
 Quantum efficiency
 ~~~~~~~~~~~~~~~~~~
 
@@ -228,7 +230,7 @@ Unsharpness
 There are two ways provided to specify the detector unsharpness:
 
 1. The **basic spatial resolution,** as defined in ASTM E2597 :cite:p:`astm2597`, provided using the parameter :json:`"basic_spatial_resolution"`.
-2. The **modulation transfer function** (MTF, :cite:p:`rossmann_point_1969`), provided through a CSV or TSV file. The file name can be given in the parameter :json:`"mtf"`. It should contain the columns listed in :numref:`tab_csvMTF`, separated by commas or white space. If a valid MTF is provided, this has precedence over the basic spatial resolution.
+2. The **modulation transfer function** (MTF, :cite:p:`rossmann_point_1969`), provided through a CSV or TSV file. The file name can be given in the parameter :json:`"mtf"`. It should contain the columns listed in :numref:`tab_csvMTF`, separated by comma or tab characters. If a valid MTF is provided, this has precedence over the basic spatial resolution.
 
 .. _tab_csvMTF:
 
@@ -242,6 +244,7 @@ There are two ways provided to specify the detector unsharpness:
   3      Modulation contrast uncertainty *(optional)*
   ====== =============================================
 
+.. _sec_bad_pixel_map:
 
 Bad pixel map
 ~~~~~~~~~~~~~
@@ -253,11 +256,10 @@ The bad pixel map provided here should be a 2D gray-scale image file with a sign
   :lineno-start: 167
 
   "bad_pixel_map": {
-    "value": "badpixels.raw",
+    "file": {"value": "badpixels.raw", "drifts": null},
     "type": "int16",
     "endian": "little",
-    "headersize": 0,
-    "drifts": null
+    "headersize": 0
   }
 
 .. _sec_scintillator_and_filters:
@@ -271,7 +273,7 @@ Note that front and rear of the detector are not explicitly identified by the de
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 174
+  :lineno-start: 173
 
   "scintillator": {
     "material_id": "CsI",

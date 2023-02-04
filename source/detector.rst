@@ -256,11 +256,10 @@ The bad pixel map provided here should be a 2D gray-scale image file with a sign
   :lineno-start: 167
 
   "bad_pixel_map": {
-    "value": "badpixels.raw",
+    "file": {"value": "badpixels.raw", "drifts": null},
     "type": "int16",
     "endian": "little",
-    "headersize": 0,
-    "drifts": null
+    "headersize": 0
   }
 
 .. _sec_scintillator_and_filters:
@@ -274,7 +273,7 @@ Note that front and rear of the detector are not explicitly identified by the de
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 174
+  :lineno-start: 173
 
   "scintillator": {
     "material_id": "CsI",

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detector &mdash; CTSimU Scenarios 1.0 documentation</title>
+  <title>Detector &mdash; CTSimU Scenarios 1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -72,6 +72,8 @@
 <li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameter List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Specification Changes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -196,7 +198,7 @@
 </table>
 </section>
 <section id="quantum-efficiency">
-<h3>Quantum efficiency<a class="headerlink" href="#quantum-efficiency" title="Permalink to this heading"></a></h3>
+<span id="sec-detector-quantum-efficiency"></span><h3>Quantum efficiency<a class="headerlink" href="#quantum-efficiency" title="Permalink to this heading"></a></h3>
 <p>The photon <strong>conversion efficiency</strong> (quantum efficiency) of the detector can be provided as a characteristics curve from a file, using the parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;efficiency_characteristics_file&quot;</span></code>. This file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorefficiencycharacteristics"><span class="std std-numref">Tab. 2</span></a>, separated by a comma or tab character.</p>
 <p>A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher value density should be provided in this file.</p>
 <span id="tab-csvdetectorefficiencycharacteristics"></span><table class="docutils align-default" id="id5">
@@ -271,7 +273,7 @@
 <p>There are two ways provided to specify the detector unsharpness:</p>
 <ol class="arabic simple">
 <li><p>The <strong>basic spatial resolution,</strong> as defined in ASTM E2597 <span id="id2">[<a class="reference internal" href="bibliography.html#id3" title="ASTM Subcommittee E07.01. ASTM E2597 / E2597M-14, Standard Practice for Manufacturing Characterization of Digital Detector Arrays. ASTM International, West Conshohocken, PA, 2014, www.astm.org, 2014. doi:10.1520/E2597_E2597M-14.">1</a>]</span>, provided using the parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;basic_spatial_resolution&quot;</span></code>.</p></li>
-<li><p>The <strong>modulation transfer function</strong> (MTF, <span id="id3">[<a class="reference internal" href="bibliography.html#id4" title="Kurt Rossmann. Point Spread-Function, Line Spread-Function, and Modulation Transfer Function: Tools for the Study of Imaging Systems. Radiology, 93(2):257–272, August 1969. doi:10.1148/93.2.257.">2</a>]</span>), provided through a CSV or TSV file. The file name can be given in the parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;mtf&quot;</span></code>. It should contain the columns listed in <a class="reference internal" href="#tab-csvmtf"><span class="std std-numref">Tab. 4</span></a>, separated by commas or white space. If a valid MTF is provided, this has precedence over the basic spatial resolution.</p></li>
+<li><p>The <strong>modulation transfer function</strong> (MTF, <span id="id3">[<a class="reference internal" href="bibliography.html#id4" title="Kurt Rossmann. Point Spread-Function, Line Spread-Function, and Modulation Transfer Function: Tools for the Study of Imaging Systems. Radiology, 93(2):257–272, August 1969. doi:10.1148/93.2.257.">2</a>]</span>), provided through a CSV or TSV file. The file name can be given in the parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;mtf&quot;</span></code>. It should contain the columns listed in <a class="reference internal" href="#tab-csvmtf"><span class="std std-numref">Tab. 4</span></a>, separated by comma or tab characters. If a valid MTF is provided, this has precedence over the basic spatial resolution.</p></li>
 </ol>
 <span id="tab-csvmtf"></span><table class="docutils align-default" id="id7">
 <caption><span class="caption-number">Tab. 4 </span><span class="caption-text">Table structure for MTF files</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
@@ -294,45 +296,44 @@
 </table>
 </section>
 <section id="bad-pixel-map">
-<h3>Bad pixel map<a class="headerlink" href="#bad-pixel-map" title="Permalink to this heading"></a></h3>
+<span id="sec-bad-pixel-map"></span><h3>Bad pixel map<a class="headerlink" href="#bad-pixel-map" title="Permalink to this heading"></a></h3>
 <p>The bad pixel map provided here should be a 2D gray-scale image file with a signed data type (<code class="code docutils literal notranslate"><span class="pre">int8</span></code>, <code class="code docutils literal notranslate"><span class="pre">int16</span></code>, <code class="code docutils literal notranslate"><span class="pre">float32</span></code> or <code class="code docutils literal notranslate"><span class="pre">float64</span></code>) with a number of columns and rows that matches the detector. A pixel gray value of <code class="code docutils literal notranslate"><span class="pre">-1</span></code> means that the pixel is working properly. A pixel gray value other than <code class="code docutils literal notranslate"><span class="pre">-1</span></code> means that the pixel does not function correctly and its value is instead replaced by the provided gray value from the bad pixel map.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">167</span><span class="nt">&quot;bad_pixel_map&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">168</span><span class="w">  </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;badpixels.raw&quot;</span><span class="p">,</span>
+<span class="linenos">168</span><span class="w">  </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;badpixels.raw&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
 <span class="linenos">169</span><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;int16&quot;</span><span class="p">,</span>
 <span class="linenos">170</span><span class="w">  </span><span class="nt">&quot;endian&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;little&quot;</span><span class="p">,</span>
-<span class="linenos">171</span><span class="w">  </span><span class="nt">&quot;headersize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="linenos">172</span><span class="w">  </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<span class="linenos">173</span><span class="p">}</span>
+<span class="linenos">171</span><span class="w">  </span><span class="nt">&quot;headersize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="linenos">172</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="scintillator-filters">
-<span id="sec-scintillatorandfilters"></span><h2>Scintillator &amp; filters<a class="headerlink" href="#scintillator-filters" title="Permalink to this heading"></a></h2>
+<span id="sec-scintillator-and-filters"></span><h2>Scintillator &amp; filters<a class="headerlink" href="#scintillator-filters" title="Permalink to this heading"></a></h2>
 <p>In this section, the scintillator and filter materials for the detector can be defined. The filter materials are split into <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;front&quot;</span></code> filters and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;rear&quot;</span></code> filters (i.e., a back panel, mostly to consider backscattering). Any number of filters can be defined. For the materials of scintillator and filters, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">materials section</span></a> of the JSON file.</p>
 <p>Note that front and rear of the detector are not explicitly identified by the detector’s normal vector or any other property, but only given implicitly by the side of the detector facing the source.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">174</span><span class="nt">&quot;scintillator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">175</span><span class="w">  </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CsI&quot;</span><span class="p">,</span>
-<span class="linenos">176</span><span class="w">  </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">177</span><span class="p">},</span>
-<span class="linenos">178</span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">179</span><span class="w">  </span><span class="nt">&quot;front&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">180</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">181</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
-<span class="linenos">182</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">183</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">184</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">185</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kapton&quot;</span><span class="p">,</span>
-<span class="linenos">186</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">187</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">188</span><span class="w">  </span><span class="p">],</span>
-<span class="linenos">189</span><span class="w">  </span><span class="nt">&quot;rear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">190</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">191</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
-<span class="linenos">192</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">193</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">194</span><span class="w">  </span><span class="p">]</span>
-<span class="linenos">195</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">173</span><span class="nt">&quot;scintillator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">174</span><span class="w">  </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CsI&quot;</span><span class="p">,</span>
+<span class="linenos">175</span><span class="w">  </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">176</span><span class="p">},</span>
+<span class="linenos">177</span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">178</span><span class="w">  </span><span class="nt">&quot;front&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">179</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">180</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">181</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">182</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">183</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">184</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kapton&quot;</span><span class="p">,</span>
+<span class="linenos">185</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">186</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">187</span><span class="w">  </span><span class="p">],</span>
+<span class="linenos">188</span><span class="w">  </span><span class="nt">&quot;rear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">189</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">190</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">191</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">192</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">193</span><span class="w">  </span><span class="p">]</span>
+<span class="linenos">194</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>

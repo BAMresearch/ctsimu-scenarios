@@ -14,7 +14,7 @@ The sample name:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 257
+  :lineno-start: 256
 
   "name": "Tetrahedron"
 
@@ -22,7 +22,7 @@ A reference to the model file (e.g. STL or CAD file) that describes the sample g
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 258
+  :lineno-start: 257
 
   "file": {"value": "tetra.stl", "drifts": null}
 
@@ -30,7 +30,7 @@ The unit of length that is used in the model file:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 259
+  :lineno-start: 258
 
   "unit": "mm"
 
@@ -38,7 +38,7 @@ A scaling factor for each axis of the sample coordinate system, if the model sho
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 260
+  :lineno-start: 259
 
   "scaling_factor": {
     "r": {"value": 0.75, "drifts": null},
@@ -50,7 +50,7 @@ The material of the sample, given by a :json:`"material_id"` that references a m
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 265
+  :lineno-start: 264
 
   "material_id": "Glass Ceramic"
 
@@ -76,7 +76,7 @@ The description follows the convention that has been established for the :ref:`p
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 266
+  :lineno-start: 265
 
   "position": {
     "center": {
@@ -95,7 +95,7 @@ The description follows the convention that has been established for the :ref:`p
       "v": {"value": -0.2},
       "w": {"value":  1}
     },
-    
+
     "deviations": []
   }
 
@@ -103,7 +103,7 @@ The **center** is given in terms of the stage coordinate system {u, |nbsp| v, |n
 
 To define the sample's **orientation,** its :math:`\vec{r}` and :math:`\vec{t}` vector must also be expressed in terms of the stage coordinate system {u, |nbsp| v, |nbsp| w}\ :sub:`O`\ :
 
-In analogy to the **deviations** of the principal elements of the scene (see :ref:`deviations <sec_geometry_deviations>` in the geometry section), the sample's deviations can also be expressed take place along axes of the **sample coordinate system** {r, s, t}.
+In analogy to the **deviations** of the principal elements of the scene (see :ref:`deviations <sec_geometry_deviations>` in the geometry section), the sample's deviations can also take place along axes of the **sample coordinate system** {r, s, t}.
 
 .. _sec_sample_in_world_coordinates:
 
@@ -116,7 +116,7 @@ The description is very similar to placing a sample in the stage coordinate syst
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 287
+  :lineno-start: 286
 
   {
     "name": "Attachment Frame",
@@ -145,7 +145,7 @@ The description is very similar to placing a sample in the stage coordinate syst
         "y": {"value":  1},
         "z": {"value":  0}
       },
-      
+
       "deviations": []
     }
   }

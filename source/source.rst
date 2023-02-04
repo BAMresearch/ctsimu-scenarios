@@ -23,7 +23,7 @@ The tube acceleration voltage and the target current:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 201
+  :lineno-start: 200
 
   "voltage": {"value": 130, "unit": "kV"},
   "current": {"value": 120, "unit": "uA"}
@@ -35,7 +35,7 @@ Target
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 203
+  :lineno-start: 202
 
   "target": {
     "material_id": "W",
@@ -53,7 +53,7 @@ The :json:`"type"` can be either a transmission target or a reflection target:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 206
+  :lineno-start: 204
 
   "type": "transmission",
   "type": "reflection"
@@ -62,7 +62,7 @@ For a transmission target, its thickness must be specified:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 206
+  :lineno-start: 204
 
   "thickness": {"value": 3.0, "unit": "um"}
 
@@ -77,7 +77,7 @@ Spot intensity profile
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 212
+  :lineno-start: 211
 
   "spot": {
     "size": {
@@ -107,7 +107,7 @@ If the spot size is set to :json:`null`, the simulation software is free to choo
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 210
+  :lineno-start: 212
 
   "size": null
 
@@ -124,7 +124,7 @@ A simple Gaussian profile can be modelled by specifying the spatial sigmas :math
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 218
+  :lineno-start: 217
 
   "sigma": {
     "u": {"value":  50.0, "unit": "um"},
@@ -163,7 +163,7 @@ If the spectrum is to be calculated by the simulation software, the following th
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 233
+  :lineno-start: 232
 
   "spectrum": {
     "monochromatic": false,
@@ -197,7 +197,7 @@ The :json:`"material_id"` refers to the :ref:`material definition <sec_materials
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 237
+  :lineno-start: 236
 
   "window": [
     {

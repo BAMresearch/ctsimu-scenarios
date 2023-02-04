@@ -4,12 +4,12 @@
 		"description": "Detector and source on a circular trajectory around the still stage with a tetrahedron sample object. Deviations are used to model the detector and source trajectory.",
 
 		"contact": "David Plotzki",
-		"date_created": "2023-01-28",
-		"date_changed": "2023-01-28",
-		"version": {"major": 1, "minor": 0},
+		"date_created": "2023-01-24",
+		"date_changed": "2023-02-04",
+		"version": {"major": 1, "minor": 1},
 
 		"file_type": "CTSimU Scenario",
-		"file_format_version": {"major": 1, "minor": 0}
+		"file_format_version": {"major": 1, "minor": 1}
 	},
 
 	"environment": {
@@ -228,7 +228,12 @@
 			"id":   "Fe",
 			"name": "Iron",
 			"density": {"value": 7.874, "unit": "g/cm^3"},
-			"composition": {"value": "Fe"}
+			"composition": [
+				{
+					"formula": {"value": "Fe"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		}
 	]
 }

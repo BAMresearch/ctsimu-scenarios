@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>General structures &mdash; CTSimU Scenarios 1.0 documentation</title>
+  <title>General structures &mdash; CTSimU Scenarios 1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -69,6 +69,8 @@
 <li class="toctree-l1"><a class="reference internal" href="proprietary.html">Software-specific properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fullexample.html">Full Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameter List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Specification Changes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
 </ul>
 
@@ -185,7 +187,7 @@
 <p>Each drift component must provide a range of drift values (at least one). These drift values represent absolute deviations from the initial values at the start position (frame 0). They can be provided in the component’s <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> array or through a single-column CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> (i.e., a simple one-column list). If a drift component provides only a single <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> different from <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code>, this deviation will stay constant throughout the scan.</p>
 <p>For dynamic, non-constant drifts, more than one drift value can be provided in the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> array or CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code>. Ideally, the number of rows in the CSV file would match the number of frames of the scan. If the number of provided drift values does not match the number of frames, the values are assumed to be spread in equidistant steps between start projection (first value) and last projection (last value), and a linear interpolation between neighbouring values is assumed to calculate each frame’s deviation value for the parameter.</p>
 <p>The physical <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code> of the drift values should be specified; otherwise, the main parameter unit is assumed. If the drift refers to a parameter that expects a string (e.g. file name of a spectrum file), the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;values&quot;</span></code> array or CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> should contain a string for each frame; otherwise, the same equidistant behaviour is assumed as for numerical parameters with the exception that no interpolation takes place. Instead, a string remains valid until the next key frame is reached.</p>
-<p>The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;known_to_reconstruction&quot;</span></code> (either <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code> or <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">false</span></code>) can be used to specify whether the drift should be considered during the reconstruction of the CT scan. This also applies to automatically generated configuration files or the calculation of projection matrices for the reconstruction software.</p>
+<p>The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;known_to_reconstruction&quot;</span></code> (either <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code> or <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">false</span></code>) can be used to specify whether the drift should be considered during the reconstruction of the CT scan. This also applies to automatically generated configuration files or the calculation of projection matrices for the reconstruction software. If not specified, the standard value is <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code>.</p>
 </dd>
 </dl>
 </section>

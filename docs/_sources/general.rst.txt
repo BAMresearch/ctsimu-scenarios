@@ -92,9 +92,9 @@ The following units are allowed for length, angle, time, voltage, current, densi
     "nm"  "deg"  "ms"   "MV"  "uA"  "g/cm^3"  "C"  "deg/s"    "lp/mm"  "px"  "relative"  null
     "um"  "rad"  "s"    "kV"  "mA"  "kg/m^3"  "K"  "deg/min"  "lp/cm"
     "mm"         "min"  "V"   "A"             "F"  "deg/h"    "lp/dm"
-    "cm"         "h"                               "rad/s"    "lp/m" 
-    "dm"                                           "rad/min"        
-    "m"                                            "rad/h"         
+    "cm"         "h"                               "rad/s"    "lp/m"
+    "dm"                                           "rad/min"
+    "m"                                            "rad/h"
 
 The prefix :code:`u` represents the SI prefix µ (10\ :sup:`-6`\ ). :json:`"relative"` can be used for relative uncertainties or any values that express a fraction of a related measure. For properties without a unit, the keyword :json:`null` is used.
 
@@ -122,7 +122,7 @@ Drifts
 
   The physical :json:`"unit"` of the drift values should be specified; otherwise, the main parameter unit is assumed. If the drift refers to a parameter that expects a string (e.g. file name of a spectrum file), the :json:`"values"` array or CSV :json:`"file"` should contain a string for each frame; otherwise, the same equidistant behaviour is assumed as for numerical parameters with the exception that no interpolation takes place. Instead, a string remains valid until the next key frame is reached.
 
-  The parameter :json:`"known_to_reconstruction"` (either :json:`true` or :json:`false`) can be used to specify whether the drift should be considered during the reconstruction of the CT scan. This also applies to automatically generated configuration files or the calculation of projection matrices for the reconstruction software.
+  The parameter :json:`"known_to_reconstruction"` (either :json:`true` or :json:`false`) can be used to specify whether the drift should be considered during the reconstruction of the CT scan. This also applies to automatically generated configuration files or the calculation of projection matrices for the reconstruction software. If not specified, the standard value is :json:`true`.
 
 
 .. _sec_referred_data_files:

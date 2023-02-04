@@ -4,12 +4,12 @@
 		"description": "In each frame, the X-ray energy increases by 0.5 keV (from 130 keV to 140 keV).",
 
 		"contact": "David Plotzki",
-		"date_created": "2023-01-25",
-		"date_changed": "2023-01-25",
-		"version": {"major": 1, "minor": 0},
+		"date_created": "2023-01-24",
+		"date_changed": "2023-02-04",
+		"version": {"major": 1, "minor": 1},
 
 		"file_type": "CTSimU Scenario",
-		"file_format_version": {"major": 1, "minor": 0}
+		"file_format_version": {"major": 1, "minor": 1}
 	},
 
 	"environment": {
@@ -36,7 +36,7 @@
 				"y": {"value":  0},
 				"z": {"value":  0}
 			},
-			
+
 			"deviations": []
 		},
 
@@ -59,7 +59,7 @@
 				"y": {"value":  0},
 				"z": {"value":  0}
 			},
-			
+
 			"deviations": []
 		},
 
@@ -80,7 +80,7 @@
 				"y": {"value":  0},
 				"z": {"value":  1}
 			},
-			
+
 			"deviations": []
 		}
 	},
@@ -164,7 +164,7 @@
 					"v": {"value":  0},
 					"w": {"value":  1}
 				},
-				
+
 				"deviations": []
 			}
 		}
@@ -190,7 +190,12 @@
 			"id":   "Fe",
 			"name": "Iron",
 			"density": {"value": 7.874, "unit": "g/cm^3"},
-			"composition": {"value": "Fe"}
+			"composition": [
+				{
+					"formula": {"value": "Fe"},
+					"mass_fraction": {"value": 1}
+				}
+			]
 		}
 	]
 }
