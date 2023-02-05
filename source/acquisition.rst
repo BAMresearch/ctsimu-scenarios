@@ -109,13 +109,13 @@ If dark field and flat field images are acquired along with the projections, the
     "number": 1,
     "frame_average": 1,
     "ideal": true,
-    "correction": true
+    "correction": false
   },
   "flat_field": {
     "number": 3,
     "frame_average": 20,
     "ideal": false,
-    "correction": true
+    "correction": false
   }
 
 .. _sec_pixel_binning:

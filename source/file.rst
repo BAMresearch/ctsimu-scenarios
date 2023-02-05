@@ -17,9 +17,9 @@ The :json:`"file_type"` is a constant string to identify this as a CTSimU scenar
 
     "contact": "David Plotzki",
     "date_created": "2020-04-23",
-    "date_changed": "2023-01-24",
+    "date_changed": "2023-02-05",
     "version": {"major": 1, "minor": 7},
 
     "file_type": "CTSimU Scenario",
-    "file_format_version": {"major": 1, "minor": 0}
+    "file_format_version": {"major": 1, "minor": 1}
   }
