@@ -12,7 +12,7 @@ For a circular CT scan, the start and stop angle of the sample stage are defined
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 320
+  :lineno-start: 329
 
   "start_angle": {"value":   0, "unit": "deg"},
   "stop_angle":  {"value": 320, "unit": "deg"}
@@ -27,7 +27,7 @@ The direction of the sample stage rotation can be counter-clockwise (:json:`"CCW
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 322
+  :lineno-start: 331
 
   "direction": "CW",
   "direction": "CCW"
@@ -36,7 +36,7 @@ The parameter :json:`"scan_mode"` defines if the rotation stops while a projecti
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 323
+  :lineno-start: 332
 
   "scan_mode": "stop+go",
   "scan_mode": "continuous"
@@ -45,7 +45,7 @@ The property for scan speed should only be used for continuous-motion scans. If 
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 324
+  :lineno-start: 333
 
   "scan_speed": {"value": 360, "unit": "deg/h"}
 
@@ -53,7 +53,7 @@ For stop&go scans, it should be set to :json:`null`:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 324
+  :lineno-start: 333
 
   "scan_speed": null
 
@@ -69,7 +69,7 @@ The :json:`"number_of_projections"` is also given in the acquisition section.
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 325
+  :lineno-start: 334
 
   "number_of_projections": 2001
 
@@ -77,7 +77,7 @@ Beginning from the start angle, the necessary number of angular steps is perform
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 326
+  :lineno-start: 335
 
   "include_final_angle": true
 
@@ -90,7 +90,7 @@ The number of frames to be averaged for one projection image can be specified:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 327
+  :lineno-start: 336
 
   "frame_average": 3
 
@@ -103,7 +103,7 @@ If dark field and flat field images are acquired along with the projections, the
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 328
+  :lineno-start: 337
 
   "dark_field": {
     "number": 1,
@@ -127,7 +127,7 @@ The number of pixels to bin in directions :math:`\vec{u}` and :math:`\vec{v}` of
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 340
+  :lineno-start: 349
 
   "pixel_binning": {"u": 1, "v": 1}
 
@@ -140,6 +140,6 @@ This parameter specifies if X-ray scattering should be simulated or not.
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 341
+  :lineno-start: 350
 
   "scattering": false

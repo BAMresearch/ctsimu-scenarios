@@ -5,6 +5,10 @@ Specification Changes
 
 The following listing contains the changes to the file format in its prior versions.
 
+Version 1.2
+-----------
+* Detector: new distinction between its :json:`"window"` and additional :json:`"filters"`. All :json:`"filters"` defined in previous versions of the file format should rather be re-interpreted as windows now (sec. :ref:`sec_scintillator_and_filters`).
+
 Version 1.1
 -----------
 * Material :json:`"composition"` is now an array that can contain the components of a compound material, each with their specific :json:`"mass_fraction"` (sec. :ref:`sec_materials`).

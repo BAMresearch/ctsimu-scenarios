@@ -69,6 +69,12 @@ Parameter List
   :code:`detector bad_pixel_map headersize`                     integer       no
   :code:`detector scintillator material_id`                     string        no
   :code:`detector scintillator thickness`                       float         yes
+  :code:`detector window front`                                 array         --
+  :code:`detector window front material_id`                     string        no
+  :code:`detector window front thickness`                       float         yes
+  :code:`detector window rear`                                  array         --
+  :code:`detector window rear material_id`                      string        no
+  :code:`detector window rear thickness`                        float         yes
   :code:`detector filters front`                                array         --
   :code:`detector filters front material_id`                    string        no
   :code:`detector filters front thickness`                      float         yes
@@ -140,7 +146,7 @@ Parameter List
   :code:`materials composition mass_fraction`                   float         yes
   ============================================================= ============= ============================
 
-Objects in the scene may come with geometrical deviations. These are defined as an array of deviation objects. The structure of deviation objects is listed in :numref:`tab_deviations`.
+Objects in the scene may come with :ref:`geometrical deviations <sec_geometry_deviations>`. These are defined as an array of deviation objects. The structure of deviation objects is listed in :numref:`tab_deviations`.
 
 
 .. _tab_deviations:

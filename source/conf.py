@@ -21,7 +21,7 @@ copyright = 'WIPANO CTSimU Project'
 author = 'WIPANO CTSimU Project'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1'
+release = '1.2'
 
 title = "CTSimU Scenario Descriptions {version}".format(version=release)
 

@@ -126,7 +126,7 @@ External characteristics file
 
 For a more general approach, it is also possible to provide an arbitrary gray value characteristics from a CSV or TSV file specified by the parameter :json:`"intensity_characteristics_file"`. The file should contain the columns listed in :numref:`tab_csvDetectorIntensityCharacteristics`, separated by a comma or tab character.
 
-A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher value density should be provided in this file.
+A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher density of values should be provided in this file.
 
 If a valid intensity characteristics CSV file is specified and the parameter is not set to :json:`null`, this method has precedence over the first two methods.
 
@@ -149,7 +149,9 @@ Quantum efficiency
 
 The photon **conversion efficiency** (quantum efficiency) of the detector can be provided as a characteristics curve from a file, using the parameter :json:`"efficiency_characteristics_file"`. This file should contain the columns listed in :numref:`tab_csvDetectorEfficiencyCharacteristics`, separated by a comma or tab character.
 
-A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher value density should be provided in this file.
+A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher density of values should be provided in this file.
+
+The quantum efficiency is assumed to already take the detector's :ref:`window <sec_scintillator_and_filters>` into account, but not additional, external :ref:`filters <sec_scintillator_and_filters>`.
 
 .. _tab_csvDetectorEfficiencyCharacteristics:
 
@@ -264,10 +266,12 @@ The bad pixel map provided here should be a 2D gray-scale image file with a sign
 
 .. _sec_scintillator_and_filters:
 
-Scintillator & filters
-----------------------
+Scintillator, window & filters
+------------------------------
 
-In this section, the scintillator and filter materials for the detector can be defined. The filter materials are split into :json:`"front"` filters and :json:`"rear"` filters (i.e., a back panel, mostly to consider backscattering). Any number of filters can be defined. For the materials of scintillator and filters, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the :ref:`materials section <sec_materials>` of the JSON file.
+In this section, the scintillator and filter materials for the detector can be defined. The window and filter materials are split into :json:`"front"` and :json:`"rear"` components (e.g., to use as a back panel, mostly to consider backscattering). Any number of windows and filters can be defined. For the materials, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the :ref:`materials section <sec_materials>` of the JSON file.
+
+The :json:`"window"` materials refer to the detector's built-in components, whereas :json:`"filters"` are assumed to be additional components that are not originally part of the detector housing. This distinction is made because the detector's :ref:`quantum efficiency <sec_detector_quantum_efficiency>` (which can be defined in the :json:`"efficiency_characteristics_file"`) already takes the window material into account, but none of the additional, external filters.
 
 Note that front and rear of the detector are not explicitly identified by the detector's normal vector or any other property, but only given implicitly by the side of the detector facing the source.
 
@@ -279,6 +283,15 @@ Note that front and rear of the detector are not explicitly identified by the de
     "material_id": "CsI",
     "thickness": {"value": 0.15, "unit": "mm"}
   },
+  "window": {
+    "front": [
+      {
+        "material_id": "Kapton",
+        "thickness": {"value": 0.13, "unit": "mm"}
+      }
+    ],
+    "rear": []
+  },
   "filters": {
     "front": [
       {
@@ -286,8 +299,8 @@ Note that front and rear of the detector are not explicitly identified by the de
         "thickness": {"value": 0.2, "unit": "mm"}
       },
       {
-        "material_id": "Kapton",
-        "thickness": {"value": 0.13, "unit": "mm"}
+        "material_id": "Cu",
+        "thickness": {"value": 0.1, "unit": "mm"}
       }
     ],
     "rear": [
