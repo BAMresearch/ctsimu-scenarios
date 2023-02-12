@@ -132,11 +132,7 @@
 				"v": {"value": 100.0, "unit": "um"},
 				"w": {"value":   0.0, "unit": "um"}
 			},
-			"sigma": {
-				"u": {"value":  50.0, "unit": "um"},
-				"v": {"value":  50.0, "unit": "um"},
-				"w": {"value":   0.0, "unit": "um"}
-			},
+			"sigma": null,
 			"intensity_map": {
 				"file": {"value": "spot_00.tif", "drifts": [{"file": "spot_drift.tsv"}]}
 			}

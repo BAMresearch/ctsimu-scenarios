@@ -100,12 +100,12 @@ Parameter List
   :code:`source spot intensity_map headersize`                  integer       no
   :code:`source spectrum monochromatic`                         boolean       no
   :code:`source spectrum file`                                  string        yes
-  :code:`source spectrum window`                                array         --
-  :code:`source spectrum window material_id`                    string        no
-  :code:`source spectrum window thickness`                      float         yes
-  :code:`source spectrum filters`                               array         --
-  :code:`source spectrum filters material_id`                   string        no
-  :code:`source spectrum filters thickness`                     float         yes
+  :code:`source window`                                         array         --
+  :code:`source window material_id`                             string        no
+  :code:`source window thickness`                               float         yes
+  :code:`source filters`                                        array         --
+  :code:`source filters material_id`                            string        no
+  :code:`source filters thickness`                              float         yes
   **Samples**
   :code:`samples`                                               array         --
   :code:`samples name`                                          string        no
