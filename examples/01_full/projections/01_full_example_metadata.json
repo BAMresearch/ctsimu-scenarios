@@ -3,8 +3,8 @@
         "name":         "01_full_example",
         "description":  "",
         "contact":      "",
-        "date_created": "2023-01-24",
-        "date_changed": "2023-01-24",
+        "date_created": "2023-02-12",
+        "date_changed": "2023-02-12",
         "version":      {
             "major": 1,
             "minor": 0
@@ -12,7 +12,7 @@
     },
     "output": {
         "system":              "aRTist v2.12.6-0-g30fb1d33, CTSimU Scenario Loader 1.0.0",
-        "date_measured":       "2023-01-24",
+        "date_measured":       "2023-02-12",
         "projections":         {
             "filename":   "01_full_example_%04d.tif",
             "datatype":   "uint16",
@@ -49,7 +49,7 @@
                 "number":        3,
                 "frame_average": 20,
                 "filename":      "01_full_example_flat_%04d.tif",
-                "projections_corrected": true
+                "projections_corrected": false
             }
         },
         "tomogram":            null,

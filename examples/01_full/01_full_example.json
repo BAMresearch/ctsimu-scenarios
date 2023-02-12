@@ -207,7 +207,7 @@
 		"model":        "XS-1",
 		"manufacturer": "X-ray Tube Company",
 		"voltage": {"value": 130, "unit": "kV"},
-		"current": {"value": 120, "unit": "uA"},
+		"current": {"value": 143, "unit": "uA"},
 		"target": {
 			"material_id": "W",
 			"type": "reflection",
