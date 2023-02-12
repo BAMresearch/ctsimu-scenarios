@@ -14,7 +14,7 @@ The model name and the manufacturer, if an existing X-ray source is modelled:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 198
+  :lineno-start: 207
 
   "model":        "XS-1",
   "manufacturer": "X-ray Tube Company",
@@ -23,10 +23,10 @@ The tube acceleration voltage and the target current:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 200
+  :lineno-start: 209
 
   "voltage": {"value": 130, "unit": "kV"},
-  "current": {"value": 120, "unit": "uA"}
+  "current": {"value": 143, "unit": "uA"}
 
 .. _sec_target:
 
@@ -35,7 +35,7 @@ Target
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 202
+  :lineno-start: 211
 
   "target": {
     "material_id": "W",
@@ -53,7 +53,7 @@ The :json:`"type"` can be either a transmission target or a reflection target:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 204
+  :lineno-start: 213
 
   "type": "transmission",
   "type": "reflection"
@@ -62,7 +62,7 @@ For a transmission target, its thickness must be specified:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 204
+  :lineno-start: 214
 
   "thickness": {"value": 3.0, "unit": "um"}
 
@@ -77,7 +77,7 @@ Spot intensity profile
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 211
+  :lineno-start: 220
 
   "spot": {
     "size": {
@@ -107,7 +107,7 @@ If the spot size is set to :json:`null`, the simulation software is free to choo
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 212
+  :lineno-start: 221
 
   "size": null
 
@@ -124,7 +124,7 @@ A simple Gaussian profile can be modelled by specifying the spatial sigmas :math
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 217
+  :lineno-start: 226
 
   "sigma": {
     "u": {"value":  50.0, "unit": "um"},
@@ -163,7 +163,7 @@ If the spectrum is to be calculated by the simulation software, the following th
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 232
+  :lineno-start: 241
 
   "spectrum": {
     "monochromatic": false,
@@ -197,7 +197,7 @@ The :json:`"material_id"` refers to the :ref:`material definition <sec_materials
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 236
+  :lineno-start: 245
 
   "window": [
     {
@@ -208,10 +208,10 @@ The :json:`"material_id"` refers to the :ref:`material definition <sec_materials
   "filters": [
     {
       "material_id": "Brass",
-      "thickness": {"value": 0.5, "unit": "mm"}
+      "thickness": {"value": 0.2, "unit": "mm"}
     },
     {
       "material_id": "Cu",
-      "thickness": {"value": 0.25, "unit": "mm"}
+      "thickness": {"value": 0.17, "unit": "mm"}
     }
   ]

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Materials &mdash; CTSimU Scenarios 1.1 documentation</title>
+  <title>Materials &mdash; CTSimU Scenarios 1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -108,78 +108,78 @@
 <section id="single-component-materials">
 <h2>Single-component materials<a class="headerlink" href="#single-component-materials" title="Permalink to this heading"></a></h2>
 <p>The following gives an example of a single-component material: pure copper.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">412</span><span class="p">{</span>
-<span class="linenos">413</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span>
-<span class="linenos">414</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Copper&quot;</span><span class="p">,</span>
-<span class="linenos">415</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.92</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;g/cm^3&quot;</span><span class="p">},</span>
-<span class="linenos">416</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">417</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">418</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cu&quot;</span><span class="p">},</span>
-<span class="linenos">419</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
-<span class="linenos">420</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">421</span><span class="w">  </span><span class="p">]</span>
-<span class="linenos">422</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">421</span><span class="p">{</span>
+<span class="linenos">422</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span>
+<span class="linenos">423</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Copper&quot;</span><span class="p">,</span>
+<span class="linenos">424</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.92</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;g/cm^3&quot;</span><span class="p">},</span>
+<span class="linenos">425</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">426</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">427</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cu&quot;</span><span class="p">},</span>
+<span class="linenos">428</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
+<span class="linenos">429</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">430</span><span class="w">  </span><span class="p">]</span>
+<span class="linenos">431</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="multi-component-materials">
 <h2>Multi-component materials<a class="headerlink" href="#multi-component-materials" title="Permalink to this heading"></a></h2>
 <p>Simple multi-component materials with known number fractions can be modeled using only the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;formula&quot;</span></code> parameter.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">401</span><span class="p">{</span>
-<span class="linenos">402</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Brass&quot;</span><span class="p">,</span>
-<span class="linenos">403</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brass&quot;</span><span class="p">,</span>
-<span class="linenos">404</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8860</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kg/m^3&quot;</span><span class="p">},</span>
-<span class="linenos">405</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">406</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">407</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CuZn5&quot;</span><span class="p">},</span>
-<span class="linenos">408</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
-<span class="linenos">409</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">410</span><span class="w">  </span><span class="p">]</span>
-<span class="linenos">411</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">410</span><span class="p">{</span>
+<span class="linenos">411</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Brass&quot;</span><span class="p">,</span>
+<span class="linenos">412</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brass&quot;</span><span class="p">,</span>
+<span class="linenos">413</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8860</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kg/m^3&quot;</span><span class="p">},</span>
+<span class="linenos">414</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">415</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">416</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CuZn5&quot;</span><span class="p">},</span>
+<span class="linenos">417</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
+<span class="linenos">418</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">419</span><span class="w">  </span><span class="p">]</span>
+<span class="linenos">420</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Multi-component materials with different <strong>mass fractions</strong> can be modeled by adding further components with their proper mass ratios to the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;composition&quot;</span></code> array. The following example defines a glass ceramic with a mass ratio of 40% Al<sub>2</sub>O<sub>3</sub> and 60% SiO<sub>2</sub>:</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">434</span><span class="p">{</span>
-<span class="linenos">435</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Glass Ceramic&quot;</span><span class="p">,</span>
-<span class="linenos">436</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Glass Ceramic&quot;</span><span class="p">,</span>
-<span class="linenos">437</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.53</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;g/cm^3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
-<span class="linenos">438</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">439</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">440</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al2O3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
-<span class="linenos">441</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}</span>
-<span class="linenos">442</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">443</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">444</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SiO2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
-<span class="linenos">445</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}</span>
-<span class="linenos">446</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">447</span><span class="w">  </span><span class="p">]</span>
-<span class="linenos">448</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">443</span><span class="p">{</span>
+<span class="linenos">444</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Glass Ceramic&quot;</span><span class="p">,</span>
+<span class="linenos">445</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Glass Ceramic&quot;</span><span class="p">,</span>
+<span class="linenos">446</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.53</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;g/cm^3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
+<span class="linenos">447</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">448</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">449</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al2O3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
+<span class="linenos">450</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}</span>
+<span class="linenos">451</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">452</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">453</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SiO2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
+<span class="linenos">454</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}</span>
+<span class="linenos">455</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">456</span><span class="w">  </span><span class="p">]</span>
+<span class="linenos">457</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Another example for a multi-component material would be the environment’s air:</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">345</span><span class="p">{</span>
-<span class="linenos">346</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Air&quot;</span><span class="p">,</span>
-<span class="linenos">347</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Air&quot;</span><span class="p">,</span>
-<span class="linenos">348</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.293</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kg/m^3&quot;</span><span class="p">},</span>
-<span class="linenos">349</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">350</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">351</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;N2&quot;</span><span class="p">},</span>
-<span class="linenos">352</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7552</span><span class="p">}</span>
-<span class="linenos">353</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">354</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">355</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;O2&quot;</span><span class="p">},</span>
-<span class="linenos">356</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2314</span><span class="p">}</span>
-<span class="linenos">357</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">358</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">359</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ar&quot;</span><span class="p">},</span>
-<span class="linenos">360</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0128</span><span class="p">}</span>
-<span class="linenos">361</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">362</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">363</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CO2&quot;</span><span class="p">},</span>
-<span class="linenos">364</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0006</span><span class="p">}</span>
-<span class="linenos">365</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">366</span><span class="w">  </span><span class="p">]</span>
-<span class="linenos">367</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">354</span><span class="p">{</span>
+<span class="linenos">355</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Air&quot;</span><span class="p">,</span>
+<span class="linenos">356</span><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Air&quot;</span><span class="p">,</span>
+<span class="linenos">357</span><span class="w">  </span><span class="nt">&quot;density&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.293</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kg/m^3&quot;</span><span class="p">},</span>
+<span class="linenos">358</span><span class="w">  </span><span class="nt">&quot;composition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">359</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">360</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;N2&quot;</span><span class="p">},</span>
+<span class="linenos">361</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7552</span><span class="p">}</span>
+<span class="linenos">362</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">363</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">364</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;O2&quot;</span><span class="p">},</span>
+<span class="linenos">365</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2314</span><span class="p">}</span>
+<span class="linenos">366</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">367</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">368</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ar&quot;</span><span class="p">},</span>
+<span class="linenos">369</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0128</span><span class="p">}</span>
+<span class="linenos">370</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">371</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">372</span><span class="w">      </span><span class="nt">&quot;formula&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CO2&quot;</span><span class="p">},</span>
+<span class="linenos">373</span><span class="w">      </span><span class="nt">&quot;mass_fraction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0006</span><span class="p">}</span>
+<span class="linenos">374</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">375</span><span class="w">  </span><span class="p">]</span>
+<span class="linenos">376</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>

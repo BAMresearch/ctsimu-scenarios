@@ -14,7 +14,7 @@ The sample name:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 256
+  :lineno-start: 265
 
   "name": "Tetrahedron"
 
@@ -22,7 +22,7 @@ A reference to the model file (e.g. STL or CAD file) that describes the sample g
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 257
+  :lineno-start: 266
 
   "file": {"value": "tetra.stl", "drifts": null}
 
@@ -30,7 +30,7 @@ The unit of length that is used in the model file:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 258
+  :lineno-start: 267
 
   "unit": "mm"
 
@@ -38,7 +38,7 @@ A scaling factor for each axis of the sample coordinate system, if the model sho
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 259
+  :lineno-start: 268
 
   "scaling_factor": {
     "r": {"value": 0.75, "drifts": null},
@@ -50,7 +50,7 @@ The material of the sample, given by a :json:`"material_id"` that references a m
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 264
+  :lineno-start: 273
 
   "material_id": "Glass Ceramic"
 
@@ -76,7 +76,7 @@ The description follows the convention that has been established for the :ref:`p
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 265
+  :lineno-start: 274
 
   "position": {
     "center": {
@@ -116,7 +116,7 @@ The description is very similar to placing a sample in the stage coordinate syst
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 286
+  :lineno-start: 295
 
   {
     "name": "Attachment Frame",

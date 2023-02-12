@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parameter List &mdash; CTSimU Scenarios 1.1 documentation</title>
+  <title>Parameter List &mdash; CTSimU Scenarios 1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -323,6 +323,30 @@
 <td><p>float</p></td>
 <td><p>yes</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">window</span> <span class="pre">front</span></code></p></td>
+<td><p>array</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">window</span> <span class="pre">front</span> <span class="pre">material_id</span></code></p></td>
+<td><p>string</p></td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">window</span> <span class="pre">front</span> <span class="pre">thickness</span></code></p></td>
+<td><p>float</p></td>
+<td><p>yes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">window</span> <span class="pre">rear</span></code></p></td>
+<td><p>array</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">window</span> <span class="pre">rear</span> <span class="pre">material_id</span></code></p></td>
+<td><p>string</p></td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">window</span> <span class="pre">rear</span> <span class="pre">thickness</span></code></p></td>
+<td><p>float</p></td>
+<td><p>yes</p></td>
+</tr>
 <tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">detector</span> <span class="pre">filters</span> <span class="pre">front</span></code></p></td>
 <td><p>array</p></td>
 <td><p>–</p></td>
@@ -423,27 +447,27 @@
 <td><p>string</p></td>
 <td><p>yes</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">spectrum</span> <span class="pre">window</span></code></p></td>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">window</span></code></p></td>
 <td><p>array</p></td>
 <td><p>–</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">spectrum</span> <span class="pre">window</span> <span class="pre">material_id</span></code></p></td>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">window</span> <span class="pre">material_id</span></code></p></td>
 <td><p>string</p></td>
 <td><p>no</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">spectrum</span> <span class="pre">window</span> <span class="pre">thickness</span></code></p></td>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">window</span> <span class="pre">thickness</span></code></p></td>
 <td><p>float</p></td>
 <td><p>yes</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">spectrum</span> <span class="pre">filters</span></code></p></td>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">filters</span></code></p></td>
 <td><p>array</p></td>
 <td><p>–</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">spectrum</span> <span class="pre">filters</span> <span class="pre">material_id</span></code></p></td>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">filters</span> <span class="pre">material_id</span></code></p></td>
 <td><p>string</p></td>
 <td><p>no</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">spectrum</span> <span class="pre">filters</span> <span class="pre">thickness</span></code></p></td>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">filters</span> <span class="pre">thickness</span></code></p></td>
 <td><p>float</p></td>
 <td><p>yes</p></td>
 </tr>
@@ -601,7 +625,7 @@
 </tr>
 </tbody>
 </table>
-<p>Objects in the scene may come with geometrical deviations. These are defined as an array of deviation objects. The structure of deviation objects is listed in <a class="reference internal" href="#tab-deviations"><span class="std std-numref">Tab. 7</span></a>.</p>
+<p>Objects in the scene may come with <a class="reference internal" href="geometry.html#sec-geometry-deviations"><span class="std std-ref">geometrical deviations</span></a>. These are defined as an array of deviation objects. The structure of deviation objects is listed in <a class="reference internal" href="#tab-deviations"><span class="std std-numref">Tab. 7</span></a>.</p>
 <span id="tab-deviations"></span><table class="docutils align-default" id="id2">
 <caption><span class="caption-number">Tab. 7 </span><span class="caption-text">Deviation objects. The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;axis&quot;</span></code> my be defined as a string or object.</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <thead>

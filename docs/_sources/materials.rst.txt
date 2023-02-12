@@ -31,7 +31,7 @@ The following gives an example of a single-component material: pure copper.
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 412
+  :lineno-start: 421
 
   {
     "id":   "Cu",
@@ -53,7 +53,7 @@ Simple multi-component materials with known number fractions can be modeled usin
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 401
+  :lineno-start: 410
 
   {
     "id":   "Brass",
@@ -71,7 +71,7 @@ Multi-component materials with different **mass fractions** can be modeled by ad
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 434
+  :lineno-start: 443
 
   {
     "id":   "Glass Ceramic",
@@ -93,7 +93,7 @@ Another example for a multi-component material would be the environment's air:
 
 .. code-block:: json-object
   :linenos:
-  :lineno-start: 345
+  :lineno-start: 354
 
   {
     "id":   "Air",

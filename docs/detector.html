@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detector &mdash; CTSimU Scenarios 1.1 documentation</title>
+  <title>Detector &mdash; CTSimU Scenarios 1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -62,7 +62,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#bad-pixel-map">Bad pixel map</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#scintillator-filters">Scintillator &amp; filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scintillator-window-filters">Scintillator, window &amp; filters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
@@ -175,7 +175,7 @@
 <section id="external-characteristics-file">
 <h3>External characteristics file<a class="headerlink" href="#external-characteristics-file" title="Permalink to this heading"></a></h3>
 <p>For a more general approach, it is also possible to provide an arbitrary gray value characteristics from a CSV or TSV file specified by the parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;intensity_characteristics_file&quot;</span></code>. The file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorintensitycharacteristics"><span class="std std-numref">Tab. 1</span></a>, separated by a comma or tab character.</p>
-<p>A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher value density should be provided in this file.</p>
+<p>A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher density of values should be provided in this file.</p>
 <p>If a valid intensity characteristics CSV file is specified and the parameter is not set to <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code>, this method has precedence over the first two methods.</p>
 <span id="tab-csvdetectorintensitycharacteristics"></span><table class="docutils align-default" id="id4">
 <caption><span class="caption-number">Tab. 1 </span><span class="caption-text">Table structure for intensity characteristics files</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
@@ -200,7 +200,8 @@
 <section id="quantum-efficiency">
 <span id="sec-detector-quantum-efficiency"></span><h3>Quantum efficiency<a class="headerlink" href="#quantum-efficiency" title="Permalink to this heading"></a></h3>
 <p>The photon <strong>conversion efficiency</strong> (quantum efficiency) of the detector can be provided as a characteristics curve from a file, using the parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;efficiency_characteristics_file&quot;</span></code>. This file should contain the columns listed in <a class="reference internal" href="#tab-csvdetectorefficiencycharacteristics"><span class="std std-numref">Tab. 2</span></a>, separated by a comma or tab character.</p>
-<p>A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher value density should be provided in this file.</p>
+<p>A linear interpolation is assumed to take place between the given values. Therefore, if higher precision is required, a higher density of values should be provided in this file.</p>
+<p>The quantum efficiency is assumed to already take the detector’s <a class="reference internal" href="#sec-scintillator-and-filters"><span class="std std-ref">window</span></a> into account, but not additional, external <a class="reference internal" href="#sec-scintillator-and-filters"><span class="std std-ref">filters</span></a>.</p>
 <span id="tab-csvdetectorefficiencycharacteristics"></span><table class="docutils align-default" id="id5">
 <caption><span class="caption-number">Tab. 2 </span><span class="caption-text">Table structure for efficiency characteristics files</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
 <thead>
@@ -308,32 +309,42 @@
 </div>
 </section>
 </section>
-<section id="scintillator-filters">
-<span id="sec-scintillator-and-filters"></span><h2>Scintillator &amp; filters<a class="headerlink" href="#scintillator-filters" title="Permalink to this heading"></a></h2>
-<p>In this section, the scintillator and filter materials for the detector can be defined. The filter materials are split into <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;front&quot;</span></code> filters and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;rear&quot;</span></code> filters (i.e., a back panel, mostly to consider backscattering). Any number of filters can be defined. For the materials of scintillator and filters, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">materials section</span></a> of the JSON file.</p>
+<section id="scintillator-window-filters">
+<span id="sec-scintillator-and-filters"></span><h2>Scintillator, window &amp; filters<a class="headerlink" href="#scintillator-window-filters" title="Permalink to this heading"></a></h2>
+<p>In this section, the scintillator and filter materials for the detector can be defined. The window and filter materials are split into <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;front&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;rear&quot;</span></code> components (e.g., to use as a back panel, mostly to consider backscattering). Any number of windows and filters can be defined. For the materials, only a material ID is given here. The actual material definition and declaration of its chemical composition is found in the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">materials section</span></a> of the JSON file.</p>
+<p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;window&quot;</span></code> materials refer to the detector’s built-in components, whereas <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code> are assumed to be additional components that are not originally part of the detector housing. This distinction is made because the detector’s <a class="reference internal" href="#sec-detector-quantum-efficiency"><span class="std std-ref">quantum efficiency</span></a> (which can be defined in the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;efficiency_characteristics_file&quot;</span></code>) already takes the window material into account, but none of the additional, external filters.</p>
 <p>Note that front and rear of the detector are not explicitly identified by the detector’s normal vector or any other property, but only given implicitly by the side of the detector facing the source.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">173</span><span class="nt">&quot;scintillator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">174</span><span class="w">  </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CsI&quot;</span><span class="p">,</span>
 <span class="linenos">175</span><span class="w">  </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
 <span class="linenos">176</span><span class="p">},</span>
-<span class="linenos">177</span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">177</span><span class="nt">&quot;window&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">178</span><span class="w">  </span><span class="nt">&quot;front&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="linenos">179</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">180</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
-<span class="linenos">181</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">182</span><span class="w">    </span><span class="p">},</span>
-<span class="linenos">183</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">184</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kapton&quot;</span><span class="p">,</span>
-<span class="linenos">185</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">186</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">187</span><span class="w">  </span><span class="p">],</span>
-<span class="linenos">188</span><span class="w">  </span><span class="nt">&quot;rear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="linenos">189</span><span class="w">    </span><span class="p">{</span>
-<span class="linenos">190</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
-<span class="linenos">191</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
-<span class="linenos">192</span><span class="w">    </span><span class="p">}</span>
-<span class="linenos">193</span><span class="w">  </span><span class="p">]</span>
-<span class="linenos">194</span><span class="p">}</span>
+<span class="linenos">180</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kapton&quot;</span><span class="p">,</span>
+<span class="linenos">181</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">182</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">183</span><span class="w">  </span><span class="p">],</span>
+<span class="linenos">184</span><span class="w">  </span><span class="nt">&quot;rear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="linenos">185</span><span class="p">},</span>
+<span class="linenos">186</span><span class="nt">&quot;filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">187</span><span class="w">  </span><span class="nt">&quot;front&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">188</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">189</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">190</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">191</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">192</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">193</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span>
+<span class="linenos">194</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">195</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">196</span><span class="w">  </span><span class="p">],</span>
+<span class="linenos">197</span><span class="w">  </span><span class="nt">&quot;rear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">198</span><span class="w">    </span><span class="p">{</span>
+<span class="linenos">199</span><span class="w">      </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Al&quot;</span><span class="p">,</span>
+<span class="linenos">200</span><span class="w">      </span><span class="nt">&quot;thickness&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span>
+<span class="linenos">201</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">202</span><span class="w">  </span><span class="p">]</span>
+<span class="linenos">203</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>

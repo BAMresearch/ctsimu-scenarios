@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acquisition &mdash; CTSimU Scenarios 1.1 documentation</title>
+  <title>Acquisition &mdash; CTSimU Scenarios 1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -100,8 +100,8 @@
 <h2>Sample stage rotation<a class="headerlink" href="#sample-stage-rotation" title="Permalink to this heading"></a></h2>
 <p>The stage is assumed to perform a rotation around its <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> axis during the scan, resulting in a circular sample trajectory. Other trajectories can be modelled using <a class="reference internal" href="general.html#sec-drifts"><span class="std std-ref">drifts</span></a>, especially drifts of the stage geometry parameters. For example, a helix scan can be modelled by starting with a standard circular trajectory of several rotations (as described in the following), and an additional drift of the stage center’s <img class="math" src="_images/math/f7986e4d4aca23a0717a3b4bcf2cb8a37bb62dfa.svg" alt="z"/> position. If the scan trajectory is completely described by drifts, the stage rotation described here should be deactivated by setting both <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;start_angle&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;stop_angle&quot;</span></code> to <code class="code highlight json-object docutils literal highlight-json-object"><span class="mi">0</span></code>.</p>
 <p>For a circular CT scan, the start and stop angle of the sample stage are defined in this section. An angle of <code class="code highlight json-object docutils literal highlight-json-object"><span class="mi">0</span></code> refers to the orientation of the stage as defined in the <a class="reference internal" href="geometry.html#sec-geometry"><span class="std std-ref">geometry section</span></a> (for frame 0). All other angles express a rotation around the <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> axis of the stage. The direction of rotation must be mathematically positive in the case of counter-clockwise acquisition direction (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CCW&quot;</span></code>), and mathematically negative in the case of clockwise acquisition direction (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CW&quot;</span></code>). The stage reaches the start and stop angle by rotating in the given <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;direction&quot;</span></code> around its normal axis (<a class="reference internal" href="#fig-rotation"><span class="std std-numref">Fig. 4</span></a>). This means that the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;direction&quot;</span></code> parameter affects both the positions of start and stop angle, as well as the direction of rotation in which the CT scan is performed. It also means that <strong>the start angle must always be less than (or equal to) the stop angle.</strong> However, negative angular positions and positions greater than 360° are allowed, as well as an angular coverage of more than a full circle, e.g. to perform multiple rotations during one scan.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">320</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg&quot;</span><span class="p">},</span>
-<span class="linenos">321</span><span class="nt">&quot;stop_angle&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg&quot;</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">329</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg&quot;</span><span class="p">},</span>
+<span class="linenos">330</span><span class="nt">&quot;stop_angle&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <figure class="align-default" id="id1">
@@ -111,21 +111,21 @@
 </figcaption>
 </figure>
 <p>The direction of the sample stage rotation can be counter-clockwise (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CCW&quot;</span></code>, mathematically positive) or clockwise (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CW&quot;</span></code>, mathematically negative) around the <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> axis:</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">322</span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CW&quot;</span><span class="p">,</span>
-<span class="linenos">323</span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CCW&quot;</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">331</span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CW&quot;</span><span class="p">,</span>
+<span class="linenos">332</span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CCW&quot;</span>
 </pre></div>
 </div>
 <p>The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;scan_mode&quot;</span></code> defines if the rotation stops while a projection is taken, or if it runs continuously.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">323</span><span class="nt">&quot;scan_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stop+go&quot;</span><span class="p">,</span>
-<span class="linenos">324</span><span class="nt">&quot;scan_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;continuous&quot;</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">332</span><span class="nt">&quot;scan_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stop+go&quot;</span><span class="p">,</span>
+<span class="linenos">333</span><span class="nt">&quot;scan_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;continuous&quot;</span>
 </pre></div>
 </div>
 <p>The property for scan speed should only be used for continuous-motion scans. If undefined, it may be calculated from the detector’s integration and dead time.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">324</span><span class="nt">&quot;scan_speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg/h&quot;</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">333</span><span class="nt">&quot;scan_speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">360</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg/h&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>For stop&amp;go scans, it should be set to <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code>:</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">324</span><span class="nt">&quot;scan_speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">333</span><span class="nt">&quot;scan_speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 </pre></div>
 </div>
 </section>
@@ -134,43 +134,43 @@
 <section id="number-of-projections">
 <span id="sec-num-of-projections"></span><h3>Number of projections<a class="headerlink" href="#number-of-projections" title="Permalink to this heading"></a></h3>
 <p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;number_of_projections&quot;</span></code> is also given in the acquisition section.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">325</span><span class="nt">&quot;number_of_projections&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2001</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">334</span><span class="nt">&quot;number_of_projections&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2001</span>
 </pre></div>
 </div>
 <p>Beginning from the start angle, the necessary number of angular steps is performed (in the case of a stop&amp;go scan). It is assumed that a frame is taken before each step (starting with the first frame at the start angle). The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;include_final_angle&quot;</span></code> can be set to <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code> if the last projection should be taken after the stop angle has been reached, or to <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">false</span></code> if it is meant to be taken at the last step before the stop angle is reached.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">326</span><span class="nt">&quot;include_final_angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">335</span><span class="nt">&quot;include_final_angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 </pre></div>
 </div>
 </section>
 <section id="frame-averaging">
 <span id="sec-frame-avg"></span><h3>Frame averaging<a class="headerlink" href="#frame-averaging" title="Permalink to this heading"></a></h3>
 <p>The number of frames to be averaged for one projection image can be specified:</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">327</span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">336</span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 </section>
 <section id="dark-field-and-flat-field-acquisition-and-correction">
 <span id="sec-flat-dark-field"></span><h3>Dark field and flat field acquisition and correction<a class="headerlink" href="#dark-field-and-flat-field-acquisition-and-correction" title="Permalink to this heading"></a></h3>
 <p>If dark field and flat field images are acquired along with the projections, their numbers and frame averages can be specified. An <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;ideal&quot;</span></code> image means that the simulation of noise is to be omitted by the simulation software, possibly in contrast to the <a class="reference internal" href="detector.html#sec-noise"><span class="std std-ref">noise</span></a> specification in the detector section. The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;correction&quot;</span></code> tells whether the projection images already come in a corrected form as a result of the scan (<code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code>) or if they are taken as uncorrected files (<code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">false</span></code>).</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">328</span><span class="nt">&quot;dark_field&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">329</span><span class="w">  </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="linenos">330</span><span class="w">  </span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="linenos">331</span><span class="w">  </span><span class="nt">&quot;ideal&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="linenos">332</span><span class="w">  </span><span class="nt">&quot;correction&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="linenos">333</span><span class="p">},</span>
-<span class="linenos">334</span><span class="nt">&quot;flat_field&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">335</span><span class="w">  </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="linenos">336</span><span class="w">  </span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-<span class="linenos">337</span><span class="w">  </span><span class="nt">&quot;ideal&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="linenos">338</span><span class="w">  </span><span class="nt">&quot;correction&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<span class="linenos">339</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">337</span><span class="nt">&quot;dark_field&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">338</span><span class="w">  </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">339</span><span class="w">  </span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">340</span><span class="w">  </span><span class="nt">&quot;ideal&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="linenos">341</span><span class="w">  </span><span class="nt">&quot;correction&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="linenos">342</span><span class="p">},</span>
+<span class="linenos">343</span><span class="nt">&quot;flat_field&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">344</span><span class="w">  </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="linenos">345</span><span class="w">  </span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="linenos">346</span><span class="w">  </span><span class="nt">&quot;ideal&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="linenos">347</span><span class="w">  </span><span class="nt">&quot;correction&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="linenos">348</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="pixel-binning">
 <span id="sec-pixel-binning"></span><h3>Pixel binning<a class="headerlink" href="#pixel-binning" title="Permalink to this heading"></a></h3>
 <p>The number of pixels to bin in directions <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> and <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/> of the detector:</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">340</span><span class="nt">&quot;pixel_binning&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;u&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">349</span><span class="nt">&quot;pixel_binning&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;u&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>The binning operation is not described here and left to the software.</p>
@@ -179,7 +179,7 @@
 <section id="scattering">
 <h2>Scattering<a class="headerlink" href="#scattering" title="Permalink to this heading"></a></h2>
 <p>This parameter specifies if X-ray scattering should be simulated or not.</p>
-<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">341</span><span class="nt">&quot;scattering&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">350</span><span class="nt">&quot;scattering&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 </pre></div>
 </div>
 </section>

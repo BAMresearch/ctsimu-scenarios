@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Specification Changes &mdash; CTSimU Scenarios 1.1 documentation</title>
+  <title>Specification Changes &mdash; CTSimU Scenarios 1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -56,6 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="metadata.html">Metadata Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameter List</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Specification Changes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-2">Version 1.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-1">Version 1.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-0">Version 1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-0-9">Version 0.9</a></li>
@@ -97,6 +98,12 @@
   <section id="specification-changes">
 <span id="changes"></span><h1>Specification Changes<a class="headerlink" href="#specification-changes" title="Permalink to this heading"></a></h1>
 <p>The following listing contains the changes to the file format in its prior versions.</p>
+<section id="version-1-2">
+<h2>Version 1.2<a class="headerlink" href="#version-1-2" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Detector: new distinction between its <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;window&quot;</span></code> and additional <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code>. All <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code> defined in previous versions of the file format should rather be re-interpreted as windows now (sec. <a class="reference internal" href="detector.html#sec-scintillator-and-filters"><span class="std std-ref">Scintillator, window &amp; filters</span></a>).</p></li>
+</ul>
+</section>
 <section id="version-1-1">
 <h2>Version 1.1<a class="headerlink" href="#version-1-1" title="Permalink to this heading"></a></h2>
 <ul class="simple">
@@ -180,7 +187,7 @@
 <li><p>Removed FOD and FDD to prevent inconsistencies.</p></li>
 <li><p>Removed detector <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;width&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;height&quot;</span></code> to prevent inconsistencies.</p></li>
 <li><p>Removed option for gain characteristics file.</p></li>
-<li><p>Detector: filters and rear panel merged into <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;front&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;rear&quot;</span></code> filters (sec. <a class="reference internal" href="detector.html#sec-scintillator-and-filters"><span class="std std-ref">Scintillator &amp; filters</span></a>).</p></li>
+<li><p>Detector: filters and rear panel merged into <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;front&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;rear&quot;</span></code> filters (sec. <a class="reference internal" href="detector.html#sec-scintillator-and-filters"><span class="std std-ref">Scintillator, window &amp; filters</span></a>).</p></li>
 <li><p><code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;image_lag&quot;</span></code> moved from <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;acquisition&quot;</span></code> to <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;detector&quot;</span></code> (sec. <a class="reference internal" href="detector.html#sec-detector-general"><span class="std std-ref">General properties</span></a>).</p></li>
 <li><p>Moved <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;integration_time&quot;</span></code> from <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;acquisition&quot;</span></code> to <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;detector&quot;</span></code>, because other detector characteristics (such as image lag and possibly noise) are specific to it (sec. <a class="reference internal" href="detector.html#sec-detector-general"><span class="std std-ref">General properties</span></a>).</p></li>
 <li><p>Source: removed number of photons from <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;spectrum&quot;</span></code> to prevent inconsistencies with tube current.</p></li>
