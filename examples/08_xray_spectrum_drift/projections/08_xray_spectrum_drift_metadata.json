@@ -3,8 +3,8 @@
         "name":         "08_xray_spectrum_drift",
         "description":  "",
         "contact":      "",
-        "date_created": "2023-01-25",
-        "date_changed": "2023-01-25",
+        "date_created": "2023-02-12",
+        "date_changed": "2023-02-12",
         "version":      {
             "major": 1,
             "minor": 0
@@ -12,7 +12,7 @@
     },
     "output": {
         "system":              "aRTist v2.12.6-0-g30fb1d33, CTSimU Scenario Loader 1.0.0",
-        "date_measured":       "2023-01-25",
+        "date_measured":       "2023-02-12",
         "projections":         {
             "filename":   "08_xray_spectrum_drift_%04d.tif",
             "datatype":   "uint16",

@@ -5,7 +5,7 @@
 
 		"contact": "David Plotzki",
 		"date_created": "2023-01-24",
-		"date_changed": "2023-02-11",
+		"date_changed": "2023-02-12",
 		"version": {"major": 1, "minor": 2},
 
 		"file_type": "CTSimU Scenario",
@@ -115,7 +115,7 @@
 	"source": {
 		"model":        "",
 		"manufacturer": "",
-		"voltage": {"value": 130, "unit": "kV"},
+		"voltage": {"value": 130, "unit": "kV", "drifts": [{"value": [-5, 5], "unit": "kV"}]},
 		"current": {"value": 120, "unit": "uA"},
 		"target": {
 			"material_id": "W",
@@ -230,6 +230,6 @@
 					"mass_fraction": {"value": 1}
 				}
 			]
-		},
+		}
 	]
 }

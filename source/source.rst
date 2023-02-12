@@ -26,7 +26,7 @@ The tube acceleration voltage and the target current:
   :lineno-start: 209
 
   "voltage": {"value": 130, "unit": "kV"},
-  "current": {"value": 120, "unit": "uA"}
+  "current": {"value": 143, "unit": "uA"}
 
 .. _sec_target:
 
