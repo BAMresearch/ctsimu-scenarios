@@ -11,7 +11,7 @@
         }
     },
     "output": {
-        "system":              "aRTist v2.12.6-0-g30fb1d33, CTSimU Scenario Loader 1.0.0",
+        "system":              "aRTist v2.12.6-0-g30fb1d33, CTSimU Scenario Loader 1.2.0",
         "date_measured":       "2023-02-12",
         "projections":         {
             "filename":   "01_full_example_%04d.tif",

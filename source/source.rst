@@ -208,10 +208,10 @@ The :json:`"material_id"` refers to the :ref:`material definition <sec_materials
   "filters": [
     {
       "material_id": "Brass",
-      "thickness": {"value": 0.5, "unit": "mm"}
+      "thickness": {"value": 0.2, "unit": "mm"}
     },
     {
       "material_id": "Cu",
-      "thickness": {"value": 0.25, "unit": "mm"}
+      "thickness": {"value": 0.17, "unit": "mm"}
     }
   ]
