@@ -57,7 +57,7 @@ Depending on the situation, only the parameter properties of relevance must be s
     "uncertainty": {
       "value": 0.1,
       "unit": "mm"
-    }
+    },
     "drifts": [
       {
         "value": [-100, 100],
