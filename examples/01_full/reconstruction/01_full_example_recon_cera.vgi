@@ -1,0 +1,22 @@
+{volume1}
+[representation]
+size = 200 200 150
+datatype = float
+datarange = -1 1
+bitsperelement = 32
+[file1]
+SkipHeader = 0
+FileFormat = raw
+Size = 200 200 150
+Name = 01_full_example_recon_cera.raw
+Datatype = float
+datarange = -1 1
+BitsPerElement = 32
+{volumeprimitive12}
+[geometry]
+resolution = 0.893752963236774 0.893752963236774 0.893752963236774
+unit = mm
+[volume]
+volume = volume1
+[description]
+text = 01_full_example_recon_cera
