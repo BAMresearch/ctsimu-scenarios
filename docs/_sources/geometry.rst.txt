@@ -62,7 +62,7 @@ A deviation component should provide the following properties:
 * :json:`"amount":` the amount by which to deviate. For a translational deviation, this is the length by which the object should shift in the given direction. For a rotational deviation, it is the angle by which the object should rotate around the given axis (and optionally, the given pivot point). A :json:`"value"` and :json:`"unit"` must be specified for the amount.
 * :json:`"axis":` specifies the direction of the deviation. For translations, it provides the direction of the shift. For rotations, it provides the rotation axis. The axis must not be a unit vector, but its length has no special significance.
 
-  The axis can be given as and axis designation or as an arbitrary vector:
+  The axis can be given as a designation (name) or as an arbitrary vector:
 
   * :code:`"x"`, :code:`"y"` or :code:`"z"` are the axes of the **world coordinate system.**
 

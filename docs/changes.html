@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Specification Changes &mdash; CTSimU Scenarios 1.2 documentation</title>
@@ -12,12 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=61243dd2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CTSimU Scenarios
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CTSimU Scenarios
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -84,7 +87,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Specification Changes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/changes.rst.txt" rel="nofollow"> View page source</a>
@@ -96,23 +99,23 @@
            <div itemprop="articleBody">
              
   <section id="specification-changes">
-<span id="changes"></span><h1>Specification Changes<a class="headerlink" href="#specification-changes" title="Permalink to this heading"></a></h1>
+<span id="changes"></span><h1>Specification Changes<a class="headerlink" href="#specification-changes" title="Link to this heading"></a></h1>
 <p>The following listing contains the changes to the file format in its prior versions.</p>
 <section id="version-1-2">
-<h2>Version 1.2<a class="headerlink" href="#version-1-2" title="Permalink to this heading"></a></h2>
+<h2>Version 1.2<a class="headerlink" href="#version-1-2" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Detector: new distinction between its <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;window&quot;</span></code> and additional <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code>. All <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code> defined in previous versions of the file format should rather be re-interpreted as windows now (sec. <a class="reference internal" href="detector.html#sec-scintillator-and-filters"><span class="std std-ref">Scintillator, window &amp; filters</span></a>).</p></li>
 </ul>
 </section>
 <section id="version-1-1">
-<h2>Version 1.1<a class="headerlink" href="#version-1-1" title="Permalink to this heading"></a></h2>
+<h2>Version 1.1<a class="headerlink" href="#version-1-1" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Material <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;composition&quot;</span></code> is now an array that can contain the components of a compound material, each with their specific <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;mass_fraction&quot;</span></code> (sec. <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">Materials</span></a>).</p></li>
 <li><p>Bad pixel maps are now defined in their new <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> parameter (which can come with its own drift). The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> property has therefore been removed (sec. <a class="reference internal" href="detector.html#sec-bad-pixel-map"><span class="std std-ref">Bad pixel map</span></a>).</p></li>
 </ul>
 </section>
 <section id="version-1-0">
-<h2>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this heading"></a></h2>
+<h2>Version 1.0<a class="headerlink" href="#version-1-0" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Introduced a more general concept to specify geometric deviations (sec. <a class="reference internal" href="geometry.html#sec-geometry-deviations"><span class="std std-ref">Deviations</span></a>). Instead of a strict order of rotations around the axes of the local coordinate system, an arbitrary order of translations and rotations around arbitrary axes and pivot points can be specified in a <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;deviations&quot;</span></code> array.</p></li>
 <li><p>Re-introduced American spelling to keep consistency with most other software and IT standards, also in regard to the world of Python packages. Therefore: <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;centre&quot;</span></code> → <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;center&quot;</span></code>, <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;grey&quot;</span></code> → <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;gray&quot;</span></code>.</p></li>
@@ -125,7 +128,7 @@
 </ul>
 </section>
 <section id="version-0-9">
-<h2>Version 0.9<a class="headerlink" href="#version-0-9" title="Permalink to this heading"></a></h2>
+<h2>Version 0.9<a class="headerlink" href="#version-0-9" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Introduced a new concept for drifts (sec. <a class="reference internal" href="general.html#sec-drifts"><span class="std std-ref">Drifts</span></a>).</p></li>
 <li><p>Uncertainties are now described in single <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;uncertainty&quot;</span></code> blocks that contain a <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code> element, instead of defining two separate elements for <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;uncertainty&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;uncertainty_unit&quot;</span></code> (sec. <a class="reference internal" href="general.html#sec-uncertainty"><span class="std std-ref">Uncertainty</span></a>).</p></li>
@@ -134,14 +137,14 @@
 </ul>
 </section>
 <section id="version-0-8">
-<h2>Version 0.8<a class="headerlink" href="#version-0-8" title="Permalink to this heading"></a></h2>
+<h2>Version 0.8<a class="headerlink" href="#version-0-8" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added the simulation software-specific parameter section <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;simulation&quot;</span></code> (sec. <a class="reference internal" href="proprietary.html#sec-proprietary"><span class="std std-ref">Software-specific properties</span></a>).</p></li>
 <li><p>Noise parameters (SNR, FWHM, sec. <a class="reference internal" href="detector.html#sec-noise"><span class="std std-ref">Noise</span></a>) now specifically refer to one frame, not an averaged projection.</p></li>
 </ul>
 </section>
 <section id="version-0-7">
-<h2>Version 0.7<a class="headerlink" href="#version-0-7" title="Permalink to this heading"></a></h2>
+<h2>Version 0.7<a class="headerlink" href="#version-0-7" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added further meta data fields to the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> section (sec. <a class="reference internal" href="file.html#sec-file"><span class="std std-ref">File</span></a>) and changed the previous parameter designations <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;type&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;version&quot;</span></code> to <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file_format_type&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file_format_version&quot;</span></code> to make room for their meta data equivalents.</p></li>
 <li><p>The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;frames_to_average&quot;</span></code> has been renamed to <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;frame_average&quot;</span></code> (sec. <a class="reference internal" href="acquisition.html#sec-frame-avg"><span class="std std-ref">Frame averaging</span></a>).</p></li>
@@ -150,7 +153,7 @@
 </ul>
 </section>
 <section id="version-0-6">
-<h2>Version 0.6<a class="headerlink" href="#version-0-6" title="Permalink to this heading"></a></h2>
+<h2>Version 0.6<a class="headerlink" href="#version-0-6" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;description&quot;</span></code> to <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> section (sec. <a class="reference internal" href="file.html#sec-file"><span class="std std-ref">File</span></a>).</p></li>
 <li><p>Split tube <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;window&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code> into two separate arrays (sec. <a class="reference internal" href="source.html#sec-tube-filters"><span class="std std-ref">Tube window and filters</span></a>), and now demand that any tube spectrum provided through a file is only filtered by the window material, but none of the additional filters that can be placed in front of the tube (sec. <a class="reference internal" href="source.html#sec-source-spectrum"><span class="std std-ref">Spectrum</span></a>).</p></li>
@@ -159,14 +162,14 @@
 </ul>
 </section>
 <section id="version-0-5">
-<h2>Version 0.5<a class="headerlink" href="#version-0-5" title="Permalink to this heading"></a></h2>
+<h2>Version 0.5<a class="headerlink" href="#version-0-5" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added detector <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;type&quot;</span></code>, options are: <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;real&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;ideal&quot;</span></code> (sec. <a class="reference internal" href="detector.html#sec-detector-general"><span class="std std-ref">General properties</span></a>).</p></li>
 <li><p>Spectra provided through CSV files are assumed to be filtered by all tube filters (sec. <a class="reference internal" href="source.html#sec-source-spectrum"><span class="std std-ref">Spectrum</span></a>).</p></li>
 </ul>
 </section>
 <section id="version-0-4">
-<h2>Version 0.4<a class="headerlink" href="#version-0-4" title="Permalink to this heading"></a></h2>
+<h2>Version 0.4<a class="headerlink" href="#version-0-4" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Grey value characteristics of the detector is now based on total collected energy <em>E</em> (in J) for each pixel instead of incident energy density (sec. <a class="reference internal" href="detector.html#sec-gv-characteristics"><span class="std std-ref">Gray value characteristics</span></a>).</p></li>
 <li><p>Introduced <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;environment&quot;</span></code> section (sec. <a class="reference internal" href="environment.html#sec-environment"><span class="std std-ref">Environment</span></a>), with the environment temperature and (atmospheric) composition.</p></li>
@@ -178,7 +181,7 @@
 </ul>
 </section>
 <section id="version-0-3">
-<h2>Version 0.3<a class="headerlink" href="#version-0-3" title="Permalink to this heading"></a></h2>
+<h2>Version 0.3<a class="headerlink" href="#version-0-3" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>New axis designations <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/>, <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/>, <img class="math" src="_images/math/baf02a521473961a9ed6f3f5e2fd5a9930874cad.svg" alt="\vec{w}"/> for local coordinate systems, whereas <img class="math" src="_images/math/64d09525a9b362d26536f3c9ed6084a104c1fea5.svg" alt="\vec{x}"/>, <img class="math" src="_images/math/aaaf088e0401ced2a90882e760997a6c99a5b996.svg" alt="\vec{y}"/>, <img class="math" src="_images/math/c5b4a6517a63efee2a0c8cf1ca559d61a2194f3d.svg" alt="\vec{z}"/> always designate the axes of the world coordinate system (sec. <a class="reference internal" href="geometry.html#sec-geometry"><span class="std std-ref">Geometry</span></a>).</p></li>
 <li><p>Introduced sample coordinate system {r, s, t} (sec. <a class="reference internal" href="samples.html#sec-sample-positioning"><span class="std std-ref">Sample positioning</span></a>).</p></li>

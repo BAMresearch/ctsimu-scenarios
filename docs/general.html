@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>General structures &mdash; CTSimU Scenarios 1.2 documentation</title>
@@ -12,12 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=61243dd2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CTSimU Scenarios
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CTSimU Scenarios
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -87,7 +90,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">General structures</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/general.rst.txt" rel="nofollow"> View page source</a>
@@ -99,9 +102,9 @@
            <div itemprop="articleBody">
              
   <section id="general-structures">
-<span id="sec-general"></span><h1>General structures<a class="headerlink" href="#general-structures" title="Permalink to this heading"></a></h1>
+<span id="sec-general"></span><h1>General structures<a class="headerlink" href="#general-structures" title="Link to this heading"></a></h1>
 <section id="file-structure">
-<span id="sec-file-structure"></span><h2>File structure<a class="headerlink" href="#file-structure" title="Permalink to this heading"></a></h2>
+<span id="sec-file-structure"></span><h2>File structure<a class="headerlink" href="#file-structure" title="Link to this heading"></a></h2>
 <p>The JSON file should be encoded and decoded using the UTF-8 character set, even though all characters in this specification are from the ASCII set to ensure compatibility with other decoding interpretations.</p>
 <p>The scenario description consists of the following main sections:</p>
 <dl class="simple">
@@ -126,7 +129,7 @@
 </dl>
 </section>
 <section id="parameters">
-<span id="sec-general-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<span id="sec-general-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h2>
 <p>A parameter is given by its <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> and may have an associated physical <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code>. Additionally, a parameter may come with a measurement <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;uncertainty&quot;</span></code> and one or more <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;drift&quot;</span></code> components if its value changes during the CT scan. The following listing shows a full example of a parameter definition. Note that <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;drifts&quot;</span></code> is an array that may contain multiple drift components.</p>
 <p>Depending on the situation, only the parameter properties of relevance must be specified. Irrelevant ones may be omitted or set to <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code> at any level.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;parameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -135,7 +138,7 @@
 <span class="w">  </span><span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">-100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">],</span>
@@ -154,7 +157,7 @@
 </pre></div>
 </div>
 <section id="values-units">
-<span id="sec-values-and-units"></span><h3>Values &amp; Units<a class="headerlink" href="#values-units" title="Permalink to this heading"></a></h3>
+<span id="sec-values-and-units"></span><h3>Values &amp; Units<a class="headerlink" href="#values-units" title="Link to this heading"></a></h3>
 <dl class="simple">
 <dt><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;value&quot;</span><span class="p">:</span></code></dt><dd><p>gives the measured value or the value that should be used by the simulation software.</p>
 </dd>
@@ -173,34 +176,34 @@
 <p>The prefix <code class="code docutils literal notranslate"><span class="pre">u</span></code> represents the SI prefix µ (10<sup>-6</sup>). <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;relative&quot;</span></code> can be used for relative uncertainties or any values that express a fraction of a related measure. For properties without a unit, the keyword <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code> is used.</p>
 </section>
 <section id="uncertainty">
-<span id="sec-uncertainty"></span><h3>Uncertainty<a class="headerlink" href="#uncertainty" title="Permalink to this heading"></a></h3>
+<span id="sec-uncertainty"></span><h3>Uncertainty<a class="headerlink" href="#uncertainty" title="Link to this heading"></a></h3>
 <dl class="simple">
 <dt><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;uncertainty&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mm&quot;</span><span class="p">}</span></code></dt><dd><p>gives a <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> for the standard measurement uncertainty and its physical <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code>. The intention is to use this to document (or model) a real, physical CT machine.</p>
 </dd>
 </dl>
 </section>
 <section id="drifts">
-<span id="sec-drifts"></span><h3>Drifts<a class="headerlink" href="#drifts" title="Permalink to this heading"></a></h3>
+<span id="sec-drifts"></span><h3>Drifts<a class="headerlink" href="#drifts" title="Link to this heading"></a></h3>
 <dl>
 <dt><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;drifts&quot;</span><span class="p">:</span></code></dt><dd><p>provides an array that may contain an arbitrary number of drift components. Typically, only one drift component is necessary, but in some cases it can be useful to provide more than one drift component for a parameter, especially if some drift contributions shall be unknown to the reconstruction software, whereas others shall be considered during the reconstruction. A typical example would be a helix scan: the vertical movement of the stage along the rotation axis can be modelled as a drift that must be known during the reconstruction. However, inhomogeneities in the vertical motion can be modelled as a second drift component unknown to the reconstruction software.</p>
 <p><strong>Drifts are applied for each frame individually</strong> once the stage has reached its intended position as described in the <a class="reference internal" href="acquisition.html#sec-acquisition"><span class="std std-ref">acquisiton section</span></a> of the scenario file. Because any drift value describes an absolute deviation from the initial condition at frame 0, they are not accumulated over time. If multiple drift components are defined, they are applied in an additive, sequential manner in the given order.</p>
 <p>Each drift component must provide a range of drift values (at least one). These drift values represent absolute deviations from the initial values at the start position (frame 0). They can be provided in the component’s <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> array or through a single-column CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> (i.e., a simple one-column list). If a drift component provides only a single <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> different from <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code>, this deviation will stay constant throughout the scan.</p>
 <p>For dynamic, non-constant drifts, more than one drift value can be provided in the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> array or CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code>. Ideally, the number of rows in the CSV file would match the number of frames of the scan. If the number of provided drift values does not match the number of frames, the values are assumed to be spread in equidistant steps between start projection (first value) and last projection (last value), and a linear interpolation between neighbouring values is assumed to calculate each frame’s deviation value for the parameter.</p>
-<p>The physical <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code> of the drift values should be specified; otherwise, the main parameter unit is assumed. If the drift refers to a parameter that expects a string (e.g. file name of a spectrum file), the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;values&quot;</span></code> array or CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> should contain a string for each frame; otherwise, the same equidistant behaviour is assumed as for numerical parameters with the exception that no interpolation takes place. Instead, a string remains valid until the next key frame is reached.</p>
+<p>The physical <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code> of the drift values should be specified; otherwise, the main parameter unit is assumed. If the drift refers to a parameter that expects a string (e.g. file name of a spectrum file), the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> array or CSV <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> should contain a string for each frame; otherwise, the same equidistant behaviour is assumed as for numerical parameters with the exception that no interpolation takes place. Instead, a string remains valid until the next key frame is reached.</p>
 <p>The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;known_to_reconstruction&quot;</span></code> (either <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code> or <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">false</span></code>) can be used to specify whether the drift should be considered during the reconstruction of the CT scan. This also applies to automatically generated configuration files or the calculation of projection matrices for the reconstruction software. If not specified, the standard value is <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code>.</p>
 </dd>
 </dl>
 </section>
 </section>
 <section id="formats-of-referred-data-files">
-<span id="sec-referred-data-files"></span><h2>Formats of referred data files<a class="headerlink" href="#formats-of-referred-data-files" title="Permalink to this heading"></a></h2>
+<span id="sec-referred-data-files"></span><h2>Formats of referred data files<a class="headerlink" href="#formats-of-referred-data-files" title="Link to this heading"></a></h2>
 <p>A scenario description may refer to other data files.</p>
 <section id="one-dimensional-data">
-<span id="sec-referred-data-files-1d"></span><h3>One-dimensional data<a class="headerlink" href="#one-dimensional-data" title="Permalink to this heading"></a></h3>
+<span id="sec-referred-data-files-1d"></span><h3>One-dimensional data<a class="headerlink" href="#one-dimensional-data" title="Link to this heading"></a></h3>
 <p>For one-dimensional data such as response curves, characteristics files or spectra, the CSV (comma-separated values) or TSV format (tab-separated values) shall be used, with its columns in the order specified in the corresponding sections of this guide.</p>
 </section>
 <section id="two-dimensional-data">
-<span id="sec-referred-data-files-2d"></span><h3>Two-dimensional data<a class="headerlink" href="#two-dimensional-data" title="Permalink to this heading"></a></h3>
+<span id="sec-referred-data-files-2d"></span><h3>Two-dimensional data<a class="headerlink" href="#two-dimensional-data" title="Link to this heading"></a></h3>
 <p>For <strong>two-dimensional</strong> data such as intensity profiles or bad pixel maps, image files shall be used. The minimum set of supported image file formats should be TIFF and RAW. The image file is given by its <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> name which specifies the file’s path relative to the JSON file, or provides an absolute path.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">216</span><span class="nt">&quot;intensity_map&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">217</span><span class="w">  </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;spot_profile.raw&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
@@ -221,11 +224,11 @@
 </ul>
 <p>Data shall be written row-first. For an image with <img class="math" src="_images/math/444a29ef6f91183e32bede1726dbdac3df2cb090.svg" alt="n_x"/> columns and <img class="math" src="_images/math/29970beec3d3a964d2059626a0e700bfcb3bd4d9.svg" alt="n_y"/> rows, this results in an array with the following one-dimensional index representation, with coordinates <img class="math" src="_images/math/8f9a7f3122332cf3841ad8b1f97594886fab709c.svg" alt="(x, y)"/> starting at <img class="math" src="_images/math/642d963708a6da422f2a76786ba9f7b8c9bc1cb1.svg" alt="(0, 0)"/>:</p>
 <div class="math" id="equation-eq-raw-index2d">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-raw-index2d" title="Permalink to this equation"></a></span><img src="_images/math/3803c8005c75355d8d0e288e97f2583aea185810.svg" alt="\text{\textsf{Index}}(x, y) = (n_x \cdot y) + x."/></p>
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-raw-index2d" title="Link to this equation"></a></span><img src="_images/math/3803c8005c75355d8d0e288e97f2583aea185810.svg" alt="\text{\textsf{Index}}(x, y) = (n_x \cdot y) + x."/></p>
 </div><p>Bytes are assumed to be written from most-significant to least-significant bit (MSB<sub>0</sub>).</p>
 </section>
 <section id="three-dimensional-data">
-<span id="sec-referred-data-files-3d"></span><h3>Three-dimensional data<a class="headerlink" href="#three-dimensional-data" title="Permalink to this heading"></a></h3>
+<span id="sec-referred-data-files-3d"></span><h3>Three-dimensional data<a class="headerlink" href="#three-dimensional-data" title="Link to this heading"></a></h3>
 <p>For <strong>three-dimensional</strong> data, such as a 3D spot intensity profile, a RAW file shall be used. The notation is the same as for 2D data, with the addition of the third voxel dimension given by <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;dim_z&quot;</span></code>.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">216</span><span class="nt">&quot;intensity_map&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">217</span><span class="w">  </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;spot_profile.raw&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;drifts&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">},</span>
@@ -240,7 +243,7 @@
 </div>
 <p>Data shall be written as row-first, column-second slices. For an image with <img class="math" src="_images/math/444a29ef6f91183e32bede1726dbdac3df2cb090.svg" alt="n_x"/> columns, <img class="math" src="_images/math/29970beec3d3a964d2059626a0e700bfcb3bd4d9.svg" alt="n_y"/> rows and <img class="math" src="_images/math/11542a5ff8bb887f546d00fdde31783b76c94e55.svg" alt="n_z"/> slices, this results in an array with the following one-dimensional index representation, with coordinates <img class="math" src="_images/math/b8f2b32c03aacfc537cb1204bc6bd044dba2c9b6.svg" alt="(x, y, z)"/> starting at <img class="math" src="_images/math/d194c7ce84ee482b6397337e4ab16d0d95768595.svg" alt="(0, 0, 0)"/>:</p>
 <div class="math" id="equation-eq-raw-index3d">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-eq-raw-index3d" title="Permalink to this equation"></a></span><img src="_images/math/b0a018b8e2d38329768bfdd7ff505d8e489f406e.svg" alt="\text{\textsf{Index}}(x, y, z) = (n_x \cdot n_y \cdot z) + (n_x \cdot y) + x."/></p>
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-eq-raw-index3d" title="Link to this equation"></a></span><img src="_images/math/b0a018b8e2d38329768bfdd7ff505d8e489f406e.svg" alt="\text{\textsf{Index}}(x, y, z) = (n_x \cdot n_y \cdot z) + (n_x \cdot y) + x."/></p>
 </div><p>Bytes are assumed to be written from most-significant to least-significant bit (MSB<sub>0</sub>).</p>
 </section>
 </section>

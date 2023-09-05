@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Materials &mdash; CTSimU Scenarios 1.2 documentation</title>
@@ -12,12 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=61243dd2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CTSimU Scenarios
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CTSimU Scenarios
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -76,7 +79,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Materials</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/materials.rst.txt" rel="nofollow"> View page source</a>
@@ -88,7 +91,7 @@
            <div itemprop="articleBody">
              
   <section id="materials">
-<span id="sec-materials"></span><h1>Materials<a class="headerlink" href="#materials" title="Permalink to this heading"></a></h1>
+<span id="sec-materials"></span><h1>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h1>
 <p>In all previous declarations, materials are referred by their <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;material_id&quot;</span></code>. The last section of the JSON file, the materials array, finally contains the specifications for all materials used throughout the scenario description. Each element of the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;materials&quot;</span></code> array must have the following properties:</p>
 <dl>
 <dt><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;id&quot;</span><span class="p">:</span></code></dt><dd><p>names the material ID that is used to refer to the material from the other sections of the file.</p>
@@ -106,7 +109,7 @@
 </dd>
 </dl>
 <section id="single-component-materials">
-<h2>Single-component materials<a class="headerlink" href="#single-component-materials" title="Permalink to this heading"></a></h2>
+<h2>Single-component materials<a class="headerlink" href="#single-component-materials" title="Link to this heading"></a></h2>
 <p>The following gives an example of a single-component material: pure copper.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">421</span><span class="p">{</span>
 <span class="linenos">422</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span>
@@ -123,7 +126,7 @@
 </div>
 </section>
 <section id="multi-component-materials">
-<h2>Multi-component materials<a class="headerlink" href="#multi-component-materials" title="Permalink to this heading"></a></h2>
+<h2>Multi-component materials<a class="headerlink" href="#multi-component-materials" title="Link to this heading"></a></h2>
 <p>Simple multi-component materials with known number fractions can be modeled using only the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;formula&quot;</span></code> parameter.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">410</span><span class="p">{</span>
 <span class="linenos">411</span><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;Brass&quot;</span><span class="p">,</span>

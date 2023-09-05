@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Source &mdash; CTSimU Scenarios 1.2 documentation</title>
@@ -12,12 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=61243dd2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CTSimU Scenarios
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CTSimU Scenarios
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -84,7 +87,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Source</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/source.rst.txt" rel="nofollow"> View page source</a>
@@ -96,9 +99,9 @@
            <div itemprop="articleBody">
              
   <section id="source">
-<span id="sec-source"></span><h1>Source<a class="headerlink" href="#source" title="Permalink to this heading"></a></h1>
+<span id="sec-source"></span><h1>Source<a class="headerlink" href="#source" title="Link to this heading"></a></h1>
 <section id="general-properties">
-<span id="sec-source-general"></span><h2>General properties<a class="headerlink" href="#general-properties" title="Permalink to this heading"></a></h2>
+<span id="sec-source-general"></span><h2>General properties<a class="headerlink" href="#general-properties" title="Link to this heading"></a></h2>
 <p>The following properties can be specified in the source section of the scenario file.</p>
 <p>The model name and the manufacturer, if an existing X-ray source is modelled:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">207</span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w">        </span><span class="s2">&quot;XS-1&quot;</span><span class="p">,</span>
@@ -112,7 +115,7 @@
 </div>
 </section>
 <section id="target">
-<span id="sec-target"></span><h2>Target<a class="headerlink" href="#target" title="Permalink to this heading"></a></h2>
+<span id="sec-target"></span><h2>Target<a class="headerlink" href="#target" title="Link to this heading"></a></h2>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">211</span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">212</span><span class="w">  </span><span class="nt">&quot;material_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;W&quot;</span><span class="p">,</span>
 <span class="linenos">213</span><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;reflection&quot;</span><span class="p">,</span>
@@ -138,7 +141,7 @@
 <p>The angles of electron incidence and main X-ray emission can be defined and refer to the angles between the target surface and electron beam or main photon emission direction, respectively.</p>
 </section>
 <section id="spot-intensity-profile">
-<span id="sec-spot-intensity-profile"></span><h2>Spot intensity profile<a class="headerlink" href="#spot-intensity-profile" title="Permalink to this heading"></a></h2>
+<span id="sec-spot-intensity-profile"></span><h2>Spot intensity profile<a class="headerlink" href="#spot-intensity-profile" title="Link to this heading"></a></h2>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">220</span><span class="nt">&quot;spot&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">221</span><span class="w">  </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">222</span><span class="w">    </span><span class="nt">&quot;u&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;um&quot;</span><span class="p">},</span>
@@ -169,7 +172,7 @@
 </div>
 <p>The shape of the spot can be defined in the following three ways.</p>
 <section id="simple-gaussian-profiles">
-<span id="sec-spot-simple-gaussian"></span><h3>Simple Gaussian profiles<a class="headerlink" href="#simple-gaussian-profiles" title="Permalink to this heading"></a></h3>
+<span id="sec-spot-simple-gaussian"></span><h3>Simple Gaussian profiles<a class="headerlink" href="#simple-gaussian-profiles" title="Link to this heading"></a></h3>
 <p>A simple Gaussian profile can be modelled by specifying the spatial sigmas <img class="math" src="_images/math/cb94f547a1360f21be7d5f17853d3a3cf0e676bc.svg" alt="\sigma"/> for each dimension:</p>
 <p><img class="math" src="_images/math/6603f2ff2b01d33659950a1f85c37b15a1d74efd.svg" alt="I(\vec{r})=I_0\cdot\exp(-|\vec{r}|^2/2\sigma^2)"/></p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">226</span><span class="nt">&quot;sigma&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -181,20 +184,20 @@
 </div>
 </section>
 <section id="d-images">
-<span id="sec-spot-2d-images"></span><h3>2D images<a class="headerlink" href="#d-images" title="Permalink to this heading"></a></h3>
+<span id="sec-spot-2d-images"></span><h3>2D images<a class="headerlink" href="#d-images" title="Link to this heading"></a></h3>
 <p>For a more detailed approach, the intensity profile can also be provided from an external image file. In this case, the <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> vector of the source coordinate system points from left to right in the image, and the <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/> vector points from top to bottom, in analogy to the <a class="reference internal" href="geometry.html#sec-geometry-detector"><span class="std std-ref">detector geometry</span></a>. The image shall be resized to match the given <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;size&quot;</span></code> of the spot rectangle, without necessarily retaining the original aspect ratio of the image. The picture is recommended to be a 32 bit float gray-scale image and the pixel values in the interval [0, 1], with 0 meaning no intensity, and 1 meaning full intensity. However, a simulation software must also support gray-scale integer file formats and be able to re-normalize the provided gray values accordingly.</p>
 <p>If a valid spot intensity image is provided, this method takes precedence over the previously described specification of Gaussian sigmas.</p>
 <p>Further details about referring to <a class="reference internal" href="general.html#sec-referred-data-files-2d"><span class="std std-ref">two-dimensional data files</span></a> (RAW or TIFF) are given in the section about <em>General structures</em>.</p>
 </section>
 <section id="d-volumes">
-<span id="sec-spot-3d-volumes"></span><h3>3D volumes<a class="headerlink" href="#d-volumes" title="Permalink to this heading"></a></h3>
+<span id="sec-spot-3d-volumes"></span><h3>3D volumes<a class="headerlink" href="#d-volumes" title="Link to this heading"></a></h3>
 <p>To describe a three-dimensional spot profile, a RAW file can be provided. It is recommended to be a 32 bit float volume with values between <code class="code docutils literal notranslate"><span class="pre">0</span></code> and <code class="code docutils literal notranslate"><span class="pre">1</span></code>, and should otherwise be re-normalized by the simulation software. The lowest value means no intensity, the highest value means maximum intensity. If specified, this method takes precedence over the first two described methods.</p>
 <p>The <img class="math" src="_images/math/f99de1dc0ca30c2ecbab6c2f477619880f90679b.svg" alt="x"/> direction of the given volume points along the <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> vector of the source coordinate system, <img class="math" src="_images/math/6c2ff5f92930fd167d4884931360922d3f516cc7.svg" alt="y"/> points in direction <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/>, and <img class="math" src="_images/math/f7986e4d4aca23a0717a3b4bcf2cb8a37bb62dfa.svg" alt="z"/> in direction <img class="math" src="_images/math/baf02a521473961a9ed6f3f5e2fd5a9930874cad.svg" alt="\vec{w}"/>. The volume shall be resized to match the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;size&quot;</span></code> of the spot volume, without necessarily retaining the original aspect ratio of the volume file.</p>
 <p>Further details about referring to <a class="reference internal" href="general.html#sec-referred-data-files-3d"><span class="std std-ref">three-dimensional data files</span></a> (RAW volumes) are given in the section about <em>General structures</em>.</p>
 </section>
 </section>
 <section id="spectrum">
-<span id="sec-source-spectrum"></span><h2>Spectrum<a class="headerlink" href="#spectrum" title="Permalink to this heading"></a></h2>
+<span id="sec-source-spectrum"></span><h2>Spectrum<a class="headerlink" href="#spectrum" title="Link to this heading"></a></h2>
 <p>If the spectrum is to be calculated by the simulation software, the following three parameters decide whether only a monochromatic energy scenario is described or a complete spectrum. If a valid spectrum file is provided, it takes precendence over the monochromatic mode. If no spectrum file is provided, a simulation software is free to generate its own spectrum from the given tube parameters.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">241</span><span class="nt">&quot;spectrum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">242</span><span class="w">  </span><span class="nt">&quot;monochromatic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
@@ -204,7 +207,7 @@
 </div>
 <p>The spectrum from the provided file is assumed to be already filtered by the tube’s window material, but not yet by any of the filters in front of the tube (as specified under <a class="reference internal" href="#sec-tube-filters"><span class="std std-ref">Tube window and filters</span></a>). The CSV or TSV spectrum file should contain the columns listed in <a class="reference internal" href="#tab-csvspectrum"><span class="std std-numref">Tab. 5</span></a>, separated by a comma or tab character.</p>
 <span id="tab-csvspectrum"></span><table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Tab. 5 </span><span class="caption-text">Table structure for X-ray spectrum files.</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Tab. 5 </span><span class="caption-text">Table structure for X-ray spectrum files.</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Column</p></th>
 <th class="head"><p>Property</p></th>
@@ -225,7 +228,7 @@
 <p>The energy values correspond to the centre of the histogram bins. The interpolation between the bin values shall not be specified here and is left to the simulation software. If a valid spectrum file is specified and the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;file&quot;</span></code> parameter is not set to <code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">null</span></code>, this has precedence over the spectrum calculated by the simulation software or the monochromatic mode.</p>
 </section>
 <section id="tube-window-and-filters">
-<span id="sec-tube-filters"></span><h2>Tube window and filters<a class="headerlink" href="#tube-window-and-filters" title="Permalink to this heading"></a></h2>
+<span id="sec-tube-filters"></span><h2>Tube window and filters<a class="headerlink" href="#tube-window-and-filters" title="Link to this heading"></a></h2>
 <p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;window&quot;</span></code> material(s) and the additional <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code> in front of the tube are specified in two separate JSON arrays. For both, an arbitrary number of materials and thicknesses can be specified. If a <a class="reference internal" href="#sec-source-spectrum"><span class="std std-ref">source spectrum</span></a> is provided in a file, the spectrum is assumed to be already filtered by all <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;window&quot;</span></code> materials but not yet by any <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;filters&quot;</span></code>.</p>
 <p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;material_id&quot;</span></code> refers to the <a class="reference internal" href="materials.html#sec-materials"><span class="std std-ref">material definition</span></a> in the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;materials&quot;</span></code> section of the file. Also, a window and filter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;thickness&quot;</span></code> must be provided.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">245</span><span class="nt">&quot;window&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>

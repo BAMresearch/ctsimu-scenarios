@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geometry &mdash; CTSimU Scenarios 1.2 documentation</title>
@@ -12,12 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=61243dd2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CTSimU Scenarios
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CTSimU Scenarios
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,7 +82,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Geometry</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/geometry.rst.txt" rel="nofollow"> View page source</a>
@@ -91,13 +94,13 @@
            <div itemprop="articleBody">
              
   <section id="geometry">
-<span id="sec-geometry"></span><h1>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading"></a></h1>
+<span id="sec-geometry"></span><h1>Geometry<a class="headerlink" href="#geometry" title="Link to this heading"></a></h1>
 <section id="placement-of-objects-in-the-world-coordinate-system">
-<span id="sec-geometry-placement-in-world"></span><h2>Placement of objects in the world coordinate system<a class="headerlink" href="#placement-of-objects-in-the-world-coordinate-system" title="Permalink to this heading"></a></h2>
+<span id="sec-geometry-placement-in-world"></span><h2>Placement of objects in the world coordinate system<a class="headerlink" href="#placement-of-objects-in-the-world-coordinate-system" title="Link to this heading"></a></h2>
 <figure class="align-default" id="id1">
 <span id="fig-coordinates"></span><a class="reference internal image-reference" href="_images/geometry.svg"><img alt="_images/geometry.svg" src="_images/geometry.svg" width="80%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">World coordinate system {x, y, z} and local coordinate systems {u, v, w}.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">World coordinate system {x, y, z} and local coordinate systems {u, v, w}.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>This specification does not define a fixed coordinate system for the CT set-up. The only assumption is that a right-handed world coordinate system {x, y, z} is used, and the local coordinate systems {u, v, w} of source, detector and sample stage are to be placed in this world coordinate system. <a class="reference internal" href="#fig-coordinates"><span class="std std-numref">Fig. 2</span></a> illustrates the general placement that is used in the following examples.</p>
@@ -111,7 +114,7 @@
 </dl>
 </section>
 <section id="deviations">
-<span id="sec-geometry-deviations"></span><h2>Deviations<a class="headerlink" href="#deviations" title="Permalink to this heading"></a></h2>
+<span id="sec-geometry-deviations"></span><h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading"></a></h2>
 <p>Deviations are small shifts (translations) or rotations that specify how much an object’s position or orientation differs from its ideal placement for the given frame. Deviations can be part of an object’s geometry definition. For example, a wobbling rotation axis of the stage could be described as a tilt of its local coordinate system:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">42</span><span class="nt">&quot;deviations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="linenos">43</span><span class="w">  </span><span class="p">{</span>
@@ -136,7 +139,7 @@
 <li><p><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;type&quot;</span><span class="p">:</span></code> can be either <code class="code docutils literal notranslate"><span class="pre">&quot;translation&quot;</span></code> or <code class="code docutils literal notranslate"><span class="pre">&quot;rotation&quot;</span></code>.</p></li>
 <li><p><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;amount&quot;</span><span class="p">:</span></code> the amount by which to deviate. For a translational deviation, this is the length by which the object should shift in the given direction. For a rotational deviation, it is the angle by which the object should rotate around the given axis (and optionally, the given pivot point). A <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;value&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;unit&quot;</span></code> must be specified for the amount.</p></li>
 <li><p><code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;axis&quot;</span><span class="p">:</span></code> specifies the direction of the deviation. For translations, it provides the direction of the shift. For rotations, it provides the rotation axis. The axis must not be a unit vector, but its length has no special significance.</p>
-<p>The axis can be given as and axis designation or as an arbitrary vector:</p>
+<p>The axis can be given as a designation (name) or as an arbitrary vector:</p>
 <ul>
 <li><p><code class="code docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code> or <code class="code docutils literal notranslate"><span class="pre">&quot;z&quot;</span></code> are the axes of the <strong>world coordinate system.</strong></p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">45</span><span class="nt">&quot;axis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
@@ -214,7 +217,7 @@
 </div>
 </section>
 <section id="detector">
-<span id="sec-geometry-detector"></span><h2>Detector<a class="headerlink" href="#detector" title="Permalink to this heading"></a></h2>
+<span id="sec-geometry-detector"></span><h2>Detector<a class="headerlink" href="#detector" title="Link to this heading"></a></h2>
 <p>For this specification, in general, vectors <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> and <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/> designate an item’s in-plane vectors, whereas <img class="math" src="_images/math/baf02a521473961a9ed6f3f5e2fd5a9930874cad.svg" alt="\vec{w}"/> usually designates a normal vector. Following this convention, <img class="math" src="_images/math/17dcdd8ca2862e923fac2c2f9f81f5e419623cbc.svg" alt="\vec{u}_\textsf{D}"/> is the detector’s <strong>row vector,</strong> pointing from left to right in the resulting projection image (as seen on a computer screen with a pixel coordinate system that has its origin in the upper left corner). <img class="math" src="_images/math/0fe05e079e32ad1d98f6dba2311676c78617e598.svg" alt="\vec{v}_\textsf{D}"/> is the detector’s <strong>column vector,</strong> pointing from top to bottom in the resulting projection image. The orientation of these two vectors directly determines the orientation of the projection image.</p>
 <p>Note that for any object only the normal vector <img class="math" src="_images/math/baf02a521473961a9ed6f3f5e2fd5a9930874cad.svg" alt="\vec{w}"/> and the support vector <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> are given in the JSON file. The detector normal <img class="math" src="_images/math/3f6ec79dc6fd8458355550fef1b8d5eab49328c2.svg" alt="\vec{w}_\textsf{D}"/> does not have any special meaning and should be arranged such that the detector’s row and column vector point in the desired directions.</p>
 <p>The size and further properties of the detector are defined later on in the <a class="reference internal" href="detector.html#sec-detector"><span class="std std-ref">detector section</span></a> of the JSON file.</p>
@@ -270,7 +273,7 @@
 </div>
 </section>
 <section id="source">
-<span id="sec-geometry-source"></span><h2>Source<a class="headerlink" href="#source" title="Permalink to this heading"></a></h2>
+<span id="sec-geometry-source"></span><h2>Source<a class="headerlink" href="#source" title="Link to this heading"></a></h2>
 <p>The source can be modelled either as a cone-beam geometry or a parallel beam geometry. This behaviour is set by the <code class="code highlight json-object docutils literal highlight-json-object"><span class="nt">&quot;type&quot;</span><span class="p">:</span></code> property, which can be either <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;cone&quot;</span></code> or <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;parallel&quot;</span></code>.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">74</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cone&quot;</span><span class="p">,</span>
 <span class="linenos">75</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;parallel&quot;</span>
@@ -322,7 +325,7 @@
 </div>
 </section>
 <section id="stage">
-<span id="sec-geometry-stage"></span><h2>Stage<a class="headerlink" href="#stage" title="Permalink to this heading"></a></h2>
+<span id="sec-geometry-stage"></span><h2>Stage<a class="headerlink" href="#stage" title="Link to this heading"></a></h2>
 <p>The normal vector <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> of the sample stage specifies the axis of rotation for the CT scan. By default, the sample stage coordinate system and all samples attached to it are meant to rotate around this axis, whereas the source and detector stay still (as for typical industrial CT scanners).</p>
 <p>Samples that are placed in the stage coordinate system all take part in the rotation of the sample stage. Samples that are placed in the world coordinate system are fixed during the CT scan (i.e. fixed relative to source and detector, see <a class="reference internal" href="samples.html#sec-samples"><span class="std std-ref">samples</span></a> for details).</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">100</span><span class="nt">&quot;stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

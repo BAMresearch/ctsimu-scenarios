@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acquisition &mdash; CTSimU Scenarios 1.2 documentation</title>
@@ -12,12 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=61243dd2"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> CTSimU Scenarios
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CTSimU Scenarios
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -83,7 +86,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Acquisition</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/acquisition.rst.txt" rel="nofollow"> View page source</a>
@@ -95,9 +98,9 @@
            <div itemprop="articleBody">
              
   <section id="acquisition">
-<span id="sec-acquisition"></span><h1>Acquisition<a class="headerlink" href="#acquisition" title="Permalink to this heading"></a></h1>
+<span id="sec-acquisition"></span><h1>Acquisition<a class="headerlink" href="#acquisition" title="Link to this heading"></a></h1>
 <section id="sample-stage-rotation">
-<h2>Sample stage rotation<a class="headerlink" href="#sample-stage-rotation" title="Permalink to this heading"></a></h2>
+<h2>Sample stage rotation<a class="headerlink" href="#sample-stage-rotation" title="Link to this heading"></a></h2>
 <p>The stage is assumed to perform a rotation around its <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> axis during the scan, resulting in a circular sample trajectory. Other trajectories can be modelled using <a class="reference internal" href="general.html#sec-drifts"><span class="std std-ref">drifts</span></a>, especially drifts of the stage geometry parameters. For example, a helix scan can be modelled by starting with a standard circular trajectory of several rotations (as described in the following), and an additional drift of the stage center’s <img class="math" src="_images/math/f7986e4d4aca23a0717a3b4bcf2cb8a37bb62dfa.svg" alt="z"/> position. If the scan trajectory is completely described by drifts, the stage rotation described here should be deactivated by setting both <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;start_angle&quot;</span></code> and <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;stop_angle&quot;</span></code> to <code class="code highlight json-object docutils literal highlight-json-object"><span class="mi">0</span></code>.</p>
 <p>For a circular CT scan, the start and stop angle of the sample stage are defined in this section. An angle of <code class="code highlight json-object docutils literal highlight-json-object"><span class="mi">0</span></code> refers to the orientation of the stage as defined in the <a class="reference internal" href="geometry.html#sec-geometry"><span class="std std-ref">geometry section</span></a> (for frame 0). All other angles express a rotation around the <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> axis of the stage. The direction of rotation must be mathematically positive in the case of counter-clockwise acquisition direction (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CCW&quot;</span></code>), and mathematically negative in the case of clockwise acquisition direction (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CW&quot;</span></code>). The stage reaches the start and stop angle by rotating in the given <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;direction&quot;</span></code> around its normal axis (<a class="reference internal" href="#fig-rotation"><span class="std std-numref">Fig. 4</span></a>). This means that the <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;direction&quot;</span></code> parameter affects both the positions of start and stop angle, as well as the direction of rotation in which the CT scan is performed. It also means that <strong>the start angle must always be less than (or equal to) the stop angle.</strong> However, negative angular positions and positions greater than 360° are allowed, as well as an angular coverage of more than a full circle, e.g. to perform multiple rotations during one scan.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">329</span><span class="nt">&quot;start_angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w">   </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;deg&quot;</span><span class="p">},</span>
@@ -107,7 +110,7 @@
 <figure class="align-default" id="id1">
 <span id="fig-rotation"></span><a class="reference internal image-reference" href="_images/rotation.svg"><img alt="_images/rotation.svg" src="_images/rotation.svg" width="80%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The given start angle and stop angle refer to opposite angular positions in <strong>(a)</strong> counter-clockwise or <strong>(b)</strong> clockwise direction (as seen from “above” the stage). They describe the angular range covered by the CT scan.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The given start angle and stop angle refer to opposite angular positions in <strong>(a)</strong> counter-clockwise or <strong>(b)</strong> clockwise direction (as seen from “above” the stage). They describe the angular range covered by the CT scan.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The direction of the sample stage rotation can be counter-clockwise (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CCW&quot;</span></code>, mathematically positive) or clockwise (<code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;CW&quot;</span></code>, mathematically negative) around the <img class="math" src="_images/math/57b8c497fc4604ea5dc14244450099acbc355b2c.svg" alt="\vec{w}_\textsf{O}"/> axis:</p>
@@ -130,9 +133,9 @@
 </div>
 </section>
 <section id="frames-and-projections">
-<h2>Frames and projections<a class="headerlink" href="#frames-and-projections" title="Permalink to this heading"></a></h2>
+<h2>Frames and projections<a class="headerlink" href="#frames-and-projections" title="Link to this heading"></a></h2>
 <section id="number-of-projections">
-<span id="sec-num-of-projections"></span><h3>Number of projections<a class="headerlink" href="#number-of-projections" title="Permalink to this heading"></a></h3>
+<span id="sec-num-of-projections"></span><h3>Number of projections<a class="headerlink" href="#number-of-projections" title="Link to this heading"></a></h3>
 <p>The <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;number_of_projections&quot;</span></code> is also given in the acquisition section.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">334</span><span class="nt">&quot;number_of_projections&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2001</span>
 </pre></div>
@@ -143,14 +146,14 @@
 </div>
 </section>
 <section id="frame-averaging">
-<span id="sec-frame-avg"></span><h3>Frame averaging<a class="headerlink" href="#frame-averaging" title="Permalink to this heading"></a></h3>
+<span id="sec-frame-avg"></span><h3>Frame averaging<a class="headerlink" href="#frame-averaging" title="Link to this heading"></a></h3>
 <p>The number of frames to be averaged for one projection image can be specified:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">336</span><span class="nt">&quot;frame_average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 </section>
 <section id="dark-field-and-flat-field-acquisition-and-correction">
-<span id="sec-flat-dark-field"></span><h3>Dark field and flat field acquisition and correction<a class="headerlink" href="#dark-field-and-flat-field-acquisition-and-correction" title="Permalink to this heading"></a></h3>
+<span id="sec-flat-dark-field"></span><h3>Dark field and flat field acquisition and correction<a class="headerlink" href="#dark-field-and-flat-field-acquisition-and-correction" title="Link to this heading"></a></h3>
 <p>If dark field and flat field images are acquired along with the projections, their numbers and frame averages can be specified. An <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;ideal&quot;</span></code> image means that the simulation of noise is to be omitted by the simulation software, possibly in contrast to the <a class="reference internal" href="detector.html#sec-noise"><span class="std std-ref">noise</span></a> specification in the detector section. The parameter <code class="code highlight json-object docutils literal highlight-json-object"><span class="s2">&quot;correction&quot;</span></code> tells whether the projection images already come in a corrected form as a result of the scan (<code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">true</span></code>) or if they are taken as uncorrected files (<code class="code highlight json-object docutils literal highlight-json-object"><span class="kc">false</span></code>).</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">337</span><span class="nt">&quot;dark_field&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">338</span><span class="w">  </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -168,7 +171,7 @@
 </div>
 </section>
 <section id="pixel-binning">
-<span id="sec-pixel-binning"></span><h3>Pixel binning<a class="headerlink" href="#pixel-binning" title="Permalink to this heading"></a></h3>
+<span id="sec-pixel-binning"></span><h3>Pixel binning<a class="headerlink" href="#pixel-binning" title="Link to this heading"></a></h3>
 <p>The number of pixels to bin in directions <img class="math" src="_images/math/a2e1a3aecbec396d9a1854e5646dffc769cdec9d.svg" alt="\vec{u}"/> and <img class="math" src="_images/math/61f582a51919c2823c8aa9a0fd396d9b4b13d4c5.svg" alt="\vec{v}"/> of the detector:</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">349</span><span class="nt">&quot;pixel_binning&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;u&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span>
 </pre></div>
@@ -177,7 +180,7 @@
 </section>
 </section>
 <section id="scattering">
-<h2>Scattering<a class="headerlink" href="#scattering" title="Permalink to this heading"></a></h2>
+<h2>Scattering<a class="headerlink" href="#scattering" title="Link to this heading"></a></h2>
 <p>This parameter specifies if X-ray scattering should be simulated or not.</p>
 <div class="highlight-json-object notranslate"><div class="highlight"><pre><span></span><span class="linenos">350</span><span class="nt">&quot;scattering&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 </pre></div>
